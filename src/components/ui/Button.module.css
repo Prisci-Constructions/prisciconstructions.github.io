@@ -1,0 +1,10 @@
+.btn { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-display); font-weight: 700; letter-spacing: 1.5px; border-radius: 5px; transition: background var(--transition), border-color var(--transition); cursor: pointer; text-decoration: none; border: none; }
+.primary { background: var(--blue); color: #fff; }
+.primary:hover { background: var(--blue-hover); }
+.ghost { background: transparent; border: 1px solid rgba(201,162,39,0.45); color: var(--accent); }
+.ghost:hover { border-color: var(--accent); background: var(--accent-dim); }
+.outline { background: transparent; border: 1.5px solid var(--blue); color: var(--blue); }
+.outline:hover { background: var(--blue); color: #fff; }
+.sm { font-size: 10px; padding: 7px 14px; }
+.md { font-size: 11px; padding: 11px 22px; }
+.lg { font-size: 13px; padding: 13px 28px; }

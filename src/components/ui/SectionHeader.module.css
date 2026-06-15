@@ -1,0 +1,8 @@
+.wrap { margin-bottom: 0; }
+.center { text-align: center; }
+.tag { font-family: var(--font-body); font-size: 10px; color: var(--accent); letter-spacing: 3px; font-weight: 600; margin-bottom: 8px; text-transform: uppercase; }
+.tagWhite { color: var(--accent); }
+.title { font-family: var(--font-display); font-size: 32px; font-weight: 800; color: var(--text); line-height: 1.1; letter-spacing: -0.5px; }
+.titleWhite { color: #fff; }
+.line { width: 40px; height: 3px; background: var(--accent); margin: 10px 0 0; border-radius: 2px; }
+.lineCenter { margin: 8px auto 0; }

@@ -1,0 +1,44 @@
+:root {
+  /* Brand Color Palette */
+  --primary:      #0A2342;             /* Primary Navy */
+  --secondary:    #486581;             /* Secondary Steel Blue */
+  --accent:       #C9A227;             /* Gold Accent */
+  --accent-hover: #b8901e;             /* Darker Gold (hover) */
+  --accent-dim:   rgba(201,162,39,0.12);
+  --accent-border:rgba(201,162,39,0.25);
+
+  /* Dark backgrounds */
+  --dark:         #0A2342;             /* Primary Navy */
+  --dark2:        #131A22;             /* Dark Sections */
+  --dark3:        #0d1e35;             /* Mid-dark panel */
+
+  /* --blue aliased to accent so all existing CSS modules pick up gold automatically */
+  --blue:         #C9A227;
+  --blue-hover:   #b8901e;
+  --blue-dim:     rgba(201,162,39,0.12);
+  --blue-border:  rgba(201,162,39,0.25);
+
+  /* Light / Background */
+  --light:        #F8F9FB;
+  --light2:       #edf0f5;
+  --white:        #ffffff;
+  --border:       #dde3ed;
+
+  /* Text */
+  --muted:        #486581;
+  --muted2:       #6b84a0;
+  --text:         #0A2342;
+
+  /* Typography */
+  --font-display: 'Montserrat', sans-serif;
+  --font-body:    'Inter', sans-serif;
+
+  /* Layout */
+  --section-px: 52px;
+  --section-py: 60px;
+  --radius-sm:  4px;
+  --radius-md:  7px;
+  --radius-lg:  12px;
+  --shadow-card: 0 2px 16px rgba(10,35,66,0.08);
+  --transition: 0.18s ease;
+}
