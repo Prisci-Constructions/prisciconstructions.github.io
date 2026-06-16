@@ -1,18 +1,17 @@
 :root {
   /* Brand Color Palette */
-  --primary:      #0A2342;             /* Primary Navy */
-  --secondary:    #486581;             /* Secondary Steel Blue */
-  --accent:       #C9A227;             /* Gold Accent */
-  --accent-hover: #b8901e;             /* Darker Gold (hover) */
+  --primary:      #0A2342;
+  --secondary:    #486581;
+  --accent:       #C9A227;
+  --accent-hover: #b8901e;
   --accent-dim:   rgba(201,162,39,0.12);
   --accent-border:rgba(201,162,39,0.25);
 
   /* Dark backgrounds */
-  --dark:         #0A2342;             /* Primary Navy */
-  --dark2:        #131A22;             /* Dark Sections */
-  --dark3:        #0d1e35;             /* Mid-dark panel */
+  --dark:         #0A2342;
+  --dark2:        #131A22;
+  --dark3:        #0d1e35;
 
-  /* --blue aliased to accent so all existing CSS modules pick up gold automatically */
   --blue:         #C9A227;
   --blue-hover:   #b8901e;
   --blue-dim:     rgba(201,162,39,0.12);
@@ -41,4 +40,18 @@
   --radius-lg:  12px;
   --shadow-card: 0 2px 16px rgba(10,35,66,0.08);
   --transition: 0.18s ease;
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --section-px: 32px;
+    --section-py: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --section-px: 16px;
+    --section-py: 36px;
+  }
 }

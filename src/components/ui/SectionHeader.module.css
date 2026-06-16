@@ -6,3 +6,11 @@
 .titleWhite { color: #fff; }
 .line { width: 40px; height: 3px; background: var(--accent); margin: 10px 0 0; border-radius: 2px; }
 .lineCenter { margin: 8px auto 0; }
+
+@media (max-width: 1023px) {
+  .title { font-size: 26px; }
+}
+@media (max-width: 640px) {
+  .title { font-size: 22px; }
+  .tag { font-size: 9px; letter-spacing: 2px; }
+}

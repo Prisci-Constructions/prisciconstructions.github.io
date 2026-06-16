@@ -49,8 +49,10 @@ export default function InspectionForm() {
 
     const payload = {
       access_key: import.meta.env.VITE_WEB3FORMS_KEY,
-      subject:    `New Inspection Request — ${form.name} (${form.city})`,
+      to:         import.meta.env.VITE_CONTACT_EMAIL || 'stephen@prisciconstructions.com',
+      subject:    `Book Your Inspection — ${form.name} (${form.city})`,
       from_name:  'Prisci Constructions Website',
+      replyto:    form.email || undefined,
       name:       form.name,
       phone:      form.phone,
       email:      form.email || 'Not provided',

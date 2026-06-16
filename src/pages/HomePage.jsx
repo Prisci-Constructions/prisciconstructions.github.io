@@ -7,9 +7,15 @@ import Testimonials from '@/components/sections/Testimonials';
 import CTABanner from '@/components/sections/CTABanner';
 import InspectionForm from '@/components/forms/InspectionForm';
 import { useScrollTop } from '@/hooks/useScrollTop';
+import { useSEO } from '@/hooks/useSEO';
 
 export default function HomePage() {
   useScrollTop();
+  useSEO({
+    title: 'Prisci Constructions | Waterproofing & Structural Repair in Hyderabad',
+    description: 'Expert waterproofing, structural repairs, building diagnostics & epoxy flooring across AP, Telangana, Karnataka and Maharashtra. 25+ years, 500+ projects. Request a free inspection.',
+    path: '/',
+  });
   return (
     <Layout>
       <HeroSplit />

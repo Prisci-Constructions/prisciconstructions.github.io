@@ -2,9 +2,15 @@ import Layout from '@/components/layout/Layout';
 import { PROJECTS } from '@/data';
 import SectionHeader from '@/components/ui/SectionHeader';
 import { useScrollTop } from '@/hooks/useScrollTop';
+import { useSEO } from '@/hooks/useSEO';
 
 export default function ProjectsPage() {
   useScrollTop();
+  useSEO({
+    title: 'Projects | Prisci Constructions Portfolio',
+    description: 'Completed projects including OHT waterproofing, industrial structural works, stadium restoration and epoxy flooring across Hyderabad, AP, Karnataka and Maharashtra.',
+    path: '/projects',
+  });
   return (
     <Layout>
       <section style={{ background: 'var(--dark)', padding: '56px 52px' }}>

@@ -19,3 +19,20 @@
 .iconWrap i { font-size: 18px; color: var(--blue); }
 .svcName { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--text); letter-spacing: 0.5px; line-height: 1.1; }
 .svcDesc { font-size: 10px; color: var(--muted); margin-top: 3px; line-height: 1.5; }
+
+@media (max-width: 1023px) {
+  .hero { grid-template-columns: 1fr; min-height: unset; }
+  .left { padding: 40px 32px; }
+  .title { font-size: 34px; }
+  .stats { grid-template-columns: repeat(4, 1fr); margin: 0 -32px -40px -32px; padding: 0 32px; }
+  .right { padding: 28px 32px 40px; border-left: none; border-top: 3px solid var(--accent); }
+}
+@media (max-width: 640px) {
+  .left { padding: 28px 16px; }
+  .title { font-size: 26px; letter-spacing: -0.3px; }
+  .sub { max-width: 100%; margin-bottom: 20px; }
+  .btns { flex-wrap: wrap; }
+  .stats { grid-template-columns: repeat(2, 1fr); margin: 0 -16px -28px -16px; padding: 0 16px; }
+  .right { padding: 24px 16px 28px; }
+  .svcRow { padding: 12px 14px; }
+}
