@@ -389,12 +389,45 @@
     document.getElementById('nav-burger').addEventListener('click', () => {
       document.querySelector('.nav-links').classList.toggle('nav-links--open');
     });
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
       e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
-      btn.textContent = 'REQUEST SENT ✓';
-      btn.style.background = '#1a5c1a';
+      const form = e.target;
+      const btn = form.querySelector('button[type="submit"]');
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      btn.textContent = 'SENDING...';
       btn.disabled = true;
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            access_key: 'c0c98dcf-a47d-4340-abde-34fc67551df2',
+            to: 'stephen@prisciconstructions.com',
+            subject: 'Free Inspection Request — ' + (data.name || 'Website Visitor'),
+            from_name: 'Prisci Constructions Website',
+            name: data.name || '',
+            phone: data.phone || '',
+            service: data.service || 'Not specified',
+            message: data.message || '',
+          }),
+        });
+        const json = await res.json();
+        if (json.success) {
+          btn.textContent = 'REQUEST SENT ✓';
+          btn.style.background = '#1a5c1a';
+          form.reset();
+        } else {
+          btn.textContent = 'FAILED — CALL US';
+          btn.style.background = '#8b1a1a';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.textContent = 'FAILED — CALL US';
+        btn.style.background = '#8b1a1a';
+        btn.disabled = false;
+      }
     }
   </script>
 </body>
