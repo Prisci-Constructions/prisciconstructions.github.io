@@ -1,6 +1,7 @@
 import { PROJECTS } from '@/data';
 import { Link } from 'react-router-dom';
 import SectionHeader from '@/components/ui/SectionHeader';
+import TiltCard from '@/components/ui/TiltCard';
 import styles from './ProjectsGrid.module.css';
 
 export default function ProjectsGrid() {
@@ -12,7 +13,7 @@ export default function ProjectsGrid() {
       </div>
       <div className={styles.grid}>
         {PROJECTS.map((p) => (
-          <div key={p.id} className={styles.card}>
+          <TiltCard key={p.id} className={styles.card} strength={8}>
             <div className={styles.thumb} style={{ background: p.bg }}>
               <i className={`ti ${p.icon}`} aria-hidden="true" />
             </div>
@@ -21,7 +22,7 @@ export default function ProjectsGrid() {
               <div className={styles.loc}><i className="ti ti-map-pin" aria-hidden="true" />{p.location}</div>
               <span className={styles.tag}>{p.category}</span>
             </div>
-          </div>
+          </TiltCard>
         ))}
       </div>
     </section>

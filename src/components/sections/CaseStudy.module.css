@@ -1,7 +1,8 @@
 .section { background: var(--light); padding: var(--section-py) var(--section-px); }
 .head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 28px; }
 .viewAll { font-size: 11px; color: var(--accent); font-weight: 600; display: flex; align-items: center; gap: 5px; font-family: var(--font-body); }
-.card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: grid; grid-template-columns: 220px 1fr; }
+.card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: grid; grid-template-columns: 220px 1fr; transition: transform 0.45s ease, box-shadow 0.45s ease; box-shadow: 0 6px 30px rgba(0,0,0,0.08); }
+.card:hover { transform: perspective(1200px) translateZ(10px) rotateX(-1deg); box-shadow: 0 24px 80px rgba(0,0,0,0.16), 0 0 40px rgba(201,162,39,0.06); }
 .baPanel { display: grid; grid-template-rows: 1fr 1fr; }
 .before, .after { height: 90px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
 .before { background: #37474f; }

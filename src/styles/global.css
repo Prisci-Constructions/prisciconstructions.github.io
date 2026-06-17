@@ -7,3 +7,25 @@ a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; }
 img { max-width: 100%; display: block; }
+
+@keyframes float-geo-a {
+  0%, 100% { transform: rotate(45deg) translateY(0px); }
+  50%       { transform: rotate(45deg) translateY(-12px); }
+}
+@keyframes float-geo-b {
+  0%, 100% { transform: rotate(45deg) translateY(0px); }
+  50%       { transform: rotate(45deg) translateY(-7px); }
+}
+@keyframes float-geo-c {
+  0%, 100% { transform: rotate(45deg) translateY(0px); }
+  33%       { transform: rotate(45deg) translateY(-9px); }
+  66%       { transform: rotate(45deg) translateY(5px); }
+}
+@keyframes float-geo-d {
+  0%, 100% { transform: rotate(45deg) translateY(0px); }
+  50%       { transform: rotate(45deg) translateY(-5px); }
+}
+@keyframes depth-glow {
+  0%, 100% { opacity: 0.18; }
+  50%       { opacity: 0.38; }
+}

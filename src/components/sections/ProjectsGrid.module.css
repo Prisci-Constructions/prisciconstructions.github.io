@@ -1,9 +1,9 @@
 .section { background: var(--dark); padding: var(--section-py) var(--section-px); }
 .head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 28px; }
 .viewAll { font-size: 11px; color: var(--blue); font-weight: 600; display: flex; align-items: center; gap: 5px; }
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.card { background: var(--dark3); border: 1px solid var(--blue-border); border-radius: 10px; overflow: hidden; transition: border-color var(--transition), transform var(--transition); }
-.card:hover { border-color: var(--blue); transform: translateY(-2px); }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; perspective: 1200px; }
+.card { background: var(--dark3); border: 1px solid var(--blue-border); border-radius: 10px; overflow: hidden; transition: transform 0.5s ease, box-shadow 0.5s ease, border-color var(--transition); transform-style: preserve-3d; box-shadow: 0 4px 24px rgba(0,0,0,0.25); }
+.card:hover { border-color: var(--blue); box-shadow: 0 20px 60px rgba(0,0,0,0.55), 0 0 30px rgba(201,162,39,0.10); }
 .thumb { height: 80px; display: flex; align-items: center; justify-content: center; }
 .thumb i { font-size: 32px; color: rgba(255,255,255,0.7); }
 .body { padding: 14px; }

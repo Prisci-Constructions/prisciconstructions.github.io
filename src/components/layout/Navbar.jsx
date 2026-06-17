@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { NAV_LINKS, COMPANY } from '@/data';
+import LogoImg from '@/assets/icons/Logo.jpeg';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
@@ -9,7 +10,7 @@ export default function Navbar() {
   return (
     <nav className={styles.nav}>
       <Link to="/" className={styles.logo}>
-        <div className={styles.logoMark}><span>PC</span></div>
+        <img src={LogoImg} alt="Prisci Constructions Logo" className={styles.logoImg} />
         <div>
           <div className={styles.logoName}>{COMPANY.name.toUpperCase()}</div>
           <div className={styles.logoTag}>{COMPANY.tagline}</div>

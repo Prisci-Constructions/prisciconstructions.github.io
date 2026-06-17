@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { COMPANY, SERVICES } from '@/data';
+import { WEB3FORMS_KEY, CONTACT_EMAIL } from '@/config';
 import Button from '@/components/ui/Button';
 import SectionHeader from '@/components/ui/SectionHeader';
 import { isEmail, isPhone, required } from '@/utils/validators';
@@ -48,8 +49,8 @@ export default function InspectionForm() {
     const serviceName = SERVICES.find((s) => s.id === form.service)?.name || form.service;
 
     const payload = {
-      access_key: import.meta.env.VITE_WEB3FORMS_KEY,
-      to:         import.meta.env.VITE_CONTACT_EMAIL || 'stephen@prisciconstructions.com',
+      access_key: WEB3FORMS_KEY,
+      to:         CONTACT_EMAIL,
       subject:    `Book Your Inspection — ${form.name} (${form.city})`,
       from_name:  'Prisci Constructions Website',
       replyto:    form.email || undefined,

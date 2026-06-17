@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { COMPANY, SERVICES } from '@/data';
+import LogoImg from '@/assets/icons/Logo.jpeg';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -7,8 +8,13 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.grid}>
         <div>
-          <div className={styles.brandName}>{COMPANY.name.toUpperCase()}</div>
-          <div className={styles.brandTag}>{COMPANY.tagline}</div>
+          <div className={styles.brandLogo}>
+            <img src={LogoImg} alt="Prisci Constructions Logo" className={styles.footerLogoImg} />
+            <div>
+              <div className={styles.brandName}>{COMPANY.name.toUpperCase()}</div>
+              <div className={styles.brandTag}>{COMPANY.tagline}</div>
+            </div>
+          </div>
           <p className={styles.about}>Delivering waterproofing, rehabilitation, diagnostics, architecture and interior solutions with engineering excellence and integrity since {COMPANY.since}.</p>
           <div className={styles.social}>
             {Object.entries(COMPANY.social).map(([k, v]) => (

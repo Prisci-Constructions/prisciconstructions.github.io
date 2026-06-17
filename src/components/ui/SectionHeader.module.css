@@ -2,9 +2,9 @@
 .center { text-align: center; }
 .tag { font-family: var(--font-body); font-size: 10px; color: var(--accent); letter-spacing: 3px; font-weight: 600; margin-bottom: 8px; text-transform: uppercase; }
 .tagWhite { color: var(--accent); }
-.title { font-family: var(--font-display); font-size: 32px; font-weight: 800; color: var(--text); line-height: 1.1; letter-spacing: -0.5px; }
-.titleWhite { color: #fff; }
-.line { width: 40px; height: 3px; background: var(--accent); margin: 10px 0 0; border-radius: 2px; }
+.title { font-family: var(--font-display); font-size: 32px; font-weight: 800; color: var(--text); line-height: 1.1; letter-spacing: -0.5px; text-shadow: 0 2px 10px rgba(10,35,66,0.08); }
+.titleWhite { color: #fff; text-shadow: 0 3px 16px rgba(0,0,0,0.3); }
+.line { width: 40px; height: 3px; background: var(--accent); margin: 10px 0 0; border-radius: 2px; box-shadow: 0 2px 12px rgba(201,162,39,0.45); }
 .lineCenter { margin: 8px auto 0; }
 
 @media (max-width: 1023px) {
