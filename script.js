@@ -23,8 +23,8 @@
 
   // ── SCENE ─────────────────────────────────────────────────
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x080808);
-  scene.fog = new THREE.FogExp2(0x080808, 0.016);
+  scene.background = new THREE.Color(0x070a14);
+  scene.fog = new THREE.FogExp2(0x070a14, 0.016);
 
   // ── CAMERA ────────────────────────────────────────────────
   const camera = new THREE.PerspectiveCamera(52, window.innerWidth / window.innerHeight, 0.1, 300);
@@ -34,12 +34,12 @@
 
   // ── LIGHTING ──────────────────────────────────────────────
 
-  // Dark cyan-tinted ambient
-  const ambientLight = new THREE.AmbientLight(0x081014, 1.4);
+  // Deep navy ambient
+  const ambientLight = new THREE.AmbientLight(0x080c1a, 1.4);
   scene.add(ambientLight);
 
-  // Main sun — cool white
-  const sunLight = new THREE.DirectionalLight(0xe0f8ff, 2.8);
+  // Main sun — warm white
+  const sunLight = new THREE.DirectionalLight(0xfff8f0, 2.8);
   sunLight.position.set(10, 20, 8);
   sunLight.castShadow = true;
   sunLight.shadow.mapSize.set(2048, 2048);
@@ -52,40 +52,40 @@
   sunLight.shadow.bias = -0.001;
   scene.add(sunLight);
 
-  // Cyan fill (signature accent light)
-  const fillLight = new THREE.PointLight(0x00E5FF, 2.5, 40);
+  // Warm cream fill (signature accent light)
+  const fillLight = new THREE.PointLight(0xF0D4A0, 2.5, 40);
   fillLight.position.set(-6, 2, 12);
   scene.add(fillLight);
 
-  // Deep cyan rim from behind
-  const rimLight = new THREE.DirectionalLight(0x006688, 0.9);
+  // Navy blue rim from behind
+  const rimLight = new THREE.DirectionalLight(0x1a3060, 0.9);
   rimLight.position.set(-15, 8, -10);
   scene.add(rimLight);
 
-  // Sky dark cyan / ground black hemisphere
-  const hemiLight = new THREE.HemisphereLight(0x081418, 0x040608, 0.8);
+  // Sky navy / ground deep navy hemisphere
+  const hemiLight = new THREE.HemisphereLight(0x0d1530, 0x060810, 0.8);
   scene.add(hemiLight);
 
-  // Crane light — cyan pulse at crane top
-  const craneLamp = new THREE.PointLight(0x00E5FF, 3.5, 14);
+  // Crane light — warm cream pulse at crane top
+  const craneLamp = new THREE.PointLight(0xF0D4A0, 3.5, 14);
   scene.add(craneLamp); // positioned after crane is built
 
   // ── MATERIALS ─────────────────────────────────────────────
   function mat(params) { return new THREE.MeshStandardMaterial(params); }
 
   const M = {
-    concrete:    mat({ color: 0x141414, roughness: 0.9,  metalness: 0.05 }),
-    concreteLt:  mat({ color: 0x1e1e1e, roughness: 0.85, metalness: 0.08 }),
-    concreteDk:  mat({ color: 0x080808, roughness: 0.96, metalness: 0.02 }),
-    steel:       mat({ color: 0x607080, roughness: 0.3,  metalness: 0.88 }),
-    steelDk:     mat({ color: 0x141414, roughness: 0.45, metalness: 0.78 }),
-    glassCool:   mat({ color: 0x040c10, emissive: new THREE.Color(0x00E5FF), emissiveIntensity: 0.5, roughness: 0.05, metalness: 0.92 }),
-    glassWarm:   mat({ color: 0x040c10, emissive: new THREE.Color(0x80F0FF), emissiveIntensity: 0.22, roughness: 0.08, metalness: 0.88 }),
-    ground:      mat({ color: 0x060606, roughness: 1.0,  metalness: 0.0  }),
-    asphalt:     mat({ color: 0x080808, roughness: 0.98, metalness: 0.0  }),
+    concrete:    mat({ color: 0x0d1428, roughness: 0.9,  metalness: 0.05 }),
+    concreteLt:  mat({ color: 0x162038, roughness: 0.85, metalness: 0.08 }),
+    concreteDk:  mat({ color: 0x080c18, roughness: 0.96, metalness: 0.02 }),
+    steel:       mat({ color: 0x304868, roughness: 0.3,  metalness: 0.88 }),
+    steelDk:     mat({ color: 0x0d1828, roughness: 0.45, metalness: 0.78 }),
+    glassCool:   mat({ color: 0x07091a, emissive: new THREE.Color(0xF5E6C8), emissiveIntensity: 0.4, roughness: 0.05, metalness: 0.92 }),
+    glassWarm:   mat({ color: 0x07091a, emissive: new THREE.Color(0xFFF5E6), emissiveIntensity: 0.18, roughness: 0.08, metalness: 0.88 }),
+    ground:      mat({ color: 0x060810, roughness: 1.0,  metalness: 0.0  }),
+    asphalt:     mat({ color: 0x080a14, roughness: 0.98, metalness: 0.0  }),
     yellow:      mat({ color: 0xf5c510, emissive: new THREE.Color(0xf5a800), emissiveIntensity: 0.1, roughness: 0.35, metalness: 0.2 }),
     red:         mat({ color: 0x8b1a1a, roughness: 0.8,  metalness: 0.1  }),
-    accent:      mat({ color: 0x00E5FF, emissive: new THREE.Color(0x00E5FF), emissiveIntensity: 0.6, roughness: 0.2, metalness: 0.5 }),
+    accent:      mat({ color: 0xF5E6C8, emissive: new THREE.Color(0xF5E6C8), emissiveIntensity: 0.5, roughness: 0.2, metalness: 0.5 }),
   };
 
   // ── HELPERS ───────────────────────────────────────────────
@@ -119,11 +119,11 @@
     return m;
   }
 
-  // Random window material (cyan glow variants)
+  // Random window material (warm cream glow variants)
   function winMat() {
     const g = M.glassCool.clone();
     if (Math.random() > 0.65) {
-      g.emissive = new THREE.Color(0x00CCEE);
+      g.emissive = new THREE.Color(0xE8D0A0);
       g.emissiveIntensity = 0.12 + Math.random() * 0.2;
     }
     return g;
@@ -295,7 +295,7 @@
 
     // Operator cabin
     g.add(box(0.7, 0.65, 0.7, M.yellow, 0.5, 17.4, 0));
-    g.add(box(0.5, 0.55, 0.5, mat({ color: 0x040c10, emissive: new THREE.Color(0x003344), emissiveIntensity: 0.4, roughness: 0.05, metalness: 0.9 }), 0.5, 17.4, 0)); // cabin glass
+    g.add(box(0.5, 0.55, 0.5, mat({ color: 0x07091a, emissive: new THREE.Color(0x1a2040), emissiveIntensity: 0.4, roughness: 0.05, metalness: 0.9 }), 0.5, 17.4, 0)); // cabin glass
 
     // Horizontal jib (main — extends right)
     g.add(box(10, 0.25, 0.25, M.yellow, 5, 18, 0));
@@ -413,7 +413,7 @@
 
   bgData.forEach(({ w, h, d, x, z }) => {
     const bMat = M.concreteDk.clone();
-    bMat.color.setHex(0x080808 + Math.floor(Math.random() * 0x080808));
+    bMat.color.setHex(0x080c18 + Math.floor(Math.random() * 0x060c18));
     const b = box(w, h, d, bMat, x, h / 2, z);
     scene.add(b);
 
@@ -423,8 +423,8 @@
       const wm = new THREE.MeshStandardMaterial({
         color: 0x050c14,
         emissive: Math.random() > 0.45
-          ? new THREE.Color(0x00E5FF)
-          : new THREE.Color(0x80F0FF),
+          ? new THREE.Color(0xF5E6C8)
+          : new THREE.Color(0xC8B898),
         emissiveIntensity: 0.12 + Math.random() * 0.12,
         roughness: 0.05, metalness: 0.9,
       });
@@ -472,7 +472,7 @@
   pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
 
   const pMat = new THREE.PointsMaterial({
-    color: 0x00E5FF,
+    color: 0xF5E6C8,
     size: 0.06,
     sizeAttenuation: true,
     transparent: true,
@@ -485,7 +485,7 @@
   // ── EDGE WIREFRAME HIGHLIGHT ───────────────────────────────
   // Add subtle edge lines to main tower for blueprint feel
   const edgesGeo = new THREE.EdgesGeometry(new THREE.BoxGeometry(3, 12, 2.5));
-  const edgesMat = new THREE.LineBasicMaterial({ color: 0x00E5FF, transparent: true, opacity: 0.12 });
+  const edgesMat = new THREE.LineBasicMaterial({ color: 0xF5E6C8, transparent: true, opacity: 0.12 });
   const edgesMesh = new THREE.LineSegments(edgesGeo, edgesMat);
   edgesMesh.position.set(0, 6, 0);
   buildingGroup.add(edgesMesh);
