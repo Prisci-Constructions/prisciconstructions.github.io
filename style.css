@@ -4,24 +4,24 @@
 ───────────────────────────────────────────── */
 
 :root {
-  --bg:          #141414;
-  --bg2:         #1A1A1A;
-  --surface:     #202020;
-  --surface2:    #1a1a1a;
-  --concrete:    #282828;
-  --concrete-lt: #383838;
-  --stone:       #111111;
-  --earth:       #1c1c1c;
-  --sand:        #BDBDBD;
-  --gold:        #FF5722;
-  --gold-lt:     #FF8A65;
-  --steel:       #BDBDBD;
-  --rust:        #C44020;
-  --text:        #F5F5F5;
-  --text-muted:  #BDBDBD;
-  --text-dim:    #757575;
-  --border:      rgba(189,189,189,0.1);
-  --border-gold: rgba(255,87,34,0.25);
+  --bg:          #080808;
+  --bg2:         #0E0E0E;
+  --surface:     #141414;
+  --surface2:    #0e0e0e;
+  --concrete:    #1e1e1e;
+  --concrete-lt: #2e2e2e;
+  --stone:       #060606;
+  --earth:       #121212;
+  --sand:        #80AABB;
+  --gold:        #00E5FF;
+  --gold-lt:     #80F0FF;
+  --steel:       #80AABB;
+  --rust:        #0099BB;
+  --text:        #F0FAFE;
+  --text-muted:  #80AABB;
+  --text-dim:    #406070;
+  --border:      rgba(128,170,187,0.1);
+  --border-gold: rgba(0,229,255,0.22);
 
   --font-display: 'Bebas Neue', sans-serif;
   --font-body:    'Inter', sans-serif;
@@ -93,7 +93,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   place-items: center;
   width: 38px; height: 38px;
   background: var(--gold);
-  color: #141414;
+  color: #080808;
   font-family: var(--font-display);
   font-size: 1rem;
   letter-spacing: 0.05em;
@@ -130,7 +130,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .nav-cta {
   padding: 0.5rem 1.25rem !important;
   background: var(--gold) !important;
-  color: #141414 !important;
+  color: #080808 !important;
   border-radius: var(--radius) !important;
   font-weight: 700 !important;
   transition: background var(--transition) !important;
@@ -209,7 +209,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
   padding: 0.85rem 2rem;
   background: var(--gold);
-  color: #141414;
+  color: #080808;
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 700;
@@ -286,7 +286,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   justify-content: center;
   gap: 0;
   padding: 1.5rem 2.5rem;
-  background: linear-gradient(to top, rgba(20,20,20,0.92) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(8,8,8,0.92) 0%, transparent 100%);
   pointer-events: none;
 }
 .hero-stat {
@@ -444,7 +444,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .service-card-tags span {
   padding: 0.2rem 0.6rem;
-  background: rgba(255,87,34,0.1);
+  background: rgba(0,229,255,0.08);
   border: 1px solid var(--border-gold);
   border-radius: 3px;
   font-family: var(--font-mono);
@@ -688,7 +688,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .footer {
   position: relative;
   z-index: 2;
-  background: #0c0c0c;
+  background: #040404;
   border-top: 1px solid var(--border);
   padding: 4rem 0 2rem;
 }
