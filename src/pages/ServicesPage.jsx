@@ -18,11 +18,20 @@ export default function ServicesPage() {
         <SectionHeader tag="WHAT WE DO" title="Our Services" />
         <div className={styles.grid}>
           {SERVICES.map((s) => (
-            <div key={s.id} id={s.id} className={styles.card}>
-              <div className={styles.thumb} style={{ background: s.bg }}>
-                <i className={'ti ' + s.icon} aria-hidden="true" />
-              </div>
-              <div className={styles.body}>
+            <div key={s.id} id={s.id} className={styles.card} style={{ background: s.bg }}>
+              <video
+                className={styles.bgVideo}
+                src={s.video}
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+              <div className={styles.overlay} />
+              <div className={styles.cardContent}>
+                <div className={styles.iconWrap}>
+                  <i className={'ti ' + s.icon} aria-hidden="true" />
+                </div>
                 <h3 className={styles.name}>{s.name}</h3>
                 <p className={styles.desc}>{s.shortDesc}</p>
               </div>

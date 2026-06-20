@@ -17,12 +17,12 @@ export const STATS = [
 ];
 
 export const SERVICES = [
-  { id: 'waterproofing', icon: 'ti-droplet', name: 'Waterproofing', shortDesc: 'Terrace, basement, OHT & retaining wall systems', bg: '#0d3b6e' },
-  { id: 'diagnostics', icon: 'ti-search', name: 'Building Diagnostics', shortDesc: 'Leak detection, moisture mapping & assessment', bg: '#00362e' },
-  { id: 'structural', icon: 'ti-tool', name: 'Structural Repairs', shortDesc: 'Concrete rehab, crack sealing & coatings', bg: '#2a1a3a' },
-  { id: 'grouting', icon: 'ti-inject', name: 'Injection Grouting', shortDesc: 'Polyurethane & epoxy grouting for cracks', bg: '#1a2e3a' },
-  { id: 'flooring', icon: 'ti-layout-grid', name: 'Epoxy Flooring', shortDesc: 'Industrial & commercial flooring systems', bg: '#2e1a0d' },
-  { id: 'architecture', icon: 'ti-building', name: 'Architecture & Interiors', shortDesc: 'Design, space planning & turnkey solutions', bg: '#0d2214' },
+  { id: 'waterproofing', icon: 'ti-droplet', name: 'Waterproofing', shortDesc: 'Terrace, basement, OHT & retaining wall systems', bg: '#0d3b6e', video: '/videos/waterproofing.mp4' },
+  { id: 'diagnostics', icon: 'ti-search', name: 'Building Diagnostics', shortDesc: 'Leak detection, moisture mapping & assessment', bg: '#00362e', video: '/videos/diagnostics.mp4' },
+  { id: 'structural', icon: 'ti-tool', name: 'Structural Repairs', shortDesc: 'Concrete rehab, crack sealing & coatings', bg: '#2a1a3a', video: '/videos/structural.mp4' },
+  { id: 'grouting', icon: 'ti-inject', name: 'Injection Grouting', shortDesc: 'Polyurethane & epoxy grouting for cracks', bg: '#1a2e3a', video: '/videos/grouting.mp4' },
+  { id: 'flooring', icon: 'ti-layout-grid', name: 'Epoxy Flooring', shortDesc: 'Industrial & commercial flooring systems', bg: '#2e1a0d', video: '/videos/flooring.mp4' },
+  { id: 'architecture', icon: 'ti-building', name: 'Architecture & Interiors', shortDesc: 'Design, space planning & turnkey solutions', bg: '#0d2214', video: '/videos/architecture.mp4' },
 ];
 
 export const PROJECTS = [
