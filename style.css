@@ -168,10 +168,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .hero {
   position: relative;
   z-index: 1;
-  height: 100vh;
-  min-height: 600px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  box-sizing: border-box;
   pointer-events: none;
 }
 
@@ -265,7 +267,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ── HERO SCROLL INDICATOR ─────────────────────────────────── */
 .hero-scroll {
   position: absolute;
-  bottom: 7rem;
+  bottom: 8rem;
   left: 2.5rem;
   display: flex;
   flex-direction: column;
@@ -779,24 +781,30 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .footer-grid   { grid-template-columns: 1fr 1fr; }
 }
 
+@media (max-width: 900px) {
+  .nav-logo-text { display: none; }
+}
+
 @media (max-width: 768px) {
-  .nav          { padding: 1rem 1.25rem; }
-  .nav--scrolled{ padding: 0.75rem 1.25rem; }
+  .nav          { padding: 0.875rem 1.25rem; }
+  .nav--scrolled{ padding: 0.65rem 1.25rem; }
   .nav-links    { display: none; }
   .nav-links.nav-links--open {
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 100%; left: 0; right: 0;
-    background: rgba(8,8,6,0.97);
+    background: rgba(7,10,20,0.97);
     border-bottom: 1px solid var(--border);
     padding: 1.5rem;
     gap: 1rem;
   }
   .nav-burger { display: flex; }
+  .nav-logo-img { width: 34px; height: 34px; }
 
+  .hero         { padding-top: 4.5rem; padding-bottom: 4rem; }
   .hero-content { padding: 0 1.25rem; margin-left: 0; }
-  .hero-title   { font-size: clamp(2.8rem, 12vw, 4.5rem); }
+  .hero-title   { font-size: clamp(2.4rem, 11vw, 4.5rem); }
   .hero-stats   { display: none; }
   .hero-scroll  { display: none; }
 
@@ -818,4 +826,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .projects-grid { grid-template-columns: 1fr; }
   .clients-grid  { grid-template-columns: 1fr; }
   .footer-grid   { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-title    { font-size: clamp(2rem, 13vw, 3.5rem); }
+  .hero-desc     { font-size: 0.9rem; }
+  .hero-btns     { flex-direction: column; }
+  .hero-btns .btn-primary,
+  .hero-btns .btn-ghost { width: 100%; justify-content: center; }
+}
+
+/* ── SHORT SCREENS (landscape phones) ─────── */
+@media (max-height: 600px) {
+  .hero          { min-height: auto; padding-top: 5rem; padding-bottom: 2rem; }
+  .hero-scroll   { display: none; }
+  .hero-stats    { display: none; }
+  .hero-title    { font-size: clamp(2rem, 10vw, 3rem); }
 }
