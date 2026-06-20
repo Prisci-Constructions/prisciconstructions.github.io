@@ -1310,29 +1310,32 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .btn-call:hover { background: var(--gold); color: var(--bg); }
 
-/* Service checkboxes */
-.service-checks {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-.service-check {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.83rem;
-  color: var(--text-muted);
-  cursor: pointer;
-  padding: 0.5rem 0.75rem;
+/* Multi-select dropdown */
+.multi-select {
+  width: 100%;
+  background: var(--surface2);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: var(--surface2);
-  transition: border-color var(--transition), color var(--transition);
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  padding: 0.25rem 0;
+  outline: none;
+  transition: border-color var(--transition);
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-gold) transparent;
 }
-.service-check:hover { border-color: var(--border-gold); color: var(--text); }
-.service-check input[type="checkbox"] { accent-color: var(--gold); width: 14px; height: 14px; flex-shrink: 0; }
-.service-check input:checked ~ span { color: var(--text); }
+.multi-select:focus { border-color: var(--border-gold); }
+.multi-select option {
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+  background: var(--surface2);
+  color: var(--text-muted);
+}
+.multi-select option:checked {
+  background: var(--concrete-lt);
+  color: var(--gold);
+}
 
 /* File input */
 .file-input-wrap { margin-top: 0.4rem; }
@@ -1372,7 +1375,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .certs-grid      { gap: 0.75rem; }
   .cert-card       { padding: 1.25rem 1.5rem; min-width: 100px; }
   .about-vm        { grid-template-columns: 1fr; }
-  .service-checks  { grid-template-columns: 1fr; }
+
   .contact-actions { flex-direction: column; }
   .btn-whatsapp, .btn-call { justify-content: center; }
   .trust-bar-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
