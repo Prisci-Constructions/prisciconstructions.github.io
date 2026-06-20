@@ -1152,6 +1152,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-left: auto;
   margin-right: auto;
 }
+.team-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1100px;
+}
 .team-card {
   padding: 2.5rem;
   background: var(--surface);
@@ -1430,7 +1434,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .process-steps   { flex-direction: column; gap: 0.75rem; }
   .process-arrow   { transform: rotate(90deg); align-self: center; padding: 0; }
   .industries-grid { grid-template-columns: repeat(3, 1fr); }
-  .team-grid       { grid-template-columns: 1fr; max-width: 460px; }
+  .team-grid, .team-grid--3 { grid-template-columns: 1fr; max-width: 460px; }
   .knowledge-grid  { grid-template-columns: 1fr; }
   .certs-grid      { gap: 0.75rem; }
   .cert-card       { padding: 1.25rem 1.5rem; min-width: 100px; }
