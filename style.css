@@ -802,39 +802,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .nav-burger { display: flex; }
   .nav-logo-img { width: 34px; height: 34px; }
 
-  /* Hero: column layout so stats sit naturally below content */
-  .hero         {
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-    padding-top: 4.5rem;
-    padding-bottom: 0;
-  }
-  .hero-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 1.5rem 1.25rem;
-    margin-left: 0;
-  }
+  .hero         { padding-top: 4.5rem; padding-bottom: 11rem; }
+  .hero-content { padding: 0 1.25rem; margin-left: 0; }
   .hero-title   { font-size: clamp(2.4rem, 11vw, 4.5rem); }
   .hero-scroll  { display: none; }
 
-  /* Stats: 2×2 grid instead of hidden */
-  .hero-stats {
-    position: relative;
-    bottom: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 1.25rem 0.5rem;
-    background: linear-gradient(to top, rgba(7,10,20,0.96) 0%, rgba(7,10,20,0.6) 100%);
-  }
-  .hero-stat     { width: 50%; padding: 0.75rem 0.5rem; }
-  .hero-stat-num { font-size: 1.6rem; }
-  .hero-stat-lbl { font-size: 0.55rem; }
-  .hero-stat-sep { display: none; }
+  /* Stats: stay absolute at bottom, wrap into 2×2 grid */
+  .hero-stats   { display: flex; flex-wrap: wrap; padding: 1rem 0.5rem; }
+  .hero-stat    { width: 50%; padding: 0.75rem 0.5rem; }
+  .hero-stat-num{ font-size: 1.5rem; }
+  .hero-stat-lbl{ font-size: 0.55rem; }
+  .hero-stat-sep{ display: none; }
 
   .about-grid   { grid-template-columns: 1fr; gap: 2rem; }
   .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -863,10 +841,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* ── SHORT SCREENS (landscape phones) ─────── */
 @media (max-height: 600px) {
-  .hero          { min-height: auto; padding-top: 5rem; padding-bottom: 0; }
+  .hero          { min-height: auto; padding-top: 5rem; padding-bottom: 9rem; }
   .hero-scroll   { display: none; }
   .hero-title    { font-size: clamp(2rem, 10vw, 3rem); }
-  .hero-stats    { position: relative; bottom: auto; flex-wrap: wrap; padding: 0.75rem 0.5rem; }
+  .hero-stats    { display: flex; flex-wrap: wrap; padding: 0.75rem 0.5rem; }
   .hero-stat     { width: 50%; padding: 0.5rem 0.5rem; }
   .hero-stat-num { font-size: 1.3rem; }
   .hero-stat-sep { display: none; }
