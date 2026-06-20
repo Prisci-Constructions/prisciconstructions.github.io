@@ -845,15 +845,12 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="f-services">Services Required <span class="form-note-inline">(hold Ctrl / Cmd to select multiple)</span></label>
-            <select id="f-services" name="services" multiple size="6" class="multi-select">
-              <option value="Leak Investigation">Leak Investigation</option>
-              <option value="Waterproofing">Waterproofing</option>
-              <option value="Structural Rehabilitation">Structural Rehabilitation</option>
-              <option value="Architecture">Architecture</option>
-              <option value="Interior Design">Interior Design</option>
-              <option value="Real Estate Advisory">Real Estate Advisory</option>
-            </select>
+            <label>Services Required</label>
+            <div class="ac-wrap" id="ac-wrap">
+              <div class="ac-tags" id="ac-tags"></div>
+              <input type="text" class="ac-input" id="ac-input" placeholder="Type to search…" autocomplete="off" />
+              <ul class="ac-dropdown" id="ac-dropdown"></ul>
+            </div>
           </div>
           <div class="form-group">
             <label for="f-msg">Project Details</label>
@@ -937,12 +934,66 @@
       document.querySelector('.nav-links').classList.toggle('nav-links--open');
     });
 
+    /* ── Service autocomplete ─────────────── */
+    (function() {
+      const ALL = ['Leak Investigation','Waterproofing','Structural Rehabilitation','Architecture','Interior Design','Real Estate Advisory'];
+      const wrap = document.getElementById('ac-wrap');
+      const tagsEl = document.getElementById('ac-tags');
+      const input = document.getElementById('ac-input');
+      const drop = document.getElementById('ac-dropdown');
+      let selected = [];
+
+      function render(items) {
+        drop.innerHTML = '';
+        if (!items.length) { drop.classList.remove('ac-open'); return; }
+        items.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          li.addEventListener('mousedown', e => { e.preventDefault(); addTag(item); });
+          drop.appendChild(li);
+        });
+        drop.classList.add('ac-open');
+      }
+
+      function addTag(val) {
+        if (selected.includes(val)) return;
+        selected.push(val);
+        const chip = document.createElement('span');
+        chip.className = 'ac-chip';
+        chip.innerHTML = val + '<button type="button" aria-label="Remove">&times;</button>';
+        chip.querySelector('button').addEventListener('click', () => {
+          selected = selected.filter(s => s !== val);
+          chip.remove();
+          updateDrop();
+        });
+        tagsEl.appendChild(chip);
+        input.value = '';
+        updateDrop();
+        input.focus();
+      }
+
+      function updateDrop() {
+        const q = input.value.toLowerCase();
+        const available = ALL.filter(s => !selected.includes(s) && s.toLowerCase().includes(q));
+        render(available);
+      }
+
+      input.addEventListener('focus', updateDrop);
+      input.addEventListener('input', updateDrop);
+      document.addEventListener('click', e => {
+        if (!wrap.contains(e.target)) drop.classList.remove('ac-open');
+      });
+      wrap.addEventListener('click', () => input.focus());
+
+      window._getSelectedServices = () => selected;
+    })();
+
     async function handleSubmit(e) {
       e.preventDefault();
       const form = e.target;
       const btn = form.querySelector('button[type="submit"]');
       const data = Object.fromEntries(new FormData(form).entries());
-      const services = Array.from(form.querySelector('#f-services').selectedOptions).map(o => o.value);
+      const services = window._getSelectedServices();
 
       btn.textContent = 'SENDING...';
       btn.disabled = true;
