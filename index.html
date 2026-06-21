@@ -71,7 +71,7 @@
       </div>
       <div class="hero-stat-sep"></div>
       <div class="hero-stat">
-        <span class="hero-stat-num">500+</span>
+        <span class="hero-stat-num">250+</span>
         <span class="hero-stat-lbl">Projects Completed</span>
       </div>
       <div class="hero-stat-sep"></div>
@@ -405,104 +405,308 @@
     <div class="container">
       <div class="section-eyebrow">Portfolio</div>
       <h2 class="section-title">Landmark <span class="accent">Projects</span></h2>
-      <div class="projects-grid">
+      <!-- ── Project carousel ── -->
+      <div class="projects-carousel" id="projects-carousel">
 
-        <div class="project-card">
-          <div class="project-card-img" style="--pc-img:url('src/assets/icons/Andhara Paradesh.jpeg')"></div>
-          <div class="project-card-body">
-            <div class="project-card-cat">Waterproofing · Municipal</div>
-            <h3 class="project-card-name">Municipal Filter Bed Rehabilitation</h3>
-            <p class="project-card-loc">Guntakal, Andhra Pradesh</p>
-            <div class="project-card-line"></div>
-            <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
-            <div class="project-details">
-              <div class="pd-row"><span class="pd-label">Challenge</span><span class="pd-val">Leakage and deterioration affecting water treatment performance.</span></div>
-              <div class="pd-row"><span class="pd-label">Solution</span><span class="pd-val">Structural repair and specialized waterproofing treatment.</span></div>
-              <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">Extended service life and improved operational efficiency.</span></div>
+        <!-- Page 1 -->
+        <div class="projects-page active" id="ppage-0">
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-card-img" style="--pc-img:url('src/assets/icons/Militery Engneering service.jpeg')"></div>
+              <div class="project-card-body">
+                <div class="project-card-cat">Waterproofing · MES</div>
+                <h3 class="project-card-name">Special Repairs — AF Station</h3>
+                <p class="project-card-loc">AF Station Madh, Mumbai</p>
+                <div class="project-card-line"></div>
+                <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
+                <div class="project-details">
+                  <div class="pd-row"><span class="pd-label">Client</span><span class="pd-val">Military Engineering Services (MES)</span></div>
+                  <div class="pd-row"><span class="pd-label">Work</span><span class="pd-val">Special Repairs — Waterproofing Treatment to Building P-1 at Air Force Station.</span></div>
+                  <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">Completed on schedule. Zero defects post-inspection.</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-img" style="--pc-img:url('src/assets/icons/Air-India.jpeg')"></div>
+              <div class="project-card-body">
+                <div class="project-card-cat">Waterproofing · Aviation</div>
+                <h3 class="project-card-name">Terrace Waterproofing — AI Colony</h3>
+                <p class="project-card-loc">Kalina, S'Cruz(E), Mumbai</p>
+                <div class="project-card-line"></div>
+                <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
+                <div class="project-details">
+                  <div class="pd-row"><span class="pd-label">Client</span><span class="pd-val">Air India Ltd.</span></div>
+                  <div class="pd-row"><span class="pd-label">Work</span><span class="pd-val">Tar felt waterproofing treatment to terraces of Buildings F, Q &amp; T at Air India Colony.</span></div>
+                  <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">Completed on schedule. Buildings certified leak-free post-treatment.</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-img" style="--pc-img:url('src/assets/icons/HP.jpeg')"></div>
+              <div class="project-card-body">
+                <div class="project-card-cat">Civil · Infrastructure</div>
+                <h3 class="project-card-name">RCC Drive Way &amp; Civil Works</h3>
+                <p class="project-card-loc">HPCL Facility, Hyderabad</p>
+                <div class="project-card-line"></div>
+                <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
+                <div class="project-details">
+                  <div class="pd-row"><span class="pd-label">Client</span><span class="pd-val">Hindustan Petroleum Corporation Ltd. (HPCL)</span></div>
+                  <div class="pd-row"><span class="pd-label">Work</span><span class="pd-val">RCC Drive Way construction and civil infrastructure works at HPCL facility, Hyderabad.</span></div>
+                  <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">₹9.5 Lakh project completed on schedule to full specification.</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-img" style="--pc-img:url('src/assets/icons/Sports authorty of andhra paradesh.jpeg')"></div>
+              <div class="project-card-body">
+                <div class="project-card-cat">Waterproofing · Government</div>
+                <h3 class="project-card-name">Stadium Restoration</h3>
+                <p class="project-card-loc">Hyderabad, Telangana</p>
+                <div class="project-card-line"></div>
+                <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
+                <div class="project-details">
+                  <div class="pd-row"><span class="pd-label">Client</span><span class="pd-val">Sports Authority of Andhra Pradesh (SAAP)</span></div>
+                  <div class="pd-row"><span class="pd-label">Work</span><span class="pd-val">Waterproofing works to Gymnasium &amp; Boxing Hall; ground restoration, levelling and consolidation of 5.5 acres.</span></div>
+                  <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">₹86.5 Lakh total project. Completed on schedule, fully operational.</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-img" style="--pc-img:url('src/assets/icons/Andhara Paradesh.jpeg')"></div>
+              <div class="project-card-body">
+                <div class="project-card-cat">Waterproofing · Municipal</div>
+                <h3 class="project-card-name">Filter Bed &amp; Water Tank Rehabilitation</h3>
+                <p class="project-card-loc">Guntakal &amp; Kurnool Municipalities, AP</p>
+                <div class="project-card-line"></div>
+                <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
+                <div class="project-details">
+                  <div class="pd-row"><span class="pd-label">Client</span><span class="pd-val">AP Municipalities — Guntakal &amp; Kurnool</span></div>
+                  <div class="pd-row"><span class="pd-label">Work</span><span class="pd-val">Improvement to Drinking Water Treatment Plant (3.84 MGD), repairs to filter beds; restoration of ELSR tanks at Kurnool.</span></div>
+                  <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">₹92.3 Lakh combined project. Restored water treatment efficiency and structural integrity.</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-img" style="--pc-img:url('src/assets/icons/Pidilite.jpeg')"></div>
+              <div class="project-card-body">
+                <div class="project-card-cat">Industrial · Structural</div>
+                <h3 class="project-card-name">Industrial Civil &amp; Structural Works</h3>
+                <p class="project-card-loc">Global Industries, Bangalore</p>
+                <div class="project-card-line"></div>
+                <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
+                <div class="project-details">
+                  <div class="pd-row"><span class="pd-label">Client</span><span class="pd-val">Pidilite Industries</span></div>
+                  <div class="pd-row"><span class="pd-label">Work</span><span class="pd-val">Civil, fabrication &amp; erection of structures with civil foundations at Global Industries, Bangalore industrial area.</span></div>
+                  <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">₹50 Lakh project. Delivered on schedule to full specification.</span></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-card-img" style="--pc-img:url('src/assets/icons/meil.jpeg')"></div>
-          <div class="project-card-body">
-            <div class="project-card-cat">Waterproofing · Municipal</div>
-            <h3 class="project-card-name">OHT Waterproofing</h3>
-            <p class="project-card-loc">Kurnool Municipality, AP</p>
-            <div class="project-card-line"></div>
-            <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
-            <div class="project-details">
-              <div class="pd-row"><span class="pd-label">Challenge</span><span class="pd-val">Overhead tank leakage causing structural damage and water loss.</span></div>
-              <div class="pd-row"><span class="pd-label">Solution</span><span class="pd-val">Comprehensive waterproofing membrane with crack injection.</span></div>
-              <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">Zero leakage post-treatment, structure certified for continued use.</span></div>
+        <!-- Page 2 -->
+        <div class="projects-page" id="ppage-1">
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-card-img" style="--pc-img:url('src/assets/icons/Militery Engneering service.jpeg')"></div>
+              <div class="project-card-body">
+                <div class="project-card-cat">Roads · MES</div>
+                <h3 class="project-card-name">Bituminous Approach Road</h3>
+                <p class="project-card-loc">INS Hansa, Goa</p>
+                <div class="project-card-line"></div>
+                <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
+                <div class="project-details">
+                  <div class="pd-row"><span class="pd-label">Client</span><span class="pd-val">Military Engineering Services (MES)</span></div>
+                  <div class="pd-row"><span class="pd-label">Work</span><span class="pd-val">Provision of bituminous approach road near Building No. 482 at INS Hansa Naval Air Station.</span></div>
+                  <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">Completed on schedule to MES specification.</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-img" style="--pc-img:url('src/assets/icons/Militery Engneering service.jpeg')"></div>
+              <div class="project-card-body">
+                <div class="project-card-cat">Civil Maintenance · MES</div>
+                <h3 class="project-card-name">Artificers Works — NOFRA Complex</h3>
+                <p class="project-card-loc">Gomantak, Vasco, Goa</p>
+                <div class="project-card-line"></div>
+                <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
+                <div class="project-details">
+                  <div class="pd-row"><span class="pd-label">Client</span><span class="pd-val">Military Engineering Services (MES)</span></div>
+                  <div class="pd-row"><span class="pd-label">Work</span><span class="pd-val">Term Contract for Artificers work at NOFRA I &amp; II Complex, Gomantak, Vasco.</span></div>
+                  <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">Multi-year maintenance contract executed on schedule.</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-img" style="--pc-img:url('src/assets/icons/SUNGDO ENG.jpeg')"></div>
+              <div class="project-card-body">
+                <div class="project-card-cat">Electrical · Infrastructure</div>
+                <h3 class="project-card-name">33/11 KV Sub-Stations</h3>
+                <p class="project-card-loc">Prakasam District, Andhra Pradesh</p>
+                <div class="project-card-line"></div>
+                <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
+                <div class="project-details">
+                  <div class="pd-row"><span class="pd-label">Client</span><span class="pd-val">SUNGDO Engineering Co.</span></div>
+                  <div class="pd-row"><span class="pd-label">Work</span><span class="pd-val">Erection of 33/11 KV electrical sub-stations across Prakasam District, AP.</span></div>
+                  <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">₹4.42 Crore project completed to full specification.</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-img" style="--pc-img:url('src/assets/icons/SUNGDO ENG.jpeg')"></div>
+              <div class="project-card-body">
+                <div class="project-card-cat">Electrical · Turnkey</div>
+                <h3 class="project-card-name">Turnkey Supply &amp; Erection of Electricals</h3>
+                <p class="project-card-loc">Andhra Pradesh</p>
+                <div class="project-card-line"></div>
+                <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
+                <div class="project-details">
+                  <div class="pd-row"><span class="pd-label">Client</span><span class="pd-val">SUNGDO Engineering Co.</span></div>
+                  <div class="pd-row"><span class="pd-label">Work</span><span class="pd-val">Turnkey execution of supply &amp; erection of electrical infrastructure across AP.</span></div>
+                  <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">₹35.64 Crore project. Delivered on schedule.</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-img" style="--pc-img:url('src/assets/icons/HP.jpeg')"></div>
+              <div class="project-card-body">
+                <div class="project-card-cat">Civil · Petroleum</div>
+                <h3 class="project-card-name">Record Room &amp; Underground Water Tank</h3>
+                <p class="project-card-loc">HPCL Facility, Vasco, Goa</p>
+                <div class="project-card-line"></div>
+                <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
+                <div class="project-details">
+                  <div class="pd-row"><span class="pd-label">Client</span><span class="pd-val">Hindustan Petroleum Corporation Ltd. (HPCL)</span></div>
+                  <div class="pd-row"><span class="pd-label">Work</span><span class="pd-val">Construction of Record Room, Underground RCC Water Tank &amp; Septic Tank at HPCL Vasco facility.</span></div>
+                  <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">Completed on schedule to full specification.</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-img" style="--pc-img:url('src/assets/icons/HP.jpeg')"></div>
+              <div class="project-card-body">
+                <div class="project-card-cat">Civil · Retail</div>
+                <h3 class="project-card-name">Retail Outlets Civil Works</h3>
+                <p class="project-card-loc">Goa State</p>
+                <div class="project-card-line"></div>
+                <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
+                <div class="project-details">
+                  <div class="pd-row"><span class="pd-label">Client</span><span class="pd-val">Hindustan Petroleum Corporation Ltd. (HPCL)</span></div>
+                  <div class="pd-row"><span class="pd-label">Work</span><span class="pd-val">Civil, fabrication &amp; installation works for HPCL retail outlets across Goa state.</span></div>
+                  <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">Multiple outlets delivered on schedule to standard specification.</span></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-card-img" style="--pc-img:url('src/assets/icons/Pidilite.jpeg')"></div>
-          <div class="project-card-body">
-            <div class="project-card-cat">Industrial · Structural</div>
-            <h3 class="project-card-name">Industrial Structural Works</h3>
-            <p class="project-card-loc">Pidilite Industries, Karnataka</p>
-            <div class="project-card-line"></div>
-            <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
-            <div class="project-details">
-              <div class="pd-row"><span class="pd-label">Challenge</span><span class="pd-val">Chemical exposure causing concrete deterioration in production facility.</span></div>
-              <div class="pd-row"><span class="pd-label">Solution</span><span class="pd-val">Concrete rehabilitation with chemical-resistant protective coatings.</span></div>
-              <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">Zero issues in 3 years post-repair. Facility operational without interruption.</span></div>
+        <!-- Page 3 -->
+        <div class="projects-page" id="ppage-2">
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-card-img" style="--pc-img:url('src/assets/icons/Militery Engneering service.jpeg')"></div>
+              <div class="project-card-body">
+                <div class="project-card-cat">Civil Maintenance · MES</div>
+                <h3 class="project-card-name">Artificers Works — V Puri, Vasco</h3>
+                <p class="project-card-loc">Vasco, Goa</p>
+                <div class="project-card-line"></div>
+                <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
+                <div class="project-details">
+                  <div class="pd-row"><span class="pd-label">Client</span><span class="pd-val">Military Engineering Services (MES)</span></div>
+                  <div class="pd-row"><span class="pd-label">Work</span><span class="pd-val">Term Contract for Artificers work at V Puri, Vasco — annual maintenance services.</span></div>
+                  <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">Executed without interruption, all defects resolved within SLA.</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-img" style="--pc-img:url('src/assets/icons/Militery Engneering service.jpeg')"></div>
+              <div class="project-card-body">
+                <div class="project-card-cat">Pest Control · MES</div>
+                <h3 class="project-card-name">Anti Termite Treatment</h3>
+                <p class="project-card-loc">MES Installation, Goa</p>
+                <div class="project-card-line"></div>
+                <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
+                <div class="project-details">
+                  <div class="pd-row"><span class="pd-label">Client</span><span class="pd-val">Military Engineering Services (MES)</span></div>
+                  <div class="pd-row"><span class="pd-label">Work</span><span class="pd-val">Post-construction anti-termite treatment to MES buildings and installations.</span></div>
+                  <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">Completed to specification. Zero infestation reports post-treatment.</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-img" style="--pc-img:url('src/assets/icons/Militery Engneering service.jpeg')"></div>
+              <div class="project-card-body">
+                <div class="project-card-cat">Waterproofing · MES</div>
+                <h3 class="project-card-name">Leakage &amp; Seepage Repairs</h3>
+                <p class="project-card-loc">Bldg No. P-57-P/70, Goa</p>
+                <div class="project-card-line"></div>
+                <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
+                <div class="project-details">
+                  <div class="pd-row"><span class="pd-label">Client</span><span class="pd-val">Military Engineering Services (MES)</span></div>
+                  <div class="pd-row"><span class="pd-label">Work</span><span class="pd-val">Special Repairs — leakage &amp; seepage treatment to Building No. P-57-P/70.</span></div>
+                  <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">Leak-free certification achieved post-completion.</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-img" style="--pc-img:url('src/assets/icons/Sports authorty of andhra paradesh.jpeg')"></div>
+              <div class="project-card-body">
+                <div class="project-card-cat">Waterproofing · Government</div>
+                <h3 class="project-card-name">Saroornagar Indoor Stadium</h3>
+                <p class="project-card-loc">Saroornagar, Hyderabad</p>
+                <div class="project-card-line"></div>
+                <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
+                <div class="project-details">
+                  <div class="pd-row"><span class="pd-label">Client</span><span class="pd-val">Sports Authority of Andhra Pradesh (SAAP)</span></div>
+                  <div class="pd-row"><span class="pd-label">Work</span><span class="pd-val">Leak proof treatment to Saroornagar Indoor Stadium, Hyderabad.</span></div>
+                  <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">Completed on schedule. Stadium returned to full operational use.</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-img" style="--pc-img:url('src/assets/icons/Andhara Paradesh.jpeg')"></div>
+              <div class="project-card-body">
+                <div class="project-card-cat">Waterproofing · Municipal</div>
+                <h3 class="project-card-name">Pressure Grouting — Old Water Tanks</h3>
+                <p class="project-card-loc">Andhra Pradesh</p>
+                <div class="project-card-line"></div>
+                <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
+                <div class="project-details">
+                  <div class="pd-row"><span class="pd-label">Client</span><span class="pd-val">AP Municipalities</span></div>
+                  <div class="pd-row"><span class="pd-label">Work</span><span class="pd-val">Pressure grouting treatment, epoxy coating &amp; chemical treatment to old water tanks.</span></div>
+                  <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">₹29 Lakh project. Extended tank service life by 15+ years.</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card-img" style="--pc-img:url('src/assets/icons/Andhara Paradesh.jpeg')"></div>
+              <div class="project-card-body">
+                <div class="project-card-cat">Waterproofing · Municipal</div>
+                <h3 class="project-card-name">Drinking Water Treatment Plant</h3>
+                <p class="project-card-loc">Guntakal Municipality, AP</p>
+                <div class="project-card-line"></div>
+                <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
+                <div class="project-details">
+                  <div class="pd-row"><span class="pd-label">Client</span><span class="pd-val">Guntakal Municipality, AP</span></div>
+                  <div class="pd-row"><span class="pd-label">Work</span><span class="pd-val">Improvement to Drinking Water Treatment Plant (3.84 MGD) &amp; repairs to old filter beds at head works.</span></div>
+                  <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">₹7.31 Lakh project. Restored full treatment capacity.</span></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-card-img" style="--pc-img:url('src/assets/icons/Sports authorty of andhra paradesh.jpeg')"></div>
-          <div class="project-card-body">
-            <div class="project-card-cat">Rehabilitation · Government</div>
-            <h3 class="project-card-name">L.B. Stadium Restoration</h3>
-            <p class="project-card-loc">Hyderabad, Telangana</p>
-            <div class="project-card-line"></div>
-            <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
-            <div class="project-details">
-              <div class="pd-row"><span class="pd-label">Challenge</span><span class="pd-val">Ageing concrete with widespread spalling and rebar corrosion.</span></div>
-              <div class="pd-row"><span class="pd-label">Solution</span><span class="pd-val">Comprehensive structural rehabilitation with rebar treatment and repair.</span></div>
-              <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">Restored structural integrity with extended service life.</span></div>
-            </div>
-          </div>
-        </div>
+      </div><!-- end .projects-carousel -->
 
-        <div class="project-card">
-          <div class="project-card-img" style="--pc-img:url('src/assets/icons/Karnataka.jpeg')"></div>
-          <div class="project-card-body">
-            <div class="project-card-cat">Flooring · Industrial</div>
-            <h3 class="project-card-name">Epoxy Flooring System</h3>
-            <p class="project-card-loc">Industrial Unit, Bangalore</p>
-            <div class="project-card-line"></div>
-            <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
-            <div class="project-details">
-              <div class="pd-row"><span class="pd-label">Challenge</span><span class="pd-val">Deteriorating floor surface causing hygiene and safety concerns.</span></div>
-              <div class="pd-row"><span class="pd-label">Solution</span><span class="pd-val">High-performance epoxy flooring with chemical-resistant finish.</span></div>
-              <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">Seamless, durable surface meeting industrial hygiene standards.</span></div>
-            </div>
-          </div>
+      <!-- Carousel controls -->
+      <div class="projects-controls">
+        <button class="pc-arrow" id="pc-prev" onclick="goPage((window._pcCur()-1+3)%3)" aria-label="Previous">&#8592;</button>
+        <div class="projects-dots" id="projects-dots">
+          <button class="pdot active" onclick="goPage(0)" aria-label="Page 1"></button>
+          <button class="pdot" onclick="goPage(1)" aria-label="Page 2"></button>
+          <button class="pdot" onclick="goPage(2)" aria-label="Page 3"></button>
         </div>
-
-        <div class="project-card">
-          <div class="project-card-img" style="--pc-img:url('src/assets/icons/Government of telagana.jpeg')"></div>
-          <div class="project-card-body">
-            <div class="project-card-cat">Waterproofing · Residential</div>
-            <h3 class="project-card-name">Terrace Waterproofing</h3>
-            <p class="project-card-loc">Residential Complex, Hyderabad</p>
-            <div class="project-card-line"></div>
-            <button class="project-toggle" onclick="toggleProject(this)">View Details ↓</button>
-            <div class="project-details">
-              <div class="pd-row"><span class="pd-label">Challenge</span><span class="pd-val">Multiple terrace leakages affecting residential units below.</span></div>
-              <div class="pd-row"><span class="pd-label">Solution</span><span class="pd-val">Membrane waterproofing with drainage layer and UV-resistant finish.</span></div>
-              <div class="pd-row"><span class="pd-label">Outcome</span><span class="pd-val">Complete leak arrest with 10-year performance guarantee.</span></div>
-            </div>
-          </div>
-        </div>
-
+        <button class="pc-arrow" id="pc-next" onclick="goPage((window._pcCur()+1)%3)" aria-label="Next">&#8594;</button>
       </div>
     </div>
   </section>
@@ -860,9 +1064,10 @@
           </div>
           <div class="form-group">
             <label>Services Required</label>
+            <div class="ac-suggestions" id="ac-suggestions"></div>
             <div class="ac-wrap" id="ac-wrap">
               <div class="ac-tags" id="ac-tags"></div>
-              <input type="text" class="ac-input" id="ac-input" placeholder="Type to search…" autocomplete="off" />
+              <input type="text" class="ac-input" id="ac-input" placeholder="Or type your own and press Enter" autocomplete="off" />
               <ul class="ac-dropdown" id="ac-dropdown"></ul>
             </div>
           </div>
@@ -955,9 +1160,20 @@
 
     /* ── Project toggle ─────────────── */
     function toggleProject(btn) {
-      const details = btn.nextElementSibling;
-      const open = details.classList.toggle('open');
-      btn.textContent = open ? 'Show Less ↑' : 'View Details ↓';
+      const card = btn.closest('.project-card');
+      const grid = card.closest('.projects-grid');
+      const allCards = [...grid.querySelectorAll('.project-card')];
+      const cols = getComputedStyle(grid).gridTemplateColumns.split(' ').length;
+      const idx = allCards.indexOf(card);
+      const rowStart = Math.floor(idx / cols) * cols;
+      const rowCards = allCards.slice(rowStart, rowStart + cols);
+      const isOpen = card.querySelector('.project-details').classList.contains('open');
+      rowCards.forEach(c => {
+        const d = c.querySelector('.project-details');
+        const t = c.querySelector('.project-toggle');
+        if (isOpen) { d.classList.remove('open'); t.textContent = 'View Details ↓'; }
+        else         { d.classList.add('open');    t.textContent = 'Show Less ↑'; }
+      });
     }
 
     /* ── Service autocomplete ─────────────── */
@@ -967,12 +1183,46 @@
       const tagsEl = document.getElementById('ac-tags');
       const input = document.getElementById('ac-input');
       const drop = document.getElementById('ac-dropdown');
+      const sugg = document.getElementById('ac-suggestions');
       let selected = [];
 
-      function render(items) {
+      function renderSuggestions() {
+        sugg.innerHTML = '';
+        ALL.filter(s => !selected.includes(s)).forEach(item => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'ac-sugg-btn';
+          btn.textContent = item;
+          btn.addEventListener('click', () => addTag(item));
+          sugg.appendChild(btn);
+        });
+      }
+
+      function addTag(val) {
+        val = val.trim();
+        if (!val || selected.includes(val)) return;
+        selected.push(val);
+        const chip = document.createElement('span');
+        chip.className = 'ac-chip';
+        chip.innerHTML = val + '<button type="button" aria-label="Remove">&times;</button>';
+        chip.querySelector('button').addEventListener('click', () => {
+          selected = selected.filter(s => s !== val);
+          chip.remove();
+          renderSuggestions();
+        });
+        tagsEl.appendChild(chip);
+        input.value = '';
+        drop.classList.remove('ac-open');
+        renderSuggestions();
+      }
+
+      function updateDrop() {
+        const q = input.value.toLowerCase().trim();
+        if (!q) { drop.classList.remove('ac-open'); return; }
+        const available = ALL.filter(s => !selected.includes(s) && s.toLowerCase().includes(q));
         drop.innerHTML = '';
-        if (!items.length) { drop.classList.remove('ac-open'); return; }
-        items.forEach(item => {
+        if (!available.length) { drop.classList.remove('ac-open'); return; }
+        available.forEach(item => {
           const li = document.createElement('li');
           li.textContent = item;
           li.addEventListener('mousedown', e => { e.preventDefault(); addTag(item); });
@@ -981,37 +1231,65 @@
         drop.classList.add('ac-open');
       }
 
-      function addTag(val) {
-        if (selected.includes(val)) return;
-        selected.push(val);
-        const chip = document.createElement('span');
-        chip.className = 'ac-chip';
-        chip.innerHTML = val + '<button type="button" aria-label="Remove">&times;</button>';
-        chip.querySelector('button').addEventListener('click', () => {
-          selected = selected.filter(s => s !== val);
-          chip.remove();
-          updateDrop();
-        });
-        tagsEl.appendChild(chip);
-        input.value = '';
-        updateDrop();
-        input.focus();
-      }
-
-      function updateDrop() {
-        const q = input.value.toLowerCase();
-        const available = ALL.filter(s => !selected.includes(s) && s.toLowerCase().includes(q));
-        render(available);
-      }
-
-      input.addEventListener('focus', updateDrop);
       input.addEventListener('input', updateDrop);
+      input.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ',') {
+          e.preventDefault();
+          addTag(input.value);
+        } else if (e.key === 'Backspace' && !input.value) {
+          const chips = tagsEl.querySelectorAll('.ac-chip');
+          if (chips.length) chips[chips.length - 1].querySelector('button').click();
+        }
+      });
       document.addEventListener('click', e => {
         if (!wrap.contains(e.target)) drop.classList.remove('ac-open');
       });
       wrap.addEventListener('click', () => input.focus());
 
+      renderSuggestions();
       window._getSelectedServices = () => selected;
+    })();
+
+    /* ── Projects carousel ─────────────── */
+    (function() {
+      let cur = 0;
+      const total = 3;
+      const carousel = document.getElementById('projects-carousel');
+      const pages = document.querySelectorAll('.projects-page');
+      const dots  = document.querySelectorAll('.pdot');
+      window._pcCur = () => cur;
+      window.goPage = function(n) {
+        pages[cur].classList.remove('active');
+        dots[cur].classList.remove('active');
+        pages[cur].querySelectorAll('.project-details.open').forEach(d => {
+          d.classList.remove('open');
+          d.previousElementSibling.textContent = 'View Details ↓';
+        });
+        cur = (n + total) % total;
+        pages[cur].classList.add('active');
+        dots[cur].classList.add('active');
+      };
+
+      /* touch & pointer swipe */
+      let startX = null, startY = null, dragging = false;
+      const THRESHOLD = 50;
+
+      carousel.addEventListener('pointerdown', e => {
+        startX = e.clientX; startY = e.clientY; dragging = true;
+      });
+      carousel.addEventListener('pointermove', e => {
+        if (!dragging) return;
+        if (Math.abs(e.clientY - startY) > Math.abs(e.clientX - startX) + 10) {
+          dragging = false; // vertical scroll wins
+        }
+      });
+      carousel.addEventListener('pointerup', e => {
+        if (!dragging || startX === null) return;
+        const dx = e.clientX - startX;
+        if (Math.abs(dx) > THRESHOLD) goPage(dx < 0 ? cur + 1 : cur - 1);
+        dragging = false; startX = null;
+      });
+      carousel.addEventListener('pointercancel', () => { dragging = false; startX = null; });
     })();
 
     async function handleSubmit(e) {
