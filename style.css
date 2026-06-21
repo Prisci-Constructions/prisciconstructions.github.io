@@ -1306,6 +1306,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .team-grid--3 {
   grid-template-columns: repeat(3, 1fr);
   max-width: 1100px;
+  justify-items: center;
+}
+.team-grid--3 .team-card:only-child {
+  grid-column: 2;
+  width: 100%;
 }
 .team-card {
   padding: 2.5rem;
