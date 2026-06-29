@@ -358,6 +358,47 @@
     return g;
   }
 
+  // ──────────────────────────────────────────────────────────
+  //  7 · OVERHEAD WATER TANK (OHT)
+  // ──────────────────────────────────────────────────────────
+  function buildWaterTank(baseX, baseY, baseZ) {
+    const g = new THREE.Group();
+    g.position.set(baseX, baseY, baseZ);
+
+    const legMat  = mat({ color: 0x506888, roughness: 0.35, metalness: 0.85 });
+    const tankMat = mat({ color: 0x2a4a6e, roughness: 0.4,  metalness: 0.7  });
+    const domeMat = mat({ color: 0x1e3855, roughness: 0.45, metalness: 0.6  });
+    const bandMat = mat({ color: 0x2090c0, emissive: new THREE.Color(0x1060a0), emissiveIntensity: 0.5, roughness: 0.3, metalness: 0.5 });
+
+    // 4 support legs
+    [[-0.5, -0.5], [0.5, -0.5], [-0.5, 0.5], [0.5, 0.5]].forEach(([lx, lz]) => {
+      g.add(cyl(0.06, 0.06, 2.2, legMat, lx, 1.1, lz, 6));
+    });
+
+    // Horizontal bracing at mid height
+    g.add(box(1.0, 0.06, 0.06, legMat,  0,   0.9,  0));
+    g.add(box(0.06, 0.06, 1.0, legMat,  0,   0.9,  0));
+    g.add(box(1.0, 0.06, 0.06, legMat,  0,   1.6,  0));
+    g.add(box(0.06, 0.06, 1.0, legMat,  0,   1.6,  0));
+
+    // Tank body — cylinder
+    g.add(cyl(0.72, 0.78, 1.6, tankMat, 0, 3.0, 0, 16));
+
+    // Blue water-level stripe
+    g.add(cyl(0.79, 0.79, 0.35, bandMat, 0, 2.38, 0, 16));
+
+    // Dome cap
+    g.add(cyl(0.1, 0.72, 0.45, domeMat, 0, 4.02, 0, 16));
+
+    // Vent pipe
+    g.add(cyl(0.05, 0.05, 0.6, legMat, 0.25, 4.6, 0, 6));
+
+    // Outlet pipe on side
+    g.add(cyl(0.04, 0.04, 0.7, legMat, -0.78, 2.6, 0, 6));
+
+    return g;
+  }
+
   // ── ASSEMBLE ──────────────────────────────────────────────
   const { group: towerGroup, blink: antennaBlink } = buildMainTower();
   buildingGroup.add(towerGroup);
@@ -368,6 +409,10 @@
   const { group: craneGroup, lampPos } = buildCrane();
   buildingGroup.add(craneGroup);
   buildingGroup.add(buildScaffolding());
+
+  // Water tanks — large on East Tower roof, smaller on West Wing roof
+  buildingGroup.add(buildWaterTank( 2.5,  7.25,  0.0));
+  buildingGroup.add(buildWaterTank(-2.75, 5.25, -0.2));
 
   // Position crane warning lamp in world space (set after scene built)
   craneLamp.position.copy(lampPos).add(buildingGroup.position);

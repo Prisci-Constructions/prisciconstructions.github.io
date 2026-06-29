@@ -433,33 +433,37 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.projects-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.25rem;
-  margin-top: 2rem;
+.projects-carousel-outer {
+  position: relative;
+  padding: 0 120px;
 }
 .pc-arrow {
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   border: 1px solid var(--border);
   background: var(--surface2);
   color: var(--text);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: border-color 0.2s, background 0.2s;
-  flex-shrink: 0;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
 }
+.pc-arrow--left  { left: 12px; }
+.pc-arrow--right { right: 12px; }
 .pc-arrow:hover { border-color: var(--gold); background: rgba(245,230,200,0.08); color: var(--gold); }
 .projects-dots {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.6rem;
+  margin-top: 1.5rem;
 }
 .pdot {
   width: 10px;
@@ -476,6 +480,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transform: scale(1.3);
 }
 .pdot:hover { background: var(--muted); }
+.projects-footer-note {
+  text-align: center;
+  margin-top: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-style: italic;
+}
 
 /* ── ABOUT ─────────────────────────────────── */
 .about-grid {
@@ -576,11 +589,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* ── PROJECTS ─────────────────────────────────── */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 .project-card {
+  flex: 1 1 calc(33.333% - 0.75rem);
+  min-width: 220px;
   background: var(--stone);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -948,7 +963,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .about-grid   { grid-template-columns: 1fr; gap: 2rem; }
   .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
   .services-grid{ grid-template-columns: 1fr; }
-  .projects-grid{ grid-template-columns: 1fr 1fr; }
+  .projects-grid .project-card{ flex: 1 1 calc(50% - 0.5rem); }
   .clients-grid { grid-template-columns: repeat(2, 1fr); }
   .testimonials-grid { grid-template-columns: 1fr; }
   .form-row     { grid-template-columns: 1fr; }
@@ -960,7 +975,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 @media (max-width: 480px) {
-  .projects-grid { grid-template-columns: 1fr; }
+  .projects-grid .project-card{ flex: 1 1 100%; }
   .clients-grid  { grid-template-columns: 1fr; }
   .footer-grid   { grid-template-columns: 1fr; gap: 2rem; }
   .hero-title    { font-size: clamp(2rem, 13vw, 3.5rem); }
