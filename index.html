@@ -89,19 +89,17 @@
 
   <!-- ── TRUST BAR ─────────────────────────────── -->
   <div class="trust-bar">
-    <div class="container">
-      <div class="trust-bar-inner">
-        <span class="trust-bar-label">Trusted by</span>
-        <div class="trust-logos">
-          <img src="src/assets/icons/Militery Engneering service.jpeg" alt="MES" class="trust-logo" />
-          <img src="src/assets/icons/HP.jpeg" alt="HPCL" class="trust-logo" />
-          <img src="src/assets/icons/Bharat -Petroleum.jpeg" alt="BPCL" class="trust-logo" />
-          <img src="src/assets/icons/Air-India.jpeg" alt="Air India" class="trust-logo" />
-          <img src="src/assets/icons/SUNGDO ENG.jpeg" alt="SUNGDO" class="trust-logo" />
-          <img src="src/assets/icons/Sports authorty of andhra paradesh.jpeg" alt="SAAP" class="trust-logo" />
-          <img src="src/assets/icons/Andhara Paradesh.jpeg" alt="AP Govt" class="trust-logo" />
-          <img src="src/assets/icons/Pidilite.jpeg" alt="Pidilite" class="trust-logo" />
-        </div>
+    <span class="trust-bar-label">Trusted by</span>
+    <div class="trust-marquee-wrap">
+      <div class="trust-marquee">
+        <img src="src/assets/icons/Militery Engneering service.jpeg" alt="MES" class="trust-logo" />
+        <img src="src/assets/icons/HP.jpeg" alt="HPCL" class="trust-logo" />
+        <img src="src/assets/icons/Bharat -Petroleum.jpeg" alt="BPCL" class="trust-logo" />
+        <img src="src/assets/icons/Air-India.jpeg" alt="Air India" class="trust-logo" />
+        <img src="src/assets/icons/SUNGDO ENG.jpeg" alt="SUNGDO" class="trust-logo" />
+        <img src="src/assets/icons/Sports authorty of andhra paradesh.jpeg" alt="SAAP" class="trust-logo" />
+        <img src="src/assets/icons/Andhara Paradesh.jpeg" alt="AP Govt" class="trust-logo" />
+        <img src="src/assets/icons/Pidilite.jpeg" alt="Pidilite" class="trust-logo" />
       </div>
     </div>
   </div>
@@ -1434,6 +1432,17 @@
 
       renderSuggestions();
       window._getSelectedServices = () => selected;
+    })();
+
+    /* ── Trust marquee — clone logos inside track for seamless loop ── */
+    (function () {
+      const track = document.querySelector('.trust-marquee');
+      if (!track) return;
+      Array.from(track.children).forEach(function (logo) {
+        const clone = logo.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+      });
     })();
 
     /* ── Projects carousel ─────────────── */
