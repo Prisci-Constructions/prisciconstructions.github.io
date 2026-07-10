@@ -1,0 +1,439 @@
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Layout from '@/components/layout/Layout';
+import { useScrollTop } from '@/hooks/useScrollTop';
+import { useSEO } from '@/hooks/useSEO';
+import '@/styles/article.css';
+
+export default function ExpansionJoints() {
+  useScrollTop();
+  useSEO({
+    title: 'Expansion Joints | Knowledge Center | Prisci Constructions',
+    description:
+      'Sealant selection, joint geometry, and the most common mistakes that cause repeat failures at expansion joints. A practical guide by Prisci Constructions.',
+    path: '/knowledge/expansion-joints',
+  });
+
+  useEffect(() => {
+    const links = document.querySelectorAll('.kc-toc a');
+    const sections = document.querySelectorAll('.kc-article h2[id]');
+    const handler = () => {
+      let c = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) c = s.id;
+      });
+      links.forEach(l =>
+        l.classList.toggle('active', l.getAttribute('href') === '#' + c)
+      );
+    };
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
+
+  return (
+    <Layout>
+
+      {/* ── BREADCRUMB ────────────────────────────────── */}
+      <div className="kc-breadcrumb">
+        <Link to="/">Home</Link>
+        <span>/</span>
+        <Link to="/knowledge">Knowledge Center</Link>
+        <span>/</span>
+        Expansion Joints
+      </div>
+
+      {/* ── HERO ──────────────────────────────────────── */}
+      <div className="kc-hero">
+        <div className="kc-hero-inner">
+          <span className="kc-category-badge waterproofing">Waterproofing</span>
+          <h1 className="kc-title">Expansion Joints — Why They Leak and How to Fix Them</h1>
+          <p className="kc-subtitle">
+            Most expansion joint leaks are not a failure of waterproofing — they are a failure of
+            sealant selection, joint geometry, or application workmanship. Understanding how joints
+            move tells you exactly how to seal them permanently.
+          </p>
+          <div className="kc-meta">
+            <span>6 min read</span>
+            <span className="kc-meta-dot">·</span>
+            <span>Waterproofing</span>
+            <span className="kc-meta-dot">·</span>
+            <span>Prisci Constructions</span>
+          </div>
+        </div>
+      </div>
+
+      {/* ── LAYOUT: ARTICLE + SIDEBAR ─────────────────── */}
+      <div className="kc-layout">
+
+        {/* ── ARTICLE BODY ──────────────────────────── */}
+        <article className="kc-article">
+
+          {/* S1 */}
+          <h2 id="s1">What Is an Expansion Joint?</h2>
+          <p>
+            An expansion joint is a deliberate, continuous gap built into a structure to allow
+            independent movement between two sections of concrete or masonry. Unlike a crack —
+            which is unplanned and structurally disruptive — an expansion joint is a{' '}
+            <strong>designed movement plane</strong>. The gap is sized so that the two faces can
+            freely move toward or away from each other without transferring stress across the joint.
+          </p>
+          <p>In Indian construction, expansion joints are most commonly found at:</p>
+          <ul>
+            <li>
+              The junction between two independent structural bays (typically every 30–45 m in RCC
+              frames)
+            </li>
+            <li>The perimeter of terraces where the slab meets a parapet or wall</li>
+            <li>At re-entrant corners and changes in building geometry</li>
+            <li>Between an older structure and a new extension</li>
+          </ul>
+          <p>
+            Concrete expands and contracts with temperature. In Hyderabad's climate, the seasonal
+            swing of 15–40 °C produces{' '}
+            <strong>10–15 mm of seasonal movement</strong> in a 30 m bay. This is not a flaw — it
+            is physics. The joint's sole job is to accommodate this movement elastically, keeping
+            water out while the gap opens and closes throughout the year.
+          </p>
+
+          <hr className="kc-section-rule" />
+
+          {/* S2 */}
+          <h2 id="s2">Why Expansion Joints Fail</h2>
+          <p>
+            Expansion joint failures share a small set of recurring root causes. Recognising them
+            is the first step to a repair that does not fail again in two monsoons.
+          </p>
+
+          <h3>Sealant hardens and loses elasticity</h3>
+          <p>
+            Every sealant has a service life. Polysulfide sealant — the most common type used in
+            Indian civil construction — develops surface crazing and brittleness after 20–25 years.
+            Once the sealant can no longer elongate and recover with joint movement, it tears away
+            from the substrate faces, opening a direct water path.
+          </p>
+
+          <h3>Old cement mortar packing</h3>
+          <p>
+            On older buildings (pre-2000 construction), expansion joints were often packed with
+            cement mortar and then painted over. Cement mortar has zero elasticity. Within one or
+            two thermal cycles it cracks, crumbles, and leaves the gap fully open. This is one of
+            the most common causes of terrace leaks in Hyderabad's aging building stock.
+          </p>
+
+          <h3>No drainage provision</h3>
+          <p>
+            Some joint designs do not account for the fact that water will sit in the horizontal
+            groove before the sealant is applied. Without a drain or slope to clear standing water,
+            hydrostatic pressure accelerates sealant debonding from the underside.
+          </p>
+
+          <h3>New sealant applied over old without removal</h3>
+          <p>
+            This is the single most common cause of repeat failures after a repair. New sealant
+            cannot bond through degraded old sealant. The adhesion is to the old material, not to
+            the concrete faces — and the old material eventually fails, taking the new layer with
+            it. The repair looks good for six to twelve months and then peels away completely.
+          </p>
+
+          <div className="kc-callout warning">
+            <div className="kc-callout-label">Warning</div>
+            <p>
+              <strong>Never apply new sealant over old sealant.</strong> Regardless of the new
+              sealant's quality, its adhesion depends entirely on what it bonds to. Old, degraded
+              sealant is not a valid substrate. Applying over it guarantees a repeat failure within
+              one to two monsoon seasons.
+            </p>
+          </div>
+
+          <hr className="kc-section-rule" />
+
+          {/* S3 */}
+          <h2 id="s3">Sealant Types — PU, Polysulfide, Silicone, EPDM</h2>
+          <p>
+            Choosing the wrong sealant for the joint location is as damaging as using no sealant at
+            all. Each chemistry has a specific movement tolerance, a preferred orientation, and
+            environmental limitations.
+          </p>
+
+          <div className="kc-table-wrap">
+            <table className="kc-table">
+              <thead>
+                <tr>
+                  <th>Sealant Type</th>
+                  <th>Movement Capacity</th>
+                  <th>Expected Life</th>
+                  <th>Best Use</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Polyurethane (PU)</strong></td>
+                  <td>±25% of joint width</td>
+                  <td>10–15 years</td>
+                  <td>
+                    Internal joints, protected horizontal joints. Excellent adhesion to concrete and
+                    masonry; degrades under direct UV — must be shielded if used externally.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Polysulfide</strong></td>
+                  <td>±20–25% of joint width</td>
+                  <td>20–25 years</td>
+                  <td>
+                    External and horizontal joints exposed to weathering, water immersion, or
+                    chemical splash. The industry benchmark for terrace and basement perimeter joints.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Silicone</strong></td>
+                  <td>±50% of joint width</td>
+                  <td>20–30 years</td>
+                  <td>
+                    Vertical joints, glazing perimeters, and façade expansion joints. Very poor
+                    adhesion on horizontal traffic-bearing surfaces — paint, tile adhesive, and grit
+                    will not bond to cured silicone.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>EPDM Compression Seal</strong></td>
+                  <td>High — 30–50% compression</td>
+                  <td>25–30 years</td>
+                  <td>
+                    High-movement structural joints and traffic-bearing joints (parking decks,
+                    bridges, industrial floors). A preformed rubber profile pressed into an oversized
+                    groove — no adhesion dependency.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            For the majority of residential and commercial terrace joints in Hyderabad,{' '}
+            <strong>polysulfide</strong> is the correct specification. For high-rise facades with
+            wide structural joints, an EPDM compression profile eliminates adhesion risk entirely.
+          </p>
+
+          <hr className="kc-section-rule" />
+
+          {/* S4 */}
+          <h2 id="s4">Joint Geometry — The Right Design</h2>
+          <p>
+            The sealant's shape within the joint is as important as the sealant's chemistry. An
+            incorrectly proportioned sealant bead fails mechanically even when the chemistry is
+            correct.
+          </p>
+
+          <h3>Width-to-depth ratio: 1:2</h3>
+          <p>
+            The sealant bead should be <strong>twice as wide as it is deep</strong>. A wide,
+            shallow bead develops lower strain when the joint opens, because the elongation is
+            distributed over a larger face area. A narrow, deep bead concentrates strain at the
+            adhesion line and tears away under movement.
+          </p>
+
+          <h3>Bond breaker tape is not optional</h3>
+          <p>
+            A sealant must bond to exactly <strong>two faces</strong> — the two opposing concrete
+            sides of the joint. If the sealant also bonds to the base (the bottom of the groove),
+            it creates three-point adhesion. When the joint opens laterally, the base bond
+            restrains the mid-span of the sealant, causing it to neck and tear. Bond breaker tape
+            — a polyethylene film pressed into the base of the groove before sealant application —
+            prevents this third bond.
+          </p>
+
+          <div className="kc-callout tip">
+            <div className="kc-callout-label">Tip</div>
+            <p>
+              <strong>Bond breaker tape is not optional.</strong> On every joint wider than 10 mm,
+              skipping the bond breaker tape is the most common cause of mid-span sealant failure.
+              The tape costs almost nothing. The re-repair cost after one monsoon season does not.
+            </p>
+          </div>
+
+          <h3>Primer is mandatory</h3>
+          <p>
+            Concrete surfaces — even after thorough cleaning — carry fine dust, calcium carbonate
+            deposits, and laitance that prevent molecular adhesion. The correct primer for the
+            chosen sealant chemistry must be applied to both faces, allowed to flash off completely,
+            and then followed by sealant application within the pot life window stated by the
+            manufacturer. Skipping primer reduces adhesion strength by 60–80%.
+          </p>
+
+          <h3>Backer rod sizing</h3>
+          <p>
+            The closed-cell polyethylene backer rod inserted before sealant application serves two
+            functions: it sets the sealant depth (achieving the 1:2 ratio) and it acts as a
+            secondary bond breaker at the base. Select a backer rod that is 25% wider than the
+            joint opening so it stays compressed and does not fall through.
+          </p>
+
+          <hr className="kc-section-rule" />
+
+          {/* S5 */}
+          <h2 id="s5">The Correct Repair Process</h2>
+          <p>
+            A proper expansion joint repair is a methodical process. Shortcutting any step
+            compromises the next one.
+          </p>
+
+          <h3>Step 1 — Complete removal of old sealant</h3>
+          <p>
+            All existing sealant — regardless of its apparent condition — must be removed back to
+            bare concrete. Use an oscillating multi-tool or angle grinder with a thin cutting disc
+            to cut the sealant free from both faces, then hand-scrape the residue with a rigid
+            putty knife. The concrete faces must be clean, sound, and free of any sealant film.
+          </p>
+
+          <h3>Step 2 — Face preparation</h3>
+          <p>
+            Wire-brush both faces to remove laitance and loose material. Follow with a solvent wipe
+            (MEK or acetone) to remove dust and contamination. Allow to dry completely — a minimum
+            of 2 hours under direct sun, or longer in humid conditions. Moisture on the face will
+            prevent primer adhesion.
+          </p>
+
+          <h3>Step 3 — Apply primer</h3>
+          <p>
+            Using a clean brush, apply the manufacturer-specified primer to both concrete faces
+            only — not to the base of the groove. Allow to flash off per the manufacturer's stated
+            open time (typically 20–40 minutes). Do not leave primed surfaces uncoated overnight.
+          </p>
+
+          <h3>Step 4 — Install backer rod</h3>
+          <p>
+            Press the backer rod into the groove to the correct depth. The top of the rod should be
+            positioned so that the sealant depth above it equals half the joint width. Verify depth
+            with a ruler at several points along the joint.
+          </p>
+
+          <h3>Step 5 — Apply sealant in a single pass</h3>
+          <p>
+            Load the sealant into a caulking gun and apply it in one continuous pass without
+            stopping. Voids and air pockets form at start-and-stop points. Immediately tool the
+            surface with a damp spatula to compress the sealant against both faces and create a
+            smooth, slightly concave profile. A concave profile sheds water away from the adhesion
+            lines; a convex profile traps water.
+          </p>
+
+          <h3>Step 6 — Protect and cure</h3>
+          <p>
+            Keep the fresh sealant out of rain and foot traffic for the full curing period (24–72
+            hours depending on the product and ambient temperature). In Hyderabad's post-monsoon
+            humidity, cure times extend by 20–30%. Do not apply waterproofing membrane over an
+            uncured sealant.
+          </p>
+
+          <hr className="kc-section-rule" />
+
+          {/* S6 */}
+          <h2 id="s6">Maintenance and Inspection Schedule</h2>
+          <p>
+            A correctly specified and applied expansion joint sealant should not require
+            re-treatment for 15–25 years, depending on the sealant type. However, annual visual
+            inspection and a scheduled five-year assessment keep small issues from becoming major
+            leaks.
+          </p>
+
+          <h3>Annual inspection (monsoon pre-check — April/May)</h3>
+          <ul>
+            <li>
+              Walk all accessible expansion joint lines and look for surface crazing, whitening, or
+              visible gaps along the edges
+            </li>
+            <li>
+              Press the sealant surface with a finger — it should deflect slightly and spring back;
+              a sealant that has gone hard and does not flex is near end-of-life
+            </li>
+            <li>Check that drain outlets near horizontal joints are clear of debris</li>
+          </ul>
+
+          <h3>Five-year professional assessment</h3>
+          <p>
+            Every five years, have a qualified waterproofing engineer assess the joints with the
+            following checks:
+          </p>
+          <ul>
+            <li>
+              <strong>Surface crazing:</strong> Fine surface cracks visible under raking light
+              indicate UV degradation and reduced elasticity
+            </li>
+            <li>
+              <strong>Debonding:</strong> Run a blunt probe along the sealant-to-concrete
+              interface. Any section that lifts or sounds hollow has lost adhesion
+            </li>
+            <li>
+              <strong>Joint compression/extension:</strong> Measure the current joint width against
+              the original specified width. Unusual permanent narrowing or widening may indicate
+              foundation movement requiring structural investigation, not just sealant replacement
+            </li>
+            <li>
+              <strong>Sealant profile:</strong> Check that the bead remains concave. A profile that
+              has become convex from compression cycles will pool water
+            </li>
+          </ul>
+          <p>
+            Proactive five-year assessment costs a fraction of the full repair cycle triggered by a
+            missed failure. Document joint locations in a building maintenance schedule so they are
+            never overlooked during routine upkeep.
+          </p>
+
+        </article>
+
+        {/* ── SIDEBAR ─────────────────────────────────── */}
+        <aside className="kc-sidebar">
+          <nav className="kc-toc">
+            <div className="kc-toc-title">In This Article</div>
+            <ol>
+              <li><a href="#s1" className="toc-link">What Is an Expansion Joint?</a></li>
+              <li><a href="#s2" className="toc-link">Why Expansion Joints Fail</a></li>
+              <li><a href="#s3" className="toc-link">Sealant Types — PU, Polysulfide, Silicone, EPDM</a></li>
+              <li><a href="#s4" className="toc-link">Joint Geometry — The Right Design</a></li>
+              <li><a href="#s5" className="toc-link">The Correct Repair Process</a></li>
+              <li><a href="#s6" className="toc-link">Maintenance and Inspection Schedule</a></li>
+            </ol>
+          </nav>
+
+          <div className="kc-cta-box">
+            <p>Expansion joint leaking? Get a professional sealant assessment and repair specification from our engineers.</p>
+            <Link to="/#contact">Request a Site Visit</Link>
+          </div>
+        </aside>
+
+      </div>
+
+      {/* ── RELATED ARTICLES ───────────────────────────── */}
+      <div className="kc-related">
+        <div className="kc-related-inner">
+          <div className="kc-related-title">Related Articles</div>
+          <div className="kc-related-grid">
+            <Link to="/knowledge/why-waterproofing-fails" className="kc-related-card">
+              <div className="kc-related-card-cat">Waterproofing</div>
+              <h4>Why Waterproofing Fails</h4>
+              <p>The five root causes behind every failed treatment — wrong system, bad prep, skipped details, and more.</p>
+            </Link>
+            <Link to="/knowledge/terrace-waterproofing-guide" className="kc-related-card">
+              <div className="kc-related-card-cat">Waterproofing</div>
+              <h4>Terrace Waterproofing Guide</h4>
+              <p>System selection, application sequence, and maintenance for RCC terraces in Hyderabad's climate.</p>
+            </Link>
+            <Link to="/knowledge/concrete-cracks" className="kc-related-card">
+              <div className="kc-related-card-cat">Structural</div>
+              <h4>Concrete Cracks — Classification and Repair</h4>
+              <p>How to tell a structural crack from a cosmetic one, and the correct repair method for each type.</p>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* ── FOOTER ─────────────────────────────────────── */}
+      <footer className="kc-footer">
+        <p>
+          &copy; 2025 Prisci Constructions &middot; Hyderabad &middot;{' '}
+          <Link to="/#contact">Get a Free Consultation</Link>
+        </p>
+      </footer>
+
+    </Layout>
+  );
+}

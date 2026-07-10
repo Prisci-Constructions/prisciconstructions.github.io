@@ -1,0 +1,308 @@
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Layout from '@/components/layout/Layout';
+import { useScrollTop } from '@/hooks/useScrollTop';
+import { useSEO } from '@/hooks/useSEO';
+import '@/styles/article.css';
+
+export default function Corrosion() {
+  useScrollTop();
+  useSEO({
+    title: 'Rebar Corrosion — Detection, Assessment, and Repair | Prisci Constructions',
+    description: 'How rebar corrodes inside concrete, how to detect it with half-cell potential mapping and cover depth measurement, and the correct repair sequence to restore structural integrity.',
+    path: '/knowledge/corrosion',
+  });
+
+  useEffect(() => {
+    const links = document.querySelectorAll('.kc-toc a');
+    const sections = document.querySelectorAll('.kc-article h2[id]');
+    const handler = () => { let c = ''; sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) c = s.id; }); links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + c)); };
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
+
+  return (
+    <Layout>
+
+      <div className="kc-breadcrumb">
+        <Link to="/knowledge">Knowledge Center</Link>
+        <span>/</span>
+        <Link to="/knowledge">Structural Rehabilitation</Link>
+        <span>/</span>
+        Rebar Corrosion
+      </div>
+
+      <div className="kc-hero">
+        <div className="kc-hero-inner">
+          <span className="kc-category-badge structural">Structural Rehabilitation</span>
+          <h1 className="kc-title">Rebar Corrosion — Detection, Assessment, and Repair</h1>
+          <p className="kc-subtitle">
+            Corroding steel expands to six to eight times its original volume inside the concrete that is meant to protect it. The result is cracking, delamination, and spalling that compromises both cover and structural capacity. Understanding the mechanism — and catching it early — is the difference between a patch repair and a full structural intervention.
+          </p>
+          <div className="kc-meta">
+            <span>Structural Rehabilitation</span>
+            <span className="kc-meta-dot">·</span>
+            <span>9 min read</span>
+            <span className="kc-meta-dot">·</span>
+            <span>Prisci Constructions — Engineering Team</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="kc-layout">
+
+        <article className="kc-article">
+
+          <h2 id="s1">The Corrosion Mechanism</h2>
+          <p>
+            Rebar corrosion is not a surface phenomenon — it is an electrochemical process driven by the same principles as a battery. When the protective alkaline environment inside concrete breaks down, a corrosion cell forms between two zones of the same steel bar: an <strong>anode</strong> where metal is dissolved, and a <strong>cathode</strong> where oxygen is reduced.
+          </p>
+          <p>
+            At the anode, iron atoms leave the steel surface and enter solution:
+          </p>
+          <p><strong>Fe → Fe²⁺ + 2e⁻</strong></p>
+          <p>
+            Those electrons travel through the steel bar to the cathode, where dissolved oxygen and water consume them:
+          </p>
+          <p><strong>O₂ + H₂O + 4e⁻ → 4OH⁻</strong></p>
+          <p>
+            The Fe²⁺ ions and OH⁻ ions combine and oxidise further to form hydrated iron oxides — rust. The critical consequence of this chemistry is volumetric: rust occupies <strong>six to eight times the volume</strong> of the original steel from which it formed. This expansion generates tensile stress in the surrounding concrete that far exceeds the tensile strength of any normal concrete mix. The result is an inevitable cracking sequence: first hairline cracks parallel to the bar, then delamination of the cover layer, and finally spalling where chunks of concrete separate from the structure entirely.
+          </p>
+          <p>
+            Freshly mixed concrete has a pH of around 12.5 to 13, high enough that a thin, dense oxide film forms spontaneously on the steel surface. This <strong>passive film</strong> is nanometres thick but extremely effective — it suppresses the anodic reaction entirely in an intact concrete environment. Corrosion only initiates when that passivity is destroyed, either by a drop in pH (carbonation) or by the presence of chloride ions above a threshold concentration.
+          </p>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s2">Carbonation vs. Chloride-Induced Corrosion</h2>
+          <p>
+            Knowing which mechanism is active determines the entire repair strategy. The two pathways behave very differently in practice.
+          </p>
+
+          <h3>Carbonation-Induced Corrosion</h3>
+          <p>
+            Atmospheric CO₂ diffuses into concrete through interconnected pores and reacts with calcium hydroxide to form calcium carbonate — a process that progressively lowers the concrete's pH from above 12 to below 9. Once the carbonation front reaches the rebar depth, the passive film dissolves and <strong>uniform corrosion</strong> begins along the full length of the exposed bar.
+          </p>
+          <p>
+            Carbonation progresses inward at a rate roughly proportional to the square root of time (Fick's law analogy), so older buildings with lower-grade concrete and inadequate cover are most at risk. In Hyderabad's older residential stock — buildings from the 1970s through the 1990s using M15 or weaker mixes — carbonation depth routinely reaches rebar level within 20 to 30 years. A phenolphthalein indicator test on a freshly broken core is the standard diagnostic: the colourless zone is carbonated; the pink zone is still alkaline and passive.
+          </p>
+
+          <h3>Chloride-Induced Corrosion</h3>
+          <p>
+            Chloride ions do not lower pH. Instead, they attack the passive film locally by displacing oxygen at specific weak points on the steel surface. The result is <strong>pitting corrosion</strong> — highly localised, deep pits that can perforate a rebar cross-section while the surrounding concrete still looks intact. This is what makes chloride-induced corrosion particularly dangerous: by the time external symptoms appear, significant section loss may already have occurred.
+          </p>
+          <p>
+            Sources include de-icing salts in cold climates, marine spray in coastal environments, and — relevant to Hyderabad — chemical contamination near industrial zones and blast ranges. <strong>Hyderabad Cantonment buildings</strong> in proximity to blast ranges and armament storage areas have shown elevated chloride contamination in concrete cores, consistent with long-term atmospheric deposition of chloride-bearing compounds. The threshold for depassivation is approximately <strong>0.4% chloride by weight of cement</strong>, though this drops in carbonated zones where the pH is already reduced.
+          </p>
+
+          <div className="kc-table-wrap">
+            <table className="kc-table">
+              <thead>
+                <tr>
+                  <th>Corrosion Type</th>
+                  <th>Primary Trigger</th>
+                  <th>Attack Pattern</th>
+                  <th>Key Detection Method</th>
+                  <th>Repair Focus</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Carbonation-induced</strong></td>
+                  <td>pH drop from CO₂ diffusion</td>
+                  <td>Uniform along bar length; affects whole rebar network</td>
+                  <td>Phenolphthalein test on core; carbonation depth measurement</td>
+                  <td>Anti-carbonation coating; repair mortar; migrating inhibitors</td>
+                </tr>
+                <tr>
+                  <td><strong>Chloride-induced</strong></td>
+                  <td>Cl⁻ above ~0.4% by cement weight</td>
+                  <td>Localised pitting; uneven; high section-loss risk</td>
+                  <td>Half-cell potential mapping; chloride profile analysis</td>
+                  <td>Break out and replace compromised zones; sacrificial anode or cathodic protection</td>
+                </tr>
+                <tr>
+                  <td><strong>Mixed (carbonation + chloride)</strong></td>
+                  <td>Both mechanisms present simultaneously</td>
+                  <td>Accelerated onset; widespread and aggressive</td>
+                  <td>Combined testing protocol; half-cell + phenolphthalein + chloride extraction</td>
+                  <td>Full structural audit before committing to repair scope</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s3">Warning Signs — What to Look For</h2>
+          <p>
+            Visual inspection is the starting point of any corrosion assessment, but it is important to understand what visible symptoms actually mean about the internal state of the structure.
+          </p>
+          <ul>
+            <li><strong>Rust staining.</strong> Brown or orange streaks tracking along straight horizontal or diagonal lines on a façade correspond to rebar positions. Staining indicates that corrosion products have migrated through cracks or pores in the cover concrete. The bar is already corroding.</li>
+            <li><strong>Longitudinal cracking.</strong> Cracks that run parallel to the rebar direction — typically horizontal on beams and columns, vertical on walls — are caused by the expansive pressure of growing rust. These are different in character from shrinkage cracks (which are random) or structural flexure cracks (which are perpendicular to the member axis).</li>
+            <li><strong>Delamination.</strong> When the cover concrete separates from the substrate but has not yet fallen away, tapping with a hammer produces a hollow, drum-like sound compared to the sharp ring of sound concrete. Delaminated zones may cover large areas that appear visually intact.</li>
+            <li><strong>Spalling with exposed rebar.</strong> The final stage — chunks of cover concrete have separated to reveal corroded steel directly. At this point the rebar has lost confinement, the section may have lost area, and the structure is actively deteriorating.</li>
+          </ul>
+
+          <div className="kc-callout warning">
+            <div className="kc-callout-label">Warning</div>
+            <p>Visible rust staining on a concrete surface is not an early warning — it means serious internal damage has already occurred. By the time rust reaches the surface, corrosion has been active long enough to generate cracking, and the actual extent of affected rebar is almost always larger than what visual inspection reveals. Do not treat visible rust as a cosmetic problem.</p>
+          </div>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s4">Half-Cell Potential Mapping</h2>
+          <p>
+            Half-cell potential (HCP) mapping is the standard electrochemical method for assessing corrosion activity across a reinforced concrete structure. It is governed by <strong>ASTM C876</strong> and produces a corrosion probability map without requiring any concrete removal.
+          </p>
+          <h3>Principle</h3>
+          <p>
+            A copper/copper sulphate (Cu/CuSO₄) reference electrode — the standard half-cell — is placed on the wetted concrete surface. A high-impedance voltmeter connects the reference electrode to the rebar through a wire attached to an exposed bar connection point. The measured voltage is the electrochemical potential of the steel at that location, reported in millivolts relative to the Cu/CuSO₄ electrode (CSE).
+          </p>
+          <h3>Interpreting Readings</h3>
+          <p>
+            ASTM C876 provides probability thresholds based on the measured potential:
+          </p>
+          <ul>
+            <li>More positive than <strong>−200 mV (CSE)</strong>: less than 10% probability of active corrosion.</li>
+            <li>Between <strong>−200 mV and −350 mV (CSE)</strong>: corrosion activity uncertain — further investigation required.</li>
+            <li>More negative than <strong>−350 mV (CSE)</strong>: greater than 90% probability of active corrosion at that location.</li>
+          </ul>
+          <p>
+            Readings are taken on a grid — typically 200 mm to 300 mm spacing — and interpolated to produce a contour map of electrochemical potential across the whole element or elevation. This map allows the engineer to prioritise repair zones, estimate the extent of breakout required, and track progress after treatment.
+          </p>
+
+          <div className="kc-callout tip">
+            <div className="kc-callout-label">Tip</div>
+            <p>Always commission a half-cell potential survey before finalising the repair scope or budget. Visual inspection consistently underestimates the affected area. A potential map will reveal actively corroding zones that are symptom-free at the surface, allowing you to break out and treat all compromised concrete in a single mobilisation rather than returning for repeat repairs within two to three years.</p>
+          </div>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s5">Cover Depth Measurement</h2>
+          <p>
+            Inadequate concrete cover is the root cause of premature corrosion in the vast majority of Indian buildings. <strong>IS 456:2000</strong> specifies minimum covers of 20 mm (mild exposure) to 75 mm (extreme exposure), yet core sampling and covermeter surveys on distressed structures routinely reveal cover values of 8 to 15 mm — a product of poor formwork control, rebar misplacement, or the omission of spacer blocks during construction.
+          </p>
+          <h3>Covermeter / Profometer Survey</h3>
+          <p>
+            A covermeter (also sold under the brand name Profometer) works on the principle of <strong>magnetic induction</strong>. An electromagnetic coil in the probe generates an alternating magnetic field; when the field encounters a steel bar, it is disturbed in proportion to the proximity and diameter of the bar. The instrument processes this disturbance to output cover depth and an estimate of bar diameter.
+          </p>
+          <p>
+            Modern profometers log readings digitally and can produce colour-coded cover maps of an entire wall or soffit in a single survey session. Where cover is consistently below the IS 456 minimum for the exposure class, corrosion risk is elevated regardless of current electrochemical readings — treatment should include either a polymer-modified repair mortar that restores compliant cover depth or a corrosion inhibitor system to compensate.
+          </p>
+          <p>
+            Covermeter surveys are best performed in conjunction with half-cell mapping. Low cover zones that also show strongly negative potentials identify the highest-priority breakout areas.
+          </p>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s6">The Repair Sequence</h2>
+          <p>
+            Repairing corroded rebar is a sequence of interdependent steps. Skipping or shortcutting any one of them — most commonly rebar preparation — results in rebound corrosion: the treated zone looks sound for two to five years and then resumes active corrosion, often more aggressively because the surrounding untreated concrete has continued to deteriorate in the interim.
+          </p>
+          <ol>
+            <li>
+              <strong>Mark the breakout boundary.</strong> Using the half-cell potential map and a percussion survey (hammer tapping for hollow sound), mark all delaminated and actively corroding zones. Extend the boundary at least <strong>15 mm past the last visible pitting</strong> in any direction. This is the minimum to ensure that the anode zone is fully removed; stopping short leaves an active corrosion cell adjacent to the new repair.
+            </li>
+            <li>
+              <strong>Concrete removal.</strong> Break out concrete using disc cutters and chisels rather than percussive breakers where possible, to avoid micro-cracking the substrate. Remove concrete to a depth of at least 15 mm behind the rebar, or until sound concrete is reached — whichever is deeper. The exposed rebar should be accessible on all sides for cleaning.
+            </li>
+            <li>
+              <strong>Rebar cleaning to Sa 2.5.</strong> Clean the exposed steel by grit blasting to achieve a surface cleanliness of <strong>Sa 2.5 (ISO 8501-1)</strong> — a near-white metal finish free of all visible rust, mill scale, and contamination. Where grit blasting is impractical, mechanical wire brushing with angle grinders and needle scalers to St 3 is an acceptable alternative for small areas, but is less effective at removing deeply embedded chlorides from pitted surfaces.
+            </li>
+            <li>
+              <strong>Corrosion protection of steel.</strong> Apply a <strong>zinc-rich primer</strong> or a <strong>migrating corrosion inhibitor (MCI) coating</strong> to the cleaned rebar immediately — do not allow flash rust to form before treatment. Zinc-rich epoxy primers (two-coat system) provide sacrificial cathodic protection. MCI coatings such as MCI-2019 penetrate the metal surface and form a monomolecular protective layer.
+            </li>
+            <li>
+              <strong>Repair mortar application.</strong> Apply a polymer-modified cementitious repair mortar incorporating an integral corrosion inhibitor. The mortar must be applied in layers consistent with the manufacturer's specification (typically 25–50 mm per layer) and cured for the required period before additional layers. The finished surface must restore cover to IS 456 minimum for the exposure class, or greater.
+            </li>
+            <li>
+              <strong>Anti-carbonation coating to the full structure.</strong> Once repairs are complete and cured, apply an elastomeric anti-carbonation coating to the entire concrete surface — not only the repaired patches. This is the most commonly omitted step in practice. Without it, the unrepaired surrounding concrete continues to carbonate toward the rebar level, and the repaired zones become anodes within a larger corrosion cell (the incipient anode effect).
+            </li>
+          </ol>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s7">Long-Term Protection</h2>
+          <p>
+            Repair mortar and surface coatings address the concrete that has already been replaced. Protecting the steel that remains embedded in the original concrete — which may be at risk even if not yet actively corroding — requires a different approach.
+          </p>
+
+          <h3>Migrating Corrosion Inhibitors (MCI)</h3>
+          <p>
+            Migrating corrosion inhibitors are organic amine-based compounds applied as surface-applied liquids or incorporated into repair mortars. Products such as <strong>MCI-2020</strong> (Cortec Corporation) and <strong>Ferrogard 901</strong> (Sika) are absorbed into the concrete surface and migrate through the pore network to the rebar depth, where they adsorb onto the steel surface and suppress both anodic and cathodic reactions.
+          </p>
+          <p>
+            MCI treatment is particularly appropriate in structures where breaking out all at-risk concrete is not economically or structurally feasible — large facades, post-tensioned slabs, or occupied buildings where access is limited. Migration is a slow process; the inhibitor requires six to twelve months to reach rebar depth and protective concentrations are not immediate. MCI should be considered a long-term protective measure, not an emergency repair.
+          </p>
+
+          <h3>Sacrificial Anode Systems</h3>
+          <p>
+            In marine or severely chloride-contaminated environments, sacrificial anode systems provide a durable electrochemical solution. Discrete zinc or aluminium-alloy anodes are embedded in the repair mortar adjacent to the rebar and connected to the steel. The anode metal corrodes preferentially, supplying a protective current to the surrounding steel. This approach is widely used in coastal structures and jetties, and is the long-term protection of choice where chloride contamination in the remaining concrete cannot be reduced by other means.
+          </p>
+          <p>
+            For structures with extensive chloride contamination — including some of the cantonment-area buildings in Hyderabad — an electrochemical chloride extraction (ECE) treatment may be appropriate before or alongside inhibitor application. ECE applies a temporary impressed current to draw chloride ions out of the concrete pore solution and toward an external anode, reducing the residual chloride content below the corrosion threshold. It is a specialist treatment requiring careful design and monitoring but can significantly extend service life in otherwise compromised structures.
+          </p>
+
+        </article>
+
+        <aside className="kc-sidebar">
+          <nav className="kc-toc">
+            <div className="kc-toc-title">In This Article</div>
+            <ol>
+              <li><a href="#s1">The Corrosion Mechanism</a></li>
+              <li><a href="#s2">Carbonation vs. Chloride-Induced Corrosion</a></li>
+              <li><a href="#s3">Warning Signs — What to Look For</a></li>
+              <li><a href="#s4">Half-Cell Potential Mapping</a></li>
+              <li><a href="#s5">Cover Depth Measurement</a></li>
+              <li><a href="#s6">The Repair Sequence</a></li>
+              <li><a href="#s7">Long-Term Protection</a></li>
+            </ol>
+          </nav>
+
+          <div className="kc-cta-box">
+            <p>Seeing rust stains or cracking on your building? We assess and repair corroded structures across Hyderabad.</p>
+            <Link to="/#contact">Request a Structural Assessment</Link>
+          </div>
+        </aside>
+
+      </div>
+
+      <section className="kc-related">
+        <div className="kc-related-inner">
+          <div className="kc-related-title">Related Articles</div>
+          <div className="kc-related-grid">
+
+            <Link to="/knowledge/carbonation" className="kc-related-card">
+              <div className="kc-related-card-cat">Structural Rehabilitation</div>
+              <h4>Carbonation of Concrete</h4>
+              <p>The chemical process that destroys the protective alkalinity around rebar — and how to measure and stop it.</p>
+            </Link>
+
+            <Link to="/knowledge/spalling" className="kc-related-card">
+              <div className="kc-related-card-cat">Structural Rehabilitation</div>
+              <h4>Concrete Spalling — Causes, Warning Signs, and Repair</h4>
+              <p>Why chunks of concrete fall off buildings, the early warning signs, and the correct repair sequence.</p>
+            </Link>
+
+            <Link to="/services/structural-audit" className="kc-related-card">
+              <div className="kc-related-card-cat">Service</div>
+              <h4>Structural Audit</h4>
+              <p>Our systematic structural assessment service — visual survey, NDT, and a detailed condition report with repair recommendations.</p>
+            </Link>
+
+          </div>
+        </div>
+      </section>
+
+      <footer className="kc-footer">
+        <p>
+          &copy; 2025 Prisci Constructions &middot; Hyderabad &middot;
+          <Link to="/#contact">Get a Free Consultation</Link>
+        </p>
+      </footer>
+
+    </Layout>
+  );
+}

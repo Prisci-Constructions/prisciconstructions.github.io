@@ -1,0 +1,302 @@
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Layout from '@/components/layout/Layout';
+import { useScrollTop } from '@/hooks/useScrollTop';
+import { useSEO } from '@/hooks/useSEO';
+import '@/styles/article.css';
+
+export default function InfraredInspection() {
+  useScrollTop();
+  useSEO({
+    title: 'Infrared Thermal Inspection | Knowledge Center | Prisci Constructions',
+    description: 'How infrared thermography reveals hidden moisture, delamination, and thermal bridges in buildings — without breaking walls. A practical guide from Prisci Constructions.',
+    path: '/knowledge/infrared-inspection',
+  });
+
+  useEffect(() => {
+    const links = document.querySelectorAll('.kc-toc a');
+    const sections = document.querySelectorAll('.kc-article h2[id]');
+    const handler = () => { let c = ''; sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) c = s.id; }); links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + c)); };
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
+
+  return (
+    <Layout>
+
+      <nav className="kc-breadcrumb" aria-label="Breadcrumb">
+        <Link to="/">Home</Link>
+        <span>&#8250;</span>
+        <Link to="/knowledge">Knowledge Center</Link>
+        <span>&#8250;</span>
+        Building Diagnostics
+        <span>&#8250;</span>
+        Infrared Thermal Inspection
+      </nav>
+
+      <header className="kc-hero">
+        <div className="kc-hero-inner">
+          <span className="kc-category-badge diagnostics">Building Diagnostics</span>
+          <h1 className="kc-title">Infrared Thermal Inspection — Seeing the Invisible in Buildings</h1>
+          <p className="kc-subtitle">
+            Moisture hides behind plaster, delamination lies beneath tiles, and missing insulation goes unnoticed until damage accumulates. Infrared thermography locates all three without demolition — and explains why engineers reach for a camera before they reach for a hammer.
+          </p>
+          <div className="kc-meta">
+            <span>Building Diagnostics</span>
+            <span className="kc-meta-dot">·</span>
+            <span>7 min read</span>
+            <span className="kc-meta-dot">·</span>
+            <span>Non-Destructive Testing</span>
+            <span className="kc-meta-dot">·</span>
+            <span>Prisci Constructions</span>
+          </div>
+        </div>
+      </header>
+
+      <div className="kc-layout">
+
+        <article className="kc-article">
+
+          <h2 id="s1">1. How Thermal Imaging Works</h2>
+          <p>
+            Every object above absolute zero emits infrared radiation — energy in the 0.7 µm to 1000 µm wavelength range that is invisible to the naked eye but detectable by a thermal camera. The amount of radiation emitted is governed by the <strong>Stefan-Boltzmann law</strong>: radiant power increases with the fourth power of absolute temperature. In practical terms, even a 1°C difference between two adjacent surfaces produces a measurable signal that a modern IR camera can image.
+          </p>
+          <p>
+            The camera converts this invisible heat map into a <strong>thermogram</strong> — a false-colour image where warmer surfaces appear in one part of the chosen palette (typically red or white) and cooler surfaces in another (blue or black). The specific palette is configurable and has no physical meaning beyond convention; what matters is the <em>relative</em> temperature distribution within the image.
+          </p>
+          <p>
+            The diagnostic power of thermography in buildings comes from a single physical principle: different materials store and release heat at different rates. This property — <strong>thermal mass</strong>, or more precisely, thermal effusivity — means that wet concrete, an air gap behind render, and dry concrete all respond differently to the same warming or cooling stimulus. The camera records that difference; the engineer interprets what caused it.
+          </p>
+
+          <h2 id="s2">2. What Thermography Can Detect</h2>
+          <p>
+            Applied correctly, an infrared survey can identify the following defects without any opening up of the structure:
+          </p>
+          <ul>
+            <li>
+              <strong>Moisture-laden areas behind walls and ceilings.</strong> Water has a high specific heat capacity — it stores more thermal energy per degree than concrete or plaster. During the daytime heating phase, wet zones warm up more slowly than surrounding dry material; during the evening cooling phase, they release heat more slowly. In both cases they appear as anomalous temperature patches on the thermogram — cooler during warm-up, warmer during cool-down.
+            </li>
+            <li>
+              <strong>Delaminated tiles or render.</strong> An air gap between the tile and the substrate is an excellent insulator. When the surface is heated by sun or a heat lamp, the delaminated section traps that heat and re-radiates it slowly — appearing as a warmer patch on the thermogram compared to well-bonded tiles which conduct heat efficiently into the substrate behind them.
+            </li>
+            <li>
+              <strong>Areas of missing or degraded insulation.</strong> In an insulated wall or roof, a section where insulation is absent or compressed allows heat to flow through more freely, creating a visible temperature anomaly on the interior surface during periods of indoor–outdoor temperature differential.
+            </li>
+            <li>
+              <strong>Thermal bridges.</strong> Structural elements — concrete columns, ring beams, steel fixings — that penetrate an insulation layer create direct conduction paths. These show as linear or point-shaped cold (or warm) patches depending on season and the direction of heat flow.
+            </li>
+            <li>
+              <strong>Leak paths in flat roofs.</strong> The best time to survey a flat roof for moisture is after sunset on a day that followed significant solar heating. As the dry roof membrane cools rapidly by radiation, any wet insulation beneath it releases stored heat more slowly and appears warmer than the surrounding roof — even if the surface looks identical in visible light.
+            </li>
+          </ul>
+
+          <h2 id="s3">3. Active vs. Passive Thermography</h2>
+          <p>
+            Thermographic surveys fall into two modes depending on how the thermal gradient is created.
+          </p>
+          <h3>Passive Thermography</h3>
+          <p>
+            The building's own environment provides the temperature differential — solar heating during the day, radiative cooling at night, indoor heating or air conditioning. The engineer exploits these natural cycles by timing the survey appropriately: inspecting a west-facing facade in the afternoon after several hours of direct sun, or surveying a flat roof in the hour after sunset. No external heat source is required, but the inspector has no control over the magnitude of the thermal gradient and must work within a narrow timing window.
+          </p>
+          <h3>Active Thermography</h3>
+          <p>
+            The inspector introduces a controlled heat source — heat lamps, a hot-air blower, or simply waiting for direct sunlight to act as a natural flash — then images the surface during the subsequent cooling phase. This is particularly effective for detecting <strong>delamination</strong>: as the heated surface cools, bonded areas shed heat quickly into the backing substrate, while delaminated sections trap the heat at the surface and appear as persistent hot spots several minutes after the heat source is removed. Active thermography offers more repeatable results and is less dependent on ambient conditions, making it the preferred method for tile surveys and facade delamination assessments.
+          </p>
+
+          <div className="kc-callout tip">
+            <div className="kc-callout-label">Tip — Timing the Survey</div>
+            <p>For passive surveys, the most productive window is the <strong>cooling cycle</strong> — after the sun has warmed the facade for several hours, then retreated. Shooting during the heating phase (sun still rising on a cold structure) compresses the thermal contrast and makes anomalies harder to distinguish. Schedule flat-roof surveys within 90 minutes of sunset on a clear day after a dry week followed by recent rain.</p>
+          </div>
+
+          <h2 id="s4">4. When to Schedule an Inspection</h2>
+          <p>
+            Thermographic results depend heavily on conditions at the time of survey. Ignoring this is the single most common reason for inconclusive reports.
+          </p>
+          <ul>
+            <li>
+              <strong>Temperature differential of at least 10°C</strong> between the building interior or the structural mass and the outside air is the minimum threshold for a productive survey. Below this, anomalies may not develop enough contrast to distinguish from normal variation.
+            </li>
+            <li>
+              <strong>Early morning surveys</strong> work well for insulation and thermal-bridge investigations in buildings with night heating. The structure has been cooling overnight; areas of missing insulation are still releasing their stored warmth compared to well-insulated sections that are already at equilibrium with the cold outside.
+            </li>
+            <li>
+              <strong>Post-sunset surveys</strong> are optimal for flat roofs and facades that received significant daytime solar loading. The dry surface cools rapidly; wet or delaminated zones retain warmth and become clearly visible within the first hour of darkness.
+            </li>
+            <li>
+              <strong>Post-rain surveys</strong> are useful for active ingress tracing. Rain introduces moisture at the point of entry; imaging 12–24 hours after a substantial downpour, while the moisture front is still moving through the structure, can map the ingress path even if the leak path itself is sealed by standing water.
+            </li>
+            <li>
+              <strong>Avoid surveying during rain, heavy cloud, or strong wind.</strong> Wind convection disrupts the surface temperature distribution; cloud prevents solar loading from building thermal contrast; rain masks the surface signal entirely.
+            </li>
+          </ul>
+
+          <div className="kc-table-wrap">
+            <table className="kc-table">
+              <thead>
+                <tr>
+                  <th>Defect Type</th>
+                  <th>Thermal Signature</th>
+                  <th>Best Survey Condition</th>
+                  <th>Confirmed By</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Moisture behind wall/ceiling plaster</td>
+                  <td>Cooler patch during heat-up; warmer patch during cool-down</td>
+                  <td>Post-sunset or early morning; {'>'} 10°C differential</td>
+                  <td>Pin or capacitance moisture meter</td>
+                </tr>
+                <tr>
+                  <td>Delaminated tiles or render</td>
+                  <td>Persistent hot spot after active heating (air gap insulates)</td>
+                  <td>Active thermography; sunny afternoon</td>
+                  <td>Tap-testing (hollow sound) or bond test core</td>
+                </tr>
+                <tr>
+                  <td>Missing insulation in wall or roof</td>
+                  <td>Cold patch on interior surface in winter (or warm in summer)</td>
+                  <td>Heating season; {'>'} 10°C indoor–outdoor difference</td>
+                  <td>Borescope or drill core through wall build-up</td>
+                </tr>
+                <tr>
+                  <td>Thermal bridge at structural member</td>
+                  <td>Linear or point cold pattern following column or beam line</td>
+                  <td>Winter interior heating; early morning</td>
+                  <td>Structural drawing review; U-value calculation</td>
+                </tr>
+                <tr>
+                  <td>Flat-roof moisture / wet insulation</td>
+                  <td>Warm patches on cooling roof after solar loading</td>
+                  <td>First 90 min after sunset; dry surface required</td>
+                  <td>Core sample or electrical capacitance scan</td>
+                </tr>
+                <tr>
+                  <td>Active ingress leak path</td>
+                  <td>Cool trail or wet-front pattern following gravity path</td>
+                  <td>12–24 hours post-rain</td>
+                  <td>Moisture meter; tracer dye water test</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 id="s5">5. Reading a Thermogram</h2>
+          <p>
+            A thermogram presents a false-colour image using a chosen palette — Iron, Rainbow, and Grey are common. The palette is set by the operator and has no universal meaning: in Iron palette, white and yellow are hottest, purple and black are coolest. In Rainbow, red is hot and blue is cold. Always read the scale bar on the image rather than assuming the colour assignment.
+          </p>
+          <p>
+            When interpreting a thermogram, the key skill is distinguishing <strong>anomaly patterns from construction geometry</strong>:
+          </p>
+          <ul>
+            <li>
+              <strong>Irregular, organic-shaped warm or cool patches</strong> that do not correspond to any known structural element are the hallmarks of moisture accumulation or delamination. A leak spreading through ceiling plaster will typically present as a roughly elliptical cool zone during morning heat-up, blurring at the edges.
+            </li>
+            <li>
+              <strong>Regular, geometric patterns</strong> — rectangles, grids, even lines — usually correspond to structural features: stud bays in a framed wall, floor slab edges, ring beams. These are not defects unless their thermal signature departs significantly from expected norms.
+            </li>
+            <li>
+              <strong>Sharp-edged rectangular anomalies</strong> at uniform spacing often indicate a past repair — a patch of different material or density that behaves differently thermally. This is a finding but not necessarily a defect.
+            </li>
+            <li>
+              <strong>Always cross-reference with a moisture meter</strong> before reporting any thermographic anomaly as confirmed moisture. The camera shows temperature; the moisture meter confirms whether elevated moisture content is actually present at that location.
+            </li>
+          </ul>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s6">6. Limitations — What It Cannot Do</h2>
+          <p>
+            Thermography is a powerful screening tool, but it has clear physical limits. Misunderstanding these leads to over-reliance on thermographic reports and missed diagnoses.
+          </p>
+          <ul>
+            <li>
+              <strong>Signal attenuation through thick masonry.</strong> Infrared cameras detect surface temperature only. A moisture source located deep inside a 400 mm solid brick or stone wall may not produce a detectable surface anomaly because the thermal signal disperses before reaching the surface. For thick-walled heritage structures, moisture meters and drill probes remain more reliable.
+            </li>
+            <li>
+              <strong>No depth or quantity information.</strong> A thermogram shows where a temperature anomaly exists, not how deep the moisture is, how much water is present, or in what form (bound moisture vs. free water). Quantification requires destructive sampling.
+            </li>
+            <li>
+              <strong>Sensitivity to air conditioning and ventilation.</strong> Active HVAC systems introduce artificial thermal patterns. An air-conditioning unit blowing cold air across a wall creates a false cool zone that can mimic moisture. Surveys should be conducted with HVAC systems off for at least one hour before imaging wherever possible.
+            </li>
+            <li>
+              <strong>Reflective surfaces cause false readings.</strong> Aluminium cladding, mirror glass, polished stainless steel, and glazed tiles have very low thermal emissivity — they reflect the infrared radiation of surrounding objects rather than emitting their own. A polished aluminium panel will appear to be at the temperature of the sky reflected in it, not its actual surface temperature. This is the source of some of the most dramatic false positives in thermographic surveys. Any shiny surface must be treated with extreme caution or bypassed in favour of contact measurements.
+            </li>
+            <li>
+              <strong>Wind and direct sun during survey.</strong> Wind strips surface heat uniformly and can erase or distort the temperature patterns that make anomalies visible. Strong direct sun creates solar reflections on many surfaces that overwhelm the thermal signal. Surveys must be planned around weather.
+            </li>
+          </ul>
+
+          <div className="kc-callout warning">
+            <div className="kc-callout-label">Important — Reflective Surfaces</div>
+            <p>Aluminium sheeting, glass facades, polished tiles, and stainless-steel fixtures have low emissivity values (often below 0.1, compared to 0.9+ for painted concrete). The IR camera will read these surfaces as the temperature of the environment they are reflecting, not their actual temperature. Any thermogram that includes such materials should carry an explicit note that those zones are unreliable. Never report a thermographic finding on a reflective surface without contact-temperature verification.</p>
+          </div>
+
+          <h3>Thermography as a Screening Tool</h3>
+          <p>
+            The correct role for infrared inspection is exactly that — a screen. It defines the investigation zone: where to probe with a moisture meter, where to core for a lab sample, where to open up the finish for a visual inspection. A thermographic survey that ends in a report without follow-up confirmation testing is incomplete. Thermography guides where to investigate; it does not constitute a final diagnosis.
+          </p>
+          <p>
+            Used within these limits, and with correctly timed surveys carried out by an experienced thermographer, infrared inspection is one of the most cost-effective diagnostic tools available to a building engineer — capable of screening a large area quickly, prioritising repair zones, and avoiding unnecessary demolition.
+          </p>
+
+        </article>
+
+        <aside className="kc-sidebar">
+          <nav className="kc-toc" aria-label="Table of contents">
+            <div className="kc-toc-title">In This Article</div>
+            <ol>
+              <li><a href="#s1" className="toc-link">How Thermal Imaging Works</a></li>
+              <li><a href="#s2" className="toc-link">What Thermography Can Detect</a></li>
+              <li><a href="#s3" className="toc-link">Active vs. Passive Thermography</a></li>
+              <li><a href="#s4" className="toc-link">When to Schedule an Inspection</a></li>
+              <li><a href="#s5" className="toc-link">Reading a Thermogram</a></li>
+              <li><a href="#s6" className="toc-link">Limitations — What It Cannot Do</a></li>
+            </ol>
+          </nav>
+
+          <div className="kc-cta-box">
+            <p>Need a thermal survey for your building? Our engineers carry FLIR-grade equipment and provide written thermographic reports with moisture-meter confirmation.</p>
+            <Link to="/#contact">Book an Infrared Survey</Link>
+          </div>
+        </aside>
+
+      </div>
+
+      <section className="kc-related">
+        <div className="kc-related-inner">
+          <div className="kc-related-title">Related Articles</div>
+          <div className="kc-related-grid">
+
+            <Link to="/knowledge/moisture-testing" className="kc-related-card">
+              <div className="kc-related-card-cat">Diagnostics</div>
+              <h4>Moisture Testing in Buildings</h4>
+              <p>The instruments used to find hidden moisture — from pin meters to relative humidity probes — and what the readings mean.</p>
+            </Link>
+
+            <Link to="/knowledge/rebound-hammer" className="kc-related-card">
+              <div className="kc-related-card-cat">Diagnostics</div>
+              <h4>Rebound Hammer Test</h4>
+              <p>How the Schmidt hammer estimates concrete strength, what the rebound number means, and where the test has limits.</p>
+            </Link>
+
+            <Link to="/services/building-leak-investigation" className="kc-related-card">
+              <div className="kc-related-card-cat">Service</div>
+              <h4>Building Leak Investigation</h4>
+              <p>Our end-to-end leak investigation service — combining thermography, moisture mapping, and water testing to locate the source before remediation begins.</p>
+            </Link>
+
+          </div>
+        </div>
+      </section>
+
+      <footer className="kc-footer">
+        <p>
+          &copy; 2025 Prisci Constructions &middot; Hyderabad &middot;
+          <Link to="/#contact">Get a Free Consultation</Link>
+        </p>
+      </footer>
+
+    </Layout>
+  );
+}

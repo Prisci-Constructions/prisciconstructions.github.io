@@ -1,0 +1,266 @@
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Layout from '@/components/layout/Layout';
+import { useScrollTop } from '@/hooks/useScrollTop';
+import { useSEO } from '@/hooks/useSEO';
+import '@/styles/article.css';
+
+export default function Spalling() {
+  useScrollTop();
+  useSEO({
+    title: 'Concrete Spalling — Causes, Warning Signs, and Repair | Prisci Constructions',
+    description: 'Why chunks of concrete fall off buildings, the early warning signs of impending spall, and the correct repair sequence — from rebar cleaning to anti-carbonation coatings.',
+    path: '/knowledge/spalling',
+  });
+
+  useEffect(() => {
+    const links = document.querySelectorAll('.kc-toc a');
+    const sections = document.querySelectorAll('.kc-article h2[id]');
+    const handler = () => { let c = ''; sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) c = s.id; }); links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + c)); };
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
+
+  return (
+    <Layout>
+
+      <div className="kc-breadcrumb">
+        <Link to="/">Home</Link>
+        <span>/</span>
+        <Link to="/knowledge">Knowledge Center</Link>
+        <span>/</span>
+        Concrete Spalling
+      </div>
+
+      <div className="kc-hero">
+        <div className="kc-hero-inner">
+          <span className="kc-category-badge structural">Structural Rehabilitation</span>
+          <h1 className="kc-title">Concrete Spalling — Why It Happens and How to Stop It</h1>
+          <p className="kc-subtitle">Chunks of concrete falling from beams and columns are not random events — they are the end result of a corrosion chain that starts years earlier and announces itself with clear, readable signs. Here is how to catch it early and repair it correctly.</p>
+          <div className="kc-meta">
+            <span>7 min read</span>
+            <span className="kc-meta-dot">·</span>
+            <span>Structural Rehabilitation</span>
+            <span className="kc-meta-dot">·</span>
+            <span>Prisci Constructions</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="kc-layout">
+
+        <article className="kc-article">
+
+          <h2 id="s1">What Is Spalling?</h2>
+          <p>Concrete spalling is the breaking away of concrete in chips, chunks, or sheets from the surface of a structural element — most commonly from beam soffits, the underside of slabs, and the faces of columns. The fallen pieces expose the reinforcing steel beneath and leave a ragged, crater-like cavity in the element.</p>
+          <p>The critical point for building owners to understand is that spalling is <strong>not a surface cosmetic defect</strong>. Once concrete has separated from around the rebar, the steel is exposed to oxygen and moisture, accelerating further corrosion. Simultaneously, the load-carrying cross-section of the beam or column is reduced. Left unattended, a localised spall on a beam soffit can progress to a structural deficiency within a few monsoon seasons.</p>
+          <p>The driving force behind almost every spalling failure is the same: the <strong>volumetric expansion of corroding reinforcement steel</strong>. Rust occupies approximately 6 to 8 times the volume of the parent iron. That expansive pressure — generated inside a material with negligible tensile capacity — is what fractures and ejects the concrete cover.</p>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s2">The Root Cause — Rebar Corrosion</h2>
+          <p>Understanding why rebar corrodes inside concrete requires understanding what normally protects it. Fresh concrete is highly alkaline, with a pH of around 12.5 to 13. At that pH, a thin, stable iron-oxide layer — called the <strong>passive film</strong> — forms on the steel surface and prevents any further corrosion. As long as this film is intact, rebar embedded in concrete can last for the designed service life of the structure.</p>
+          <p>The chain of events that leads to spalling follows a predictable sequence:</p>
+          <ol>
+            <li><strong>Inadequate cover depth.</strong> IS 456 specifies minimum concrete cover ranging from 20 mm (for mild exposure) to 75 mm (for extreme). Buildings constructed with less than specified cover — or with porous, high water-cement-ratio concrete — are vulnerable from the outset.</li>
+            <li><strong>Carbonation front advances.</strong> Atmospheric CO₂ reacts with the calcium hydroxide in concrete to form calcium carbonate. This process, carbonation, gradually reduces the pH of the concrete pore solution from {'>'} 12.5 down to 8 or 9 — a level at which the passive film on steel becomes thermodynamically unstable.</li>
+            <li><strong>Passive film breaks down.</strong> Once carbonation depth reaches the rebar level, the film dissolves and electrochemical corrosion begins. In the presence of moisture and oxygen, iron oxidises to form hydrated iron oxides (rust).</li>
+            <li><strong>Expansion generates tensile stress.</strong> As rust volume grows — up to 8 times the original steel volume — it exerts radial expansive pressure on the surrounding concrete. This creates tensile hoop stresses that exceed the tensile strength of concrete (typically 2–4 MPa for normal grades).</li>
+            <li><strong>Longitudinal cracking and delamination.</strong> Cracks form parallel to the rebar direction, following the plane of lowest tensile resistance — the cover-to-rebar interface. The concrete cover begins to separate from the core.</li>
+            <li><strong>Spalling.</strong> Gravity or vibration causes the delaminated concrete to detach and fall.</li>
+          </ol>
+
+          <h3>Secondary Causes</h3>
+          <p>While rebar corrosion driven by carbonation is the predominant cause in India's urban building stock, other mechanisms can produce or accelerate spalling:</p>
+          <ul>
+            <li><strong>Alkali-Silica Reaction (ASR).</strong> Reactive silica in certain aggregates reacts with alkali hydroxides in cement paste to form an expansive gel. The gel absorbs moisture and swells, cracking concrete from within. ASR spalls typically show a characteristic map-cracking pattern rather than longitudinal cracking.</li>
+            <li><strong>Freeze-thaw cycling.</strong> Relevant in hill stations and northern India, though less common in Hyderabad. Water expands 9% on freezing; repeated cycles in saturated porous concrete cause progressive surface scaling.</li>
+            <li><strong>Fire damage.</strong> Sustained high temperatures cause differential thermal expansion between cement paste and aggregate, and can drive off chemically bound water from the calcium silicate hydrate (C-S-H) gel that gives concrete its strength — leading to explosive spalling during fire and surface spalling during cooling.</li>
+          </ul>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s3">Early Warning Signs</h2>
+          <p>Spalling does not arrive without warning. The corrosion chain described above takes months to years to progress from passive film breakdown to visible concrete loss. During that window, the structure announces itself through four readable signs — all detectable without specialist equipment.</p>
+
+          <h3>1. Rust Staining on the Surface</h3>
+          <p>As corrosion products dissolve in pore water and migrate outward through fine pores and cracks, they deposit as brown or orange stains on the concrete surface. These stains, sometimes called efflorescing rust, appear before the concrete has cracked. Any persistent rust stain on a structural element — particularly on a beam soffit or column face — should prompt immediate investigation. Staining on a plastered surface may be the first sign that the structural concrete behind the plaster is already corroding.</p>
+
+          <h3>2. Fine Longitudinal Cracks Parallel to Rebar</h3>
+          <p>The first mechanical consequence of rebar expansion is a fine crack running along the length of the rebar, just above the main bar. These cracks are often less than 0.2 mm wide in their early stages and can be missed in casual inspection. Their distinguishing feature is their <strong>direction</strong> — they follow the rebar exactly, unlike flexural cracks (which are transverse) or shrinkage cracks (which are random or map-patterned). A systematic inspection with a crack-width gauge and a torch at a low angle to the surface will reveal them.</p>
+
+          <h3>3. Hollow Sound on Tap-Test</h3>
+          <p>Tapping the concrete surface with a hammer, coin, or rebar rod produces a distinctly different sound depending on whether the cover concrete is bonded to the structure or has delaminated. Bonded concrete returns a solid thud; delaminated concrete returns a hollow, drum-like resonance. Systematic tap-testing at 150 mm grid spacing can map the extent of delamination before any concrete has fallen. Mark the hollow areas immediately with chalk or paint.</p>
+
+          <h3>4. Delamination Blisters</h3>
+          <p>At an advanced stage of internal delamination, the concrete cover may visibly lift or blister away from the substrate — the concrete has separated but physical separation from gravity has not yet occurred. These blisters are particularly common on beam soffits and the underside of staircases. A blister means full spalling is imminent. Any such element should be cordoned off and repaired as a priority.</p>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s4">The Spall Repair Sequence</h2>
+          <p>A correctly executed spall repair does not simply fill the cavity — it addresses the root cause (rebar corrosion), restores the concrete-rebar bond, matches the durability of the surrounding concrete, and adds a protective barrier to prevent recurrence. Skipping or shortcutting any stage produces a repair that fails within a few years.</p>
+
+          <h3>Step 1 — Map and Mark the Full Extent</h3>
+          <p>Before any breaking-out begins, tap-test the entire element to map all delaminated and hollow zones. Mark the perimeter of each area with chalk. The repair must cover the full delaminated zone — not just the cavity where concrete has already fallen. Failing to include adjacent delaminated concrete is the single most common cause of patch repairs debonding at the edges.</p>
+
+          <h3>Step 2 — Saw-Cut the Perimeter</h3>
+          <p>Cut the perimeter of each marked repair area to a minimum depth of 10–15 mm using a diamond disc saw. This creates a clean, vertical edge and prevents feather-edged patches, which are mechanically weak and almost always delaminate. A feathered edge means zero cover for the repair mortar at its boundary — it will crack there first.</p>
+
+          <h3>Step 3 — Break Out to 15 mm Beyond the Corroded Rebar</h3>
+          <p>Remove all delaminated and cracked concrete using a pneumatic chisel or breaker. The break-out must extend <strong>at least 15 mm behind the corroded rebar</strong> (i.e., the repair extends behind the bar, not just to its front face). This provides circumferential access to clean and prime all exposed steel, and ensures the repair mortar fully encapsulates the rebar — restoring the mechanical interlock and the alkaline environment around the steel.</p>
+
+          <h3>Step 4 — Clean Rebar to Sa 2.5</h3>
+          <p>All corroded rebar must be cleaned by abrasive blast cleaning to a minimum cleanliness standard of <strong>Sa 2.5</strong> (ISO 8501-1) — no visible rust, mill scale, or coating remains; only a slight shadow of staining is acceptable. In locations where blasting is not practical, power-tool cleaning to St 3 is an acceptable alternative. Wire brushing alone is insufficient; it does not remove the pitted corrosion products from the steel surface and leaves behind active corrosion cells.</p>
+          <p>After cleaning, check whether the bar has lost significant section. If the cross-sectional area loss exceeds 20% in any zone, a structural engineer must assess whether the bar needs to be supplemented or replaced.</p>
+
+          <h3>Step 5 — Apply Zinc-Rich Epoxy Primer to Rebar</h3>
+          <p>Immediately after cleaning — before any flash-rust can form — apply a dual-component zinc-rich epoxy primer to all exposed rebar. The zinc provides cathodic protection to the steel: it is preferentially oxidised, sacrificing itself to protect the iron. Products such as Sika Monotop-910 N or Fosroc Nitoprime Zincrich are specifically formulated for this application. Apply at the specified wet film thickness (typically 75–100 microns per coat) and allow to reach the correct tack-free stage before proceeding.</p>
+
+          <h3>Step 6 — Pre-Wet Substrate and Apply Bonding Slurry</h3>
+          <p>Saturate the concrete substrate with clean water until it reaches a saturated-surface-dry (SSD) condition — a dry substrate will suck water from the repair mortar, causing it to dry too fast and lose strength and bond. Immediately before applying the repair mortar, brush a layer of cementitious bonding slurry (or the polymer-modified bonding agent specified by the repair mortar manufacturer) into the substrate. Apply the mortar onto the wet bonding slurry before it has dried.</p>
+
+          <h3>Step 7 — Apply Polymer-Modified Repair Mortar in Layers</h3>
+          <p>Fill the cavity using a pre-bagged, polymer-modified cementitious repair mortar such as <strong>BASF MasterEmaco S 5400</strong> or <strong>Fosroc Renderoc LA</strong>. These mortars are formulated for low shrinkage, high bond strength, and compatibility with the surrounding concrete. Apply in layers not exceeding 25–30 mm per pass to control shrinkage stresses, allowing each layer to reach initial set before applying the next. For deep repairs (cavities {'>'} 50 mm), consider a coarser repair concrete system rated for the depth.</p>
+
+          <div className="kc-callout tip">
+            <div className="kc-callout-label">Tip — Measure Before You Specify</div>
+            <p>Always check the existing cover depth with a <strong>profometer (cover meter)</strong> before selecting the repair mortar thickness and before saw-cutting. This tells you how deep the rebar actually sits, confirms whether inadequate cover is a contributing factor, and ensures you specify a repair system thick enough to provide the required cover without overbuilding the profile.</p>
+          </div>
+
+          <h3>Step 8 — Cure and Finish</h3>
+          <p>Cure the completed repair mortar with wet hessian, curing compound, or polythene sheeting for a minimum of 7 days. Inadequate curing dramatically reduces surface strength and increases micro-cracking. Once cured, dress the surface to match the surrounding concrete profile. Do not apply the anti-carbonation coating until the repair mortar has cured for a minimum of 28 days.</p>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s5">Why Ordinary Cement Mortar Fails</h2>
+          <p>On low-budget repairs — or on sites where supervision is absent — spall cavities are routinely filled with a mix of ordinary Portland cement (OPC) and river sand. This approach is not only ineffective but actively counterproductive. The repair fails quickly and the spalling returns, often worse than before, because the root cause (rebar corrosion) was never addressed.</p>
+
+          <div className="kc-callout warning">
+            <div className="kc-callout-label">Warning — Do Not Use OPC Mortar for Spall Repairs</div>
+            <p>Never fill spall cavities with ordinary cement–sand mortar. OPC mortar cracks on curing, bonds poorly to the substrate, provides no corrosion protection to the rebar, and offers no better carbonation resistance than the original concrete. The repair will fail — typically within 3–5 years — and the second repair will cost more than doing it correctly the first time.</p>
+          </div>
+
+          <p>The specific failure mechanisms of OPC mortar in spall repair are worth understanding in detail:</p>
+          <ul>
+            <li><strong>High drying shrinkage.</strong> OPC mortar without polymer modification or shrinkage-compensating admixtures typically exhibits drying shrinkage strains of 50–100 microstrain or more. This causes micro-cracking at the patch boundary and across the surface of the repair as it cures — creating pathways for water and CO₂ to re-penetrate, often reaching the rebar faster than in the original concrete.</li>
+            <li><strong>Poor bond to the existing substrate.</strong> OPC mortar does not develop adequate mechanical and chemical bond to concrete without a proper bonding slurry system. Pull-off strengths below 0.5 MPa are common, compared to the 1.5 MPa minimum required by IS 9246 for structural repairs.</li>
+            <li><strong>No corrosion protection for the rebar.</strong> OPC mortar contains no corrosion-inhibiting admixtures and no cathodic protection agent. The corroding rebar continues to rust under the patch, and the expansive pressure returns.</li>
+            <li><strong>No improvement in carbonation resistance.</strong> Plain OPC mortar has a similar diffusion coefficient for CO₂ as the original concrete. The carbonation front continues to advance, and the new concrete cover is penetrated on the same timeline as the original — typically within 5–8 years on a tropical coastal or urban exposure site.</li>
+          </ul>
+
+          <div className="kc-table-wrap">
+            <table className="kc-table">
+              <thead>
+                <tr>
+                  <th>Property</th>
+                  <th>Polymer-Modified Repair Mortar</th>
+                  <th>OPC Cement–Sand Mortar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Drying Shrinkage</strong></td>
+                  <td>Low ({'< 200 microstrain; shrinkage-compensated'})</td>
+                  <td>High (50–100+ microstrain; cracks on curing)</td>
+                </tr>
+                <tr>
+                  <td><strong>Bond Strength to Substrate</strong></td>
+                  <td>≥ 1.5 MPa pull-off (with bonding slurry)</td>
+                  <td>{'< 0.5 MPa (no bonding slurry compatibility)'}</td>
+                </tr>
+                <tr>
+                  <td><strong>Corrosion Inhibition</strong></td>
+                  <td>Yes — zinc-rich primer + inhibiting admixtures protect the rebar</td>
+                  <td>None — rebar corrosion continues under the patch</td>
+                </tr>
+                <tr>
+                  <td><strong>Carbonation Resistance</strong></td>
+                  <td>High — low permeability; SD equivalent {'>'} 15 m when coated</td>
+                  <td>Similar to original concrete — re-carbonation proceeds at the same rate</td>
+                </tr>
+                <tr>
+                  <td><strong>Expected Service Life</strong></td>
+                  <td>15–25 years when correctly executed and coated</td>
+                  <td>3–8 years before re-spalling at the same location</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s6">Protecting What's Left — Anti-Carbonation Coatings</h2>
+          <p>Even a perfectly executed spall repair addresses only the zone that has already failed. The surrounding concrete on the same beam or column has the same cover depth, the same concrete quality, and the same exposure history. Without a protective coating applied to the <strong>full element surface</strong>, the carbonation front continues to advance in the unrepaired zones, and new spalls will develop within years — often adjacent to the recently completed repair.</p>
+
+          <h3>What Anti-Carbonation Coatings Do</h3>
+          <p>Anti-carbonation coatings are elastomeric, polymer-based films that block the ingress of CO₂ into the concrete while allowing water vapour to escape (they are breathable). Their effectiveness is measured by their <strong>equivalent air-layer thickness (SD value)</strong> — the thickness of still air that would offer the same CO₂ diffusion resistance as the coating. An SD value of 50 m means the coating provides the equivalent carbonation protection of 50 metres of still air — far exceeding what any practical thickness of concrete can provide.</p>
+          <ul>
+            <li><strong>Crack-bridging capacity.</strong> Elastomeric coatings can bridge fine cracks up to <strong>0.2 mm</strong> in width without splitting. This is critical on aged concrete that may develop hairline cracks through thermal movement or shrinkage — cracks that would otherwise create preferential carbonation pathways.</li>
+            <li><strong>SD value ≥ 50 m.</strong> Specify coatings that meet this minimum. Products such as Sika Antifect AN or BASF MasterProtect H 185 publish their SD values in technical data sheets. Do not accept a coating that specifies only "low permeability" without a quantified SD value.</li>
+            <li><strong>Applied to the full element — not just the patch.</strong> The coating must be applied to the entire beam soffit, the full column face, or the complete slab soffit — whichever element contains the spall. Applying it only to the patched area provides no protection to adjacent concrete and produces a visible mismatch that will confuse future inspections.</li>
+          </ul>
+
+          <h3>Application Sequence</h3>
+          <p>Allow the repair mortar to cure for a minimum of 28 days before coating. Apply a compatible primer to the full element surface to seal pores and improve adhesion. Apply the anti-carbonation coating in a minimum of two coats at right angles to each other — this eliminates pinholes and ensures uniform film build. The total dry film thickness (DFT) should meet the product's specified minimum — typically 200–300 microns for a 50 m SD value. Verify with a DFT gauge before the project is accepted.</p>
+
+          <div className="kc-callout tip">
+            <div className="kc-callout-label">Tip — Coat the Whole Element, Not Just the Patch</div>
+            <p>A patched beam soffit with coating applied only over the repaired areas will re-spall within a few years at the adjacent uncoated zones. Budget for coating the full element as part of every spall repair specification — the incremental material cost is small relative to the cost of remobilising a scaffolding crew for a second campaign.</p>
+          </div>
+
+        </article>
+
+        <aside className="kc-sidebar">
+          <nav className="kc-toc" aria-label="Table of contents">
+            <div className="kc-toc-title">In This Article</div>
+            <ol>
+              <li><a href="#s1">What Is Spalling?</a></li>
+              <li><a href="#s2">The Root Cause — Rebar Corrosion</a></li>
+              <li><a href="#s3">Early Warning Signs</a></li>
+              <li><a href="#s4">The Spall Repair Sequence</a></li>
+              <li><a href="#s5">Why Ordinary Cement Mortar Fails</a></li>
+              <li><a href="#s6">Protecting What's Left — Anti-Carbonation Coatings</a></li>
+            </ol>
+          </nav>
+
+          <div className="kc-cta-box">
+            <p>Seeing rust stains or hollow patches on your structure? Get a professional assessment before the next monsoon.</p>
+            <Link to="/#contact">Request a Site Inspection</Link>
+          </div>
+        </aside>
+
+      </div>
+
+      <div className="kc-related">
+        <div className="kc-related-inner">
+          <div className="kc-related-title">Related Articles</div>
+          <div className="kc-related-grid">
+            <Link to="/knowledge/corrosion" className="kc-related-card">
+              <div className="kc-related-card-cat">Structural</div>
+              <h4>Rebar Corrosion in Buildings</h4>
+              <p>The electrochemical mechanism behind rusting steel, detection with half-cell potential mapping, and repair strategies.</p>
+            </Link>
+            <Link to="/knowledge/carbonation" className="kc-related-card">
+              <div className="kc-related-card-cat">Structural</div>
+              <h4>Carbonation of Concrete</h4>
+              <p>The chemical process that destroys the protective alkalinity around rebar — and how to measure and arrest it.</p>
+            </Link>
+            <Link to="/knowledge/concrete-cracks" className="kc-related-card">
+              <div className="kc-related-card-cat">Structural</div>
+              <h4>Concrete Cracks — Classification and Repair</h4>
+              <p>How to distinguish a structural crack from a cosmetic one, and the correct repair method for each type.</p>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <footer className="kc-footer">
+        <p>
+          &copy; 2025 Prisci Constructions &middot; Hyderabad &middot;
+          <Link to="/#contact">Get a Free Consultation</Link>
+        </p>
+      </footer>
+
+    </Layout>
+  );
+}

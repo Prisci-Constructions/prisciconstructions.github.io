@@ -1,0 +1,291 @@
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Layout from '@/components/layout/Layout';
+import { useScrollTop } from '@/hooks/useScrollTop';
+import { useSEO } from '@/hooks/useSEO';
+import '@/styles/service-page.css';
+
+export default function BathroomWaterproofing() {
+  useScrollTop();
+  useSEO({ title: 'Bathroom Waterproofing | Prisci Constructions', description: 'Bathroom waterproofing in Hyderabad by Prisci Constructions. Stop toilet and bathroom leaks seeping to floors below with proven polymer waterproofing systems.', path: '/services/bathroom-waterproofing' });
+  useEffect(() => {
+    const qs = document.querySelectorAll('.sp-faq-q');
+    const handlers = [];
+    qs.forEach(q => { const fn = () => { const item = q.parentElement; document.querySelectorAll('.sp-faq-item.open').forEach(i => { if (i !== item) i.classList.remove('open'); }); item.classList.toggle('open'); }; q.addEventListener('click', fn); handlers.push({ el: q, fn }); });
+    const reveals = document.querySelectorAll('.sp-reveal');
+    const ro = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } }), { threshold: 0.1 });
+    reveals.forEach(el => ro.observe(el));
+    return () => { handlers.forEach(({ el, fn }) => el.removeEventListener('click', fn)); ro.disconnect(); };
+  }, []);
+  return (
+    <Layout>
+      <div className="sp-subnav">
+        <div className="container sp-subnav-inner">
+          <a href="#sp-overview" className="sp-subnav-link">Overview</a>
+          <a href="#sp-problems" className="sp-subnav-link">Problems</a>
+          <a href="#sp-causes" className="sp-subnav-link">Causes</a>
+          <a href="#sp-approach" className="sp-subnav-link">Approach</a>
+          <a href="#sp-materials" className="sp-subnav-link">Materials</a>
+          <a href="#sp-process" className="sp-subnav-link">Process</a>
+          <a href="#sp-faq" className="sp-subnav-link">FAQ</a>
+          <a href="#sp-projects" className="sp-subnav-link">Projects</a>
+        </div>
+      </div>
+
+      <div className="sp-hero">
+        <div className="container sp-hero-inner">
+          <div className="sp-breadcrumb">
+            <Link to="/">Home</Link>
+            <span className="sp-breadcrumb-sep">/</span>
+            <Link to="/#verticals">Services</Link>
+            <span className="sp-breadcrumb-sep">/</span>
+            Bathroom Waterproofing
+          </div>
+          <div className="sp-eyebrow">Engineering Services</div>
+          <h1 className="sp-title">BATHROOM WATERPROOFING</h1>
+          <p className="sp-lead">Bathroom leaks are the most common source of inter-floor disputes in multi-storey buildings — water from an upper-floor bathroom seeping into the ceiling of the flat below, causing damage that compounds with every shower. Prisci Constructions provides systematic bathroom waterproofing that eliminates the source, not just the visible symptom.</p>
+          <div className="sp-hero-stats">
+            <span className="sp-hero-stat"><strong>25+</strong> Years Experience</span>
+            <span className="sp-hero-stat"><strong>Diagnosed</strong> Before Treatment</span>
+            <span className="sp-hero-stat"><strong>MES · HPCL · SAAP</strong> Clients</span>
+            <span className="sp-hero-stat"><strong>Hyderabad</strong> Based</span>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <div className="container">
+
+          <section className="sp-section sp-reveal" id="sp-overview">
+            <div className="sp-section-header">
+              <span className="sp-section-idx">01</span>
+              <h2 className="sp-section-title">Overview</h2>
+            </div>
+            <div className="sp-grid-2">
+              <div className="sp-overview-text">
+                <p>A bathroom is subjected to daily wetting and drying cycles, soap and detergent chemicals, steam, and point-load pressure from fixtures — all acting on a small, heavily penetrated area of slab. Grout lines, pipe entry points, floor-wall junctions, and around trap edges are the primary leak pathways. Once water finds a path through the slab, it spreads horizontally in the screed layer, making the stain on the ceiling below appear far from the actual entry point.</p>
+                <p>Prisci Constructions approaches bathroom waterproofing as an engineering exercise, not a cosmetic fix. We remove failed tiles and screed only where necessary, treat the slab with a flexible polymer-modified waterproofing membrane, address all penetrations with pre-formed or sealant collars, and relay on a new screed and tile finish. The result is a bathroom that remains dry below even under daily use.</p>
+                <p>We apply this approach to residential apartments, hotel rooms, institutional toilets, and large-format commercial bathroom blocks — including wet areas in defence accommodation and SAAP government buildings.</p>
+              </div>
+              <div className="sp-stat-list">
+                <div className="sp-stat-item">
+                  <div className="sp-stat-label">Flexible Membrane Systems</div>
+                  <div className="sp-stat-desc">Flexible coatings that bridge hairline cracks and accommodate minor structural movement without splitting.</div>
+                </div>
+                <div className="sp-stat-item">
+                  <div className="sp-stat-label">All Penetrations Sealed</div>
+                  <div className="sp-stat-desc">Pipe sleeves, floor trap collars, and wall penetrations all individually detailed and sealed.</div>
+                </div>
+                <div className="sp-stat-item">
+                  <div className="sp-stat-label">Flood Test Before Tiling</div>
+                  <div className="sp-stat-desc">48-hour ponding test on membrane before screed or tiles are laid — no hidden failures.</div>
+                </div>
+                <div className="sp-stat-item">
+                  <div className="sp-stat-label">Minimal Disruption</div>
+                  <div className="sp-stat-desc">Targeted removal of only failed areas — we avoid unnecessary demolition in occupied buildings.</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="sp-section sp-reveal" id="sp-problems">
+            <div className="sp-section-header">
+              <span className="sp-section-idx">02</span>
+              <h2 className="sp-section-title">Common <span className="accent">Problems</span> We Solve</h2>
+            </div>
+            <ul className="sp-problem-list">
+              <li>Ceiling stains and paint peeling in the room below a bathroom — wet patches appearing after showers</li>
+              <li>Water dripping from soffit of slab below bathroom, causing damage to electrical fittings and plaster</li>
+              <li>Mould and mildew on bathroom walls from continuous moisture behind tiles</li>
+              <li>Loose or hollow-sounding floor tiles indicating debonded screed from water migration underneath</li>
+              <li>Seepage around toilet pan base or around floor drain trap during heavy use</li>
+              <li>Water appearing at skirting of adjacent room or corridor from bathroom floor spreading laterally</li>
+            </ul>
+          </section>
+
+          <section className="sp-section sp-reveal" id="sp-causes">
+            <div className="sp-section-header">
+              <span className="sp-section-idx">03</span>
+              <h2 className="sp-section-title">Root <span className="accent">Causes</span></h2>
+            </div>
+            <ul className="sp-causes-list">
+              <li>No waterproofing membrane applied during original construction — common in buildings built before 2005</li>
+              <li>Failed or cracked tile grout lines allowing water to penetrate screed and reach the slab</li>
+              <li>Missing or degraded sealant at floor-wall junction (the cove detail) — primary lateral seepage path</li>
+              <li>Poor sealing at pipe penetrations through the slab — gaps around plumbing pipes and floor trap edges</li>
+              <li>Rigid cement-based waterproofing applied where movement cracks bridge across it, breaking the seal</li>
+              <li>Accumulated damage from years of moisture cycling causing screed delamination and tile debonding</li>
+            </ul>
+          </section>
+
+          <section className="sp-section sp-reveal" id="sp-approach">
+            <div className="sp-section-header">
+              <span className="sp-section-idx">04</span>
+              <h2 className="sp-section-title">Our <span className="accent">Approach</span></h2>
+            </div>
+            <div className="sp-approach-steps">
+              <div className="sp-approach-step">
+                <div className="sp-step-num">01</div>
+                <div className="sp-step-title">Diagnose</div>
+                <p className="sp-step-desc">We inspect both the bathroom floor and the ceiling of the room below. Moisture meter readings map the extent of saturation. Tap-testing identifies delaminated tiles and hollow screed. All pipe penetrations, floor traps, and wall junctions are checked individually to locate the primary water entry paths.</p>
+              </div>
+              <div className="sp-approach-step">
+                <div className="sp-step-num">02</div>
+                <div className="sp-step-title">Design</div>
+                <p className="sp-step-desc">We specify the extent of tile and screed removal required (full bathroom or targeted areas), the appropriate membrane system (flexible polymer-modified or polyurethane-based), method for sealing each pipe penetration, and screed/tile reinstatement specification. A detailed scope of work is agreed before mobilisation.</p>
+              </div>
+              <div className="sp-approach-step">
+                <div className="sp-step-num">03</div>
+                <div className="sp-step-title">Execute</div>
+                <p className="sp-step-desc">Tiles and screed are removed cleanly. RCC surface is prepared. Membrane is applied in full coverage with fibre-mesh reinforcement at junctions. Flood test is conducted for 48 hours before screed and tiles are reinstated. The room below is inspected throughout the test period to confirm zero ingress.</p>
+              </div>
+            </div>
+          </section>
+
+          <section className="sp-section sp-reveal" id="sp-materials">
+            <div className="sp-section-header">
+              <span className="sp-section-idx">05</span>
+              <h2 className="sp-section-title">Materials <span className="accent">Used</span></h2>
+            </div>
+            <p className="sp-materials-intro">Bathroom membranes must be flexible to accommodate building movement and compatible with tile adhesive applied over them — we specify only systems with documented tile-over approval from the manufacturer.</p>
+            <div className="sp-materials">
+              <span className="sp-material-tag">Dr. Fixit Bathseal (Flexible)</span>
+              <span className="sp-material-tag">Dr. Fixit Pidicrete URP</span>
+              <span className="sp-material-tag">BASF MasterSeal 550</span>
+              <span className="sp-material-tag">Fosroc Brushbond RFX</span>
+              <span className="sp-material-tag">Sika SikaTop Seal 107</span>
+              <span className="sp-material-tag">Sika Sikagard 550W</span>
+              <span className="sp-material-tag">Sunanda Sunproof Flex</span>
+              <span className="sp-material-tag">Sikaflex 11FC (penetration sealing)</span>
+              <span className="sp-material-tag">Fosroc Nitoseal MS600 (joint sealant)</span>
+              <span className="sp-material-tag">Sika SikaFibre (reinforcement mesh)</span>
+            </div>
+          </section>
+
+          <section className="sp-section sp-reveal" id="sp-process">
+            <div className="sp-section-header">
+              <span className="sp-section-idx">06</span>
+              <h2 className="sp-section-title">Our <span className="accent">Process</span></h2>
+            </div>
+            <div className="sp-process">
+              <div className="sp-process-step">
+                <div className="sp-process-num">01</div>
+                <div className="sp-process-body">
+                  <h4>Inspection &amp; Scope Agreement</h4>
+                  <p>Engineer inspects the bathroom and the room below. Moisture readings taken. Hollow tiles identified. Extent of removal is marked and agreed with the client before demolition begins — we never remove more than is necessary.</p>
+                </div>
+              </div>
+              <div className="sp-process-step">
+                <div className="sp-process-num">02</div>
+                <div className="sp-process-body">
+                  <h4>Tile &amp; Screed Removal</h4>
+                  <p>Existing tiles and screed within the affected zone are removed to expose the bare RCC slab. Plumbing pipes and floor drain traps are exposed at their penetration points. Debris is cleared and the surface cleaned of all adhesive residue and laitance.</p>
+                </div>
+              </div>
+              <div className="sp-process-step">
+                <div className="sp-process-num">03</div>
+                <div className="sp-process-body">
+                  <h4>Pipe Penetration Sealing</h4>
+                  <p>Each pipe penetration through the slab is individually sealed using a combination of hydraulic cement, expanding polyurethane foam (if a gap exists), and a flexible sealant collar. This is the most critical step — unsealed penetrations make any surface membrane ineffective.</p>
+                </div>
+              </div>
+              <div className="sp-process-step">
+                <div className="sp-process-num">04</div>
+                <div className="sp-process-body">
+                  <h4>Flexible Membrane Application</h4>
+                  <p>Two coats of flexible polymer-modified waterproofing membrane (Dr. Fixit Bathseal or BASF MasterSeal 550) are applied by brush, ensuring full coverage and minimum specified thickness (typically 1.0–1.5mm DFT). Fibre-mesh tape is embedded at all floor-wall junctions and up the walls to 300mm height.</p>
+                </div>
+              </div>
+              <div className="sp-process-step">
+                <div className="sp-process-num">05</div>
+                <div className="sp-process-body">
+                  <h4>Flood Test (48-Hour Ponding)</h4>
+                  <p>All drain outlets are plugged and the bathroom floor is flooded to a minimum 50mm head depth. The room below is monitored throughout the 48-hour period. Any seepage points identified are marked, membrane is reopened at that point, additional treatment applied, and the test is repeated.</p>
+                </div>
+              </div>
+              <div className="sp-process-step">
+                <div className="sp-process-num">06</div>
+                <div className="sp-process-body">
+                  <h4>Screed &amp; Tile Reinstatement</h4>
+                  <p>Once the flood test is passed, a polymer-modified screed is laid to restore falls to the drain. Tiles are then laid with appropriate waterproof tile adhesive and anti-fungal grout to complete the bathroom reinstatement. Silicone sealant is applied at floor-wall junctions as a maintenance-friendly final seal.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="sp-section sp-reveal" id="sp-faq">
+            <div className="sp-section-header">
+              <span className="sp-section-idx">07</span>
+              <h2 className="sp-section-title">Frequently Asked <span className="accent">Questions</span></h2>
+            </div>
+            <div className="sp-faq">
+              <div className="sp-faq-item">
+                <div className="sp-faq-q">Why is my bathroom leaking into the flat below? <span className="sp-faq-chevron">+</span></div>
+                <div className="sp-faq-a">Water seeping from an upper-floor bathroom into the ceiling of the flat below is one of the most common complaints in Hyderabad apartments, and the root cause is almost always a failed or absent waterproofing membrane on the RCC slab. Once grout lines crack or sealant at the floor-wall junction breaks down, water from every shower penetrates the screed layer and travels laterally before dripping through the slab — which is why the wet patch on the ceiling below rarely appears directly under the floor drain. Pipe penetrations and the floor trap collar are the other frequent entry points that are commonly missed in original construction.</div>
+              </div>
+              <div className="sp-faq-item">
+                <div className="sp-faq-q">Do all tiles need to be removed to fix a bathroom leak? <span className="sp-faq-chevron">+</span></div>
+                <div className="sp-faq-a">Not always, but in most active-leak situations the answer is yes. If moisture meter readings show saturation is limited to a small zone — for example, around a single floor trap — we can attempt a targeted repair by removing only that section. However, when the entire floor screed is saturated or no membrane was applied during original construction, full tile and screed removal is the only approach that reliably stops the leak long-term; patch repairs over a wet substrate invariably fail within months.</div>
+              </div>
+              <div className="sp-faq-item">
+                <div className="sp-faq-q">Which waterproofing system is best for bathrooms? <span className="sp-faq-chevron">+</span></div>
+                <div className="sp-faq-a">Flexible polymer-modified waterproofing membranes — such as Dr. Fixit Bathseal, BASF MasterSeal 550, or Fosroc Brushbond RFX — are the most appropriate choice for bathroom floors because they can bridge hairline cracks and accommodate the minor structural movement that rigid cement-based coatings cannot. The membrane must also carry documented manufacturer approval for tiling over it, since tile adhesive is applied directly on top. For bathrooms with complex pipe layouts or heavy institutional use, a polyurethane-based system may be specified for superior elasticity and chemical resistance.</div>
+              </div>
+              <div className="sp-faq-item">
+                <div className="sp-faq-q">How long does bathroom waterproofing last? <span className="sp-faq-chevron">+</span></div>
+                <div className="sp-faq-a">A properly executed flexible membrane system applied to a clean, prepared RCC slab typically remains effective for 8–12 years under normal residential use. Longevity depends on the quality of surface preparation, correct application thickness, proper sealing of every pipe penetration, and whether the tile and grout finish above is maintained — cracked grout left unattended allows water to re-enter the screed and eventually reach the membrane. Periodic re-sealing of silicone joints at floor-wall junctions every 4–5 years significantly extends the service life of the overall system.</div>
+              </div>
+              <div className="sp-faq-item">
+                <div className="sp-faq-q">Do you provide a warranty for bathroom waterproofing work? <span className="sp-faq-chevron">+</span></div>
+                <div className="sp-faq-a">Yes. Prisci Constructions provides a written workmanship warranty on all bathroom waterproofing projects, covering defects arising from our application work. The warranty period and specific terms are confirmed in the project contract and vary based on scope and system specified. We also conduct a 48-hour flood test before reinstating tiles on every project — if any seepage is detected, the membrane is re-treated and re-tested before we proceed, so the warranty starts from a verified zero-leak baseline.</div>
+              </div>
+              <div className="sp-faq-item">
+                <div className="sp-faq-q">How much does bathroom waterproofing cost in Hyderabad? <span className="sp-faq-chevron">+</span></div>
+                <div className="sp-faq-a">Bathroom waterproofing typically costs between ₹120 and ₹250 per sq ft, depending on the membrane system selected and whether full tile and screed removal is required. A standard apartment bathroom (35–50 sq ft) where full removal is needed generally falls in the ₹18,000–₹40,000 range inclusive of waterproofing, screed, flood testing, and tile reinstatement. An exact quote requires a site visit to assess the extent of existing damage, the number of pipe penetrations, and the finish specification — contact us to arrange a free inspection.</div>
+              </div>
+            </div>
+          </section>
+
+          <section className="sp-section sp-reveal" id="sp-projects">
+            <div className="sp-section-header">
+              <span className="sp-section-idx">08</span>
+              <h2 className="sp-section-title">Related <span className="accent">Projects</span></h2>
+            </div>
+            <div className="sp-projects">
+              <div className="sp-project-card">
+                <div className="sp-project-cat">Institutional / SAAP</div>
+                <div className="sp-project-name">Government Building Toilet Block Waterproofing</div>
+                <div className="sp-project-loc">SAAP (State Agri Authority), Andhra Pradesh</div>
+              </div>
+              <div className="sp-project-card">
+                <div className="sp-project-cat">Defence / MES</div>
+                <div className="sp-project-name">Barracks Bathroom Rehabilitation</div>
+                <div className="sp-project-loc">Military Engineering Services, Hyderabad Cantonment</div>
+              </div>
+              <div className="sp-project-card">
+                <div className="sp-project-cat">Residential</div>
+                <div className="sp-project-name">Multi-Flat Bathroom Leak Rectification</div>
+                <div className="sp-project-loc">Madhapur / Hitech City, Hyderabad</div>
+              </div>
+            </div>
+          </section>
+
+          <section className="sp-section">
+            <div className="sp-cta">
+              <div className="sp-cta-inner">
+                <h2 className="sp-cta-title">Need Bathroom Waterproofing?</h2>
+                <p className="sp-cta-desc">Our engineers respond within 24 hours. Free site assessment available for qualifying projects.</p>
+                <div className="sp-cta-btns">
+                  <Link to="/#contact" className="btn-primary">Book a Site Inspection</Link>
+                  <a href="https://wa.me/message/7CSIOQ57SPOLL1" className="btn-ghost" target="_blank" rel="noreferrer">WhatsApp Us</a>
+                  <a href="tel:+919000126099" className="btn-ghost">Call Us</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </main>
+    </Layout>
+  );
+}

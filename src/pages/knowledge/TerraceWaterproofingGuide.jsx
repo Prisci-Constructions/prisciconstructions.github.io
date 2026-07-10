@@ -1,0 +1,693 @@
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Layout from '@/components/layout/Layout';
+import { useScrollTop } from '@/hooks/useScrollTop';
+import { useSEO } from '@/hooks/useSEO';
+import '@/styles/article.css';
+
+export default function TerraceWaterproofingGuide() {
+  useScrollTop();
+  useSEO({
+    title: 'Terrace Waterproofing Guide | Knowledge Center | Prisci Constructions',
+    description:
+      'A complete engineering guide to terrace waterproofing systems for RCC slabs in Hyderabad — torch-applied membranes, liquid-applied coatings, crystalline treatment, surface preparation, and long-term maintenance.',
+    path: '/knowledge/terrace-waterproofing-guide',
+  });
+
+  useEffect(() => {
+    const links = document.querySelectorAll('.kc-toc a');
+    const sections = document.querySelectorAll('.kc-article h2[id]');
+    const handler = () => {
+      let c = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) c = s.id; });
+      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + c));
+    };
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
+
+  return (
+    <Layout>
+
+      {/* BREADCRUMB */}
+      <div className="kc-breadcrumb">
+        <Link to="/">Home</Link>
+        <span>/</span>
+        <Link to="/knowledge">Knowledge Center</Link>
+        <span>/</span>
+        Terrace Waterproofing Guide
+      </div>
+
+      {/* HERO */}
+      <div className="kc-hero">
+        <div className="kc-hero-inner">
+          <div className="kc-category-badge waterproofing">Waterproofing</div>
+          <h1 className="kc-title">Terrace Waterproofing — The Complete Guide</h1>
+          <p className="kc-subtitle">
+            RCC terraces in Hyderabad face one of the harshest test environments in India — intense monsoon rainfall,
+            40 °C+ summer heat, and daily thermal cycling. This guide covers every system option, the correct
+            application sequence, and what it takes to keep a terrace dry for decades.
+          </p>
+          <div className="kc-meta">
+            <span>Waterproofing</span>
+            <span className="kc-meta-dot">·</span>
+            <span>10 min read</span>
+            <span className="kc-meta-dot">·</span>
+            <span>Prisci Constructions Engineering Team</span>
+          </div>
+        </div>
+      </div>
+
+      {/* LAYOUT: ARTICLE + SIDEBAR */}
+      <div className="kc-layout">
+
+        {/* ARTICLE BODY */}
+        <article className="kc-article">
+
+          {/* S1 */}
+          <h2 id="s1">1. Why Terraces Leak</h2>
+          <p>
+            A terrace is simultaneously a structural element, a heat shield, and a drainage surface. It is exposed to
+            every weather extreme from above while carrying the weight of foot traffic, equipment, and stored water
+            below. Understanding the mechanisms of failure is the first step toward choosing the right fix.
+          </p>
+
+          <h3>Thermal Cycling Cracks</h3>
+          <p>
+            Concrete expands and contracts with temperature. In Hyderabad, a terrace surface can swing from 18 °C on a
+            winter night to over 65 °C on a summer afternoon — a daily delta of nearly 50 °C at the surface. Over
+            years, this cyclical movement opens hairline cracks at the weakest points: construction joints, plumbing
+            pipe penetrations, parapet junctions, and anywhere the screed layer debonds from the structural slab
+            beneath it.
+          </p>
+          <p>
+            Once a crack is 0.3 mm wide or more, capillary action draws rainwater in. Water then migrates laterally
+            through the screed and eventually finds its way through the slab, appearing as a ceiling stain one or two
+            floors below — sometimes far from the actual entry point above.
+          </p>
+
+          <h3>UV Degradation</h3>
+          <p>
+            Ultraviolet radiation is the primary enemy of any polymer-based waterproofing membrane applied without a
+            protective overburden. Unprotected bituminous coatings become brittle and crack within three to five years
+            in Hyderabad's sun exposure. Acrylic membranes chalked and peel. Even polyurethane coatings lose
+            elongation capacity after sustained UV exposure. Every system that is not shielded by a protection screed,
+            tile layer, or UV-stable topcoat has a significantly shortened service life.
+          </p>
+
+          <h3>Drain Blockages and Standing Water</h3>
+          <p>
+            A terrace designed to shed water in 10–15 minutes during a downpour becomes a retention pond when drains
+            block with silt, leaves, and construction debris. Standing water exerts continuous hydrostatic pressure on
+            any pinhole, crack, or membrane lap joint. It also accelerates biological growth — moss and algae — whose
+            roots physically penetrate membrane surfaces. A blocked drain is the single fastest way to fail an
+            otherwise sound waterproofing system.
+          </p>
+
+          <div className="kc-callout warning">
+            <div className="kc-callout-label">Warning</div>
+            <p>
+              Terrace leaks almost never appear directly above the entry point. Water tracks laterally through the
+              screed bed for distances of 2–4 metres before finding a slab penetration. Never assume the ceiling stain
+              marks the source — a full tap-test of the terrace surface is required to locate the actual breach.
+            </p>
+          </div>
+
+          <h3>Other Contributing Factors</h3>
+          <ul>
+            <li>
+              <strong>Failed parapet coping joints</strong> — rainwater enters behind the parapet wall and saturates
+              the slab edge.
+            </li>
+            <li>
+              <strong>Corroded outlet flanges</strong> — cast-iron drains corrode and separate from the surrounding
+              concrete, creating a ring-shaped leak path.
+            </li>
+            <li>
+              <strong>Improper slope</strong> — terraces should drain at a minimum 1:80 fall; flatter areas pond water
+              permanently.
+            </li>
+            <li>
+              <strong>Pipe sleeve voids</strong> — plumbing penetrations without proper sleeve and sealant detailing
+              are the most common single-point failure on any terrace.
+            </li>
+          </ul>
+
+          <hr className="kc-section-rule" />
+
+          {/* S2 */}
+          <h2 id="s2">2. Understanding Your Terrace Structure</h2>
+          <p>
+            Before selecting a waterproofing system, you need to understand what you are waterproofing. A terrace is
+            not a single layer — it is a sandwich of materials, each with different movement characteristics.
+          </p>
+
+          <h3>The RCC Structural Slab</h3>
+          <p>
+            The reinforced concrete slab is the primary structural element. Its thickness typically ranges from 120 mm
+            to 200 mm in residential buildings. The slab itself is relatively impermeable when new, but contains
+            construction joints, tie-wire holes, and gradual microcracking from long-term deflection under load.
+            Waterproofing at the slab level (crystalline treatment) offers the most permanent solution because it
+            addresses the slab directly.
+          </p>
+
+          <h3>The Screed Layer</h3>
+          <p>
+            Above the structural slab sits a cement-sand screed, typically 40–75 mm thick, laid to create the drainage
+            slope toward the outlet. The screed is a weak layer — it is not structurally bonded to the slab in most
+            construction, and it shrinks as it cures. Shrinkage cracks appear in the screed within weeks of placement.
+            Most terrace membrane systems are applied over this screed, which means the membrane must bridge these
+            cracks throughout its service life.
+          </p>
+
+          <h3>Tiled vs. Non-Tiled Terraces</h3>
+          <p>
+            <strong>Non-tiled terraces</strong> (bare screed or membrane-exposed) require a UV-resistant topcoat or
+            protection screed. The waterproofing membrane is the only barrier, making material quality and application
+            thickness critical. These terraces are common on industrial buildings and commercial rooftops.
+          </p>
+          <p>
+            <strong>Tiled terraces</strong> use a ceramic or stone tile layer as the finish, which provides excellent
+            UV protection and physical protection for the membrane beneath. However, the tile adhesive bed introduces
+            another layer that can trap water if the waterproofing fails at tile joints. Grout joints in tiled terraces
+            must be maintained — failed grout is the most common source of gradual tile-bed saturation.
+          </p>
+
+          <hr className="kc-section-rule" />
+
+          {/* S3 */}
+          <h2 id="s3">3. System Options — Torch-Applied Membranes</h2>
+          <p>
+            Torch-applied bituminous membranes are the workhorse of industrial terrace waterproofing in India. They
+            consist of a bituminous compound (APP or SBS modified) factory-applied to a polyester or fibreglass carrier
+            and supplied in rolls, typically 1 m wide and 10 m long.
+          </p>
+
+          <h3>APP vs. SBS Modification</h3>
+          <p>
+            <strong>APP (Atactic Polypropylene)</strong> membranes are plastomeric — they are stiffer at low
+            temperatures and highly resistant to UV and heat. APP is the preferred choice for terraces that will be
+            exposed to direct sunlight without a tile overburden, as it retains its properties at surface temperatures
+            above 80 °C.
+          </p>
+          <p>
+            <strong>SBS (Styrene-Butadiene-Styrene)</strong> membranes are elastomeric — they remain flexible at low
+            temperatures and offer superior crack-bridging capacity (typically up to 3 mm bridge). SBS is preferred in
+            applications where significant movement is expected, such as large-area slabs with widely spaced expansion
+            joints.
+          </p>
+
+          <h3>Application Method</h3>
+          <p>
+            Both APP and SBS membranes are applied by melting the underside of the roll with an LPG torch as it is
+            unrolled onto a primed substrate. The heat fuses the bitumen to the primer and welds laps (minimum 100 mm
+            side laps, 150 mm end laps) into a continuous sheet. A double-layer system — 3 mm base sheet plus 4 mm cap
+            sheet — is the standard specification for occupied buildings. Single-layer 4 mm application is used on
+            utility terraces where cost drives the specification.
+          </p>
+
+          <h3>Service Life and Suitability</h3>
+          <p>
+            A correctly applied, double-layer torch-applied system with UV-stable granule surface or tile overburden
+            achieves a service life of <strong>10–15 years</strong> before re-treatment is required. Hot-work permits
+            are mandatory on occupied sites. For this reason, torch-applied systems are preferred on new construction,
+            industrial buildings, and institutional campuses where site access and hot-work controls are manageable.
+          </p>
+
+          <div className="kc-callout">
+            <div className="kc-callout-label">Engineering Note</div>
+            <p>
+              Torch-applied membranes require substrate moisture content below 6% before application. On existing
+              terraces, remove all old screed and membrane, allow the structural slab to dry for a minimum of 48 hours
+              after monsoon, and verify moisture with a CM meter before priming. Applying a torch membrane over a damp
+              substrate traps steam pockets that blister and delaminate within one monsoon season.
+            </p>
+          </div>
+
+          <hr className="kc-section-rule" />
+
+          {/* S4 */}
+          <h2 id="s4">4. System Options — Liquid-Applied Membranes</h2>
+          <p>
+            Liquid-applied membranes are cold-process systems that cure to form a seamless elastomeric waterproofing
+            layer. They eliminate the need for hot-work permits and can be applied on occupied buildings without
+            evacuating adjacent spaces. There are two dominant chemistries in the Indian market for terrace
+            applications.
+          </p>
+
+          <h3>Polyurethane (PU) Coatings</h3>
+          <p>
+            Two-component polyurethane coatings cure by a chemical reaction between the base and hardener, producing a
+            tough, high-elongation membrane (typically 400–600% elongation at break). Applied in two or three coats to
+            achieve a total DFT (dry film thickness) of 1.5–2.0 mm, PU coatings bridge dynamic cracks effectively.
+            They bond well to concrete, mortar, and existing ceramic tiles — making them suitable for over-tile
+            application without stripping the terrace.
+          </p>
+          <p>
+            PU coatings are UV-sensitive unless a polyurethane or acrylic topcoat is applied as the final layer. On
+            exposed terraces, specify a UV-stable aliphatic PU topcoat. On tiled terraces, the tiles provide adequate
+            UV protection and a standard aromatic PU base is sufficient.
+          </p>
+
+          <h3>Acrylic Waterproofing Coatings</h3>
+          <p>
+            Single-component acrylic coatings are water-based, low-odour, and can be applied by brush, roller, or
+            airless spray. They are the simplest system to apply but offer the lowest performance: elongation is
+            typically 150–250%, and the membrane is susceptible to ponding water pressure. Acrylic systems are
+            appropriate for low-pitch terraces with effective drainage as a top-up treatment between major
+            re-waterproofing cycles, not as a primary waterproofing layer on problem terraces.
+          </p>
+
+          <h3>Service Life and Suitability</h3>
+          <p>
+            PU systems achieve <strong>7–10 years</strong> of service life when applied correctly. Acrylic systems are
+            typically rated at 5–7 years. Both are suitable for occupied buildings where hot-work is impractical. They
+            are also the system of choice for terraces with complex geometry — multiple levels, large numbers of drain
+            outlets, and dense penetrations — where cut-and-weld detailing of sheet membranes becomes labour-intensive
+            and error-prone.
+          </p>
+
+          <hr className="kc-section-rule" />
+
+          {/* S5 */}
+          <h2 id="s5">5. System Options — Crystalline Treatment</h2>
+          <p>
+            Crystalline waterproofing is a fundamentally different approach. Rather than forming a membrane on the
+            surface, crystalline compounds penetrate into the concrete matrix and react with unhydrated cement particles
+            and calcium hydroxide to form insoluble calcium silicate hydrate crystals within the pore structure of the
+            concrete itself.
+          </p>
+
+          <h3>How Crystalline Systems Work</h3>
+          <p>
+            Products such as Xypex, Kryton Krystol, and similar proprietary formulations are supplied as dry powders
+            mixed with water to form a slurry. This slurry is brush-applied in two coats to a saturated-surface-dry
+            (SSD) concrete substrate. The active chemicals migrate into the concrete with the mixing water, penetrating
+            50–100 mm into the slab over time. When water contacts the treated concrete again — even years later — the
+            crystalline reaction reactivates, self-sealing new hairline cracks up to approximately 0.4 mm wide.
+          </p>
+
+          <h3>Advantages and Limitations</h3>
+          <p>
+            Crystalline treatment is the only permanent waterproofing solution. Once the chemicals are integrated into
+            the concrete, they cannot be stripped away. The system is particularly valuable at structural concrete
+            construction joints, tie holes, and honeycombed sections where membrane adhesion is unreliable.
+          </p>
+          <p>
+            The key limitation is crack size: crystalline systems self-seal cracks up to approximately 0.4 mm. Wider
+            structural cracks or movement joints must be addressed with supplementary sealant or injection before
+            crystalline treatment. Crystalline is also higher in material cost than bituminous sheet systems on a
+            per-square-metre basis, though the permanent nature eliminates future re-treatment costs.
+          </p>
+
+          <h3>Best Use Case on Terraces</h3>
+          <p>
+            For terraces, crystalline treatment is most often specified as a{' '}
+            <strong>complementary layer</strong> — applied to the structural slab surface before a screed is placed,
+            addressing the slab-level porosity and any construction defects, while a surface membrane handles the
+            screed and finish layer. This two-layer defence is the highest-performance approach and is specified on
+            water-retaining structures such as overhead tanks and podium terraces with landscaping above.
+          </p>
+
+          <hr className="kc-section-rule" />
+
+          {/* S6 */}
+          <h2 id="s6">6. Surface Preparation — The Critical Step</h2>
+          <p>
+            Surface preparation is responsible for more waterproofing failures than any other single factor. A premium
+            membrane applied to a poorly prepared surface will fail at the bond line within one or two monsoon seasons.
+            There are no shortcuts here.
+          </p>
+
+          <h3>The Tap-Test</h3>
+          <p>
+            Before any work begins, the entire terrace surface must be systematically tap-tested. Strike the screed
+            surface with a steel rod or hammer at approximately 300 mm intervals across the full area. A hollow sound
+            indicates debonding — the screed has separated from the slab beneath it. All hollow-sounding areas must be
+            cut out and replaced. Applying membrane over a debonded screed creates a drum that will delaminate at the
+            first thermal cycle.
+          </p>
+
+          <h3>Grinding and Mechanical Keying</h3>
+          <p>
+            All existing paint, curing compounds, laitance (the weak surface layer of fine particles left after
+            concrete curing), and old waterproofing residue must be removed by mechanical grinding or shot-blasting.
+            The prepared surface should feel like fine-grained sandpaper — visibly open-textured, free of any shiny or
+            glazed areas. Dust must be blown out with compressed air before primer application.
+          </p>
+          <p>
+            Cracks wider than 0.3 mm should be routed to a minimum 6 mm width and 10 mm depth using an angle grinder,
+            cleaned, and filled with a flexible polyurethane sealant or hydraulic cement before the waterproofing
+            system is applied over them.
+          </p>
+
+          <h3>Primer Application — Why It Cannot Be Skipped</h3>
+          <p>
+            Primer serves two functions: it seals the substrate to reduce suction (which causes membrane pinholes on
+            porous surfaces), and it creates a chemical bond between the concrete substrate and the waterproofing
+            membrane. Each membrane system has a specified primer — bitumen-based solvent primer for torch systems, PU
+            primer for polyurethane membranes, acrylic primer for acrylic coatings. Using the wrong primer or skipping
+            primer entirely is a defect that voids any product warranty and guarantees premature failure.
+          </p>
+          <p>
+            Apply primer uniformly at the manufacturer's recommended spread rate (typically 0.15–0.25 kg/m² for
+            bitumen primers) and allow it to become touch-dry before membrane application. On hot Hyderabad afternoons,
+            this can be as short as 20–30 minutes; on cool or humid days, allow up to 60 minutes.
+          </p>
+
+          <hr className="kc-section-rule" />
+
+          {/* S7 */}
+          <h2 id="s7">7. The Application Process</h2>
+          <p>
+            The following sequence describes a complete terrace waterproofing application for a torch-applied system on
+            an existing RCC terrace. The same logical sequence applies to liquid-applied systems with the membrane
+            application steps adapted accordingly.
+          </p>
+
+          <h3>Step 1 — Complete Clearance and Cleaning</h3>
+          <p>
+            Remove all loose material, furniture, satellite dish mounts, AC units, and temporary structures from the
+            terrace. Pressure-wash the entire surface at 150–200 bar to remove biological growth, silt, and loose
+            mortar. Allow to dry thoroughly.
+          </p>
+
+          <h3>Step 2 — Drain Outlet Detailing</h3>
+          <p>
+            Remove all existing drain grates and clean out the drain barrels. If cast-iron outlets have corroded,
+            replace them with UPVC or SS flanged outlets bonded into the slab with epoxy mortar. The outlet flange must
+            be mechanically anchored and sealed — this is where most terrace leaks originate. The waterproofing
+            membrane will later be applied over the flange and trimmed into the barrel.
+          </p>
+
+          <h3>Step 3 — Crack Routing and Filling</h3>
+          <p>
+            Route all visible cracks to 6 x 10 mm profile, blow clean, and fill with single-component polyurethane
+            sealant. Allow sealant to cure (typically 24 hours) before proceeding. Fill all bolt holes, tie-wire holes,
+            and surface voids with cementitious repair mortar and allow to cure.
+          </p>
+
+          <h3>Step 4 — Parapet and Upstand Detailing</h3>
+          <p>
+            Waterproofing must turn up at every vertical surface — parapet walls, plant room walls, columns, and
+            equipment bases — to a minimum height of 300 mm above finished floor level (or 150 mm above the highest
+            expected water level, whichever is greater). Prepare these upstand surfaces by hacking to expose aggregate
+            and applying a bonding slurry. On torch systems, the membrane is carried up the upstand and mechanically
+            fixed at the termination edge with a metal counter-flashing.
+          </p>
+
+          <h3>Step 5 — Primer Application</h3>
+          <p>
+            Apply primer uniformly across all horizontal and vertical surfaces using a brush or roller. Ensure complete
+            coverage without puddles or skipped areas. Allow to become touch-dry.
+          </p>
+
+          <h3>Step 6 — Membrane Application</h3>
+          <p>
+            For torch-applied systems, begin at the lowest point (drain outlets) and work toward the parapet. Unroll
+            the membrane, torch the underside to melt the bitumen, and press firmly to the primed substrate. All laps
+            must be heat-welded and rolled with a silicone pressure roller while still hot. Apply reinforcement fabric
+            (polyester fleece) at all internal and external corners before the main membrane rolls. Apply cap sheet
+            over the base sheet in a staggered pattern so that no lap joints align vertically. Check all lap welds by
+            probing with a rounded spatula — any un-welded section must be re-torched immediately.
+          </p>
+
+          <h3>Step 7 — Protection Screed</h3>
+          <p>
+            Immediately after the membrane has cooled (or cured, for liquid systems), apply a 40 mm cement-sand
+            protection screed with a polythene slip membrane between the waterproofing and the screed. The slip
+            membrane allows the screed to move without tearing the waterproofing below. Incorporate screed movement
+            joints at 3 m centres and at all upstand junctions. Cure the screed by water spraying for a minimum of
+            seven days.
+          </p>
+
+          <h3>Step 8 — Drain Outlet Completion and Flood-Test</h3>
+          <p>
+            Reinstall drain grates with stainless steel basket strainers. Plug all drains and flood the terrace with
+            50 mm of water. Leave for 24 hours and inspect the ceiling below for any moisture ingress. A successful
+            flood-test is the only reliable proof of system integrity before handing over the terrace.
+          </p>
+
+          {/* COMPARISON TABLE */}
+          <h3>System Comparison at a Glance</h3>
+          <div className="kc-table-wrap">
+            <table className="kc-table">
+              <thead>
+                <tr>
+                  <th>System</th>
+                  <th>Life Expectancy</th>
+                  <th>Best For</th>
+                  <th>Cost Range (per m²)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Torch-Applied (APP/SBS) — Double Layer</strong></td>
+                  <td>10–15 years</td>
+                  <td>Industrial, institutional, new construction; no occupied floors below during work</td>
+                  <td>₹ 180–280</td>
+                </tr>
+                <tr>
+                  <td><strong>PU Liquid Membrane — 2-coat</strong></td>
+                  <td>7–10 years</td>
+                  <td>Occupied buildings, complex geometry, over-tile application</td>
+                  <td>₹ 160–240</td>
+                </tr>
+                <tr>
+                  <td><strong>Acrylic Coating — 3-coat</strong></td>
+                  <td>5–7 years</td>
+                  <td>Low-risk terraces, top-up treatment, budget-constrained projects</td>
+                  <td>₹ 80–130</td>
+                </tr>
+                <tr>
+                  <td><strong>Crystalline Treatment (Xypex / Kryton)</strong></td>
+                  <td>Permanent (slab lifetime)</td>
+                  <td>Water-retaining structures, podium slabs, slab-level treatment before screed</td>
+                  <td>₹ 220–350</td>
+                </tr>
+                <tr>
+                  <td><strong>Crystalline + PU Liquid (Combined)</strong></td>
+                  <td>15+ years effective</td>
+                  <td>High-value terraces, occupied hospitals/hotels, worst-case problem terraces</td>
+                  <td>₹ 360–520</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style={{ fontSize: '0.78rem', color: 'var(--text-dim)', marginTop: '-0.5rem' }}>
+            Cost ranges are indicative for Hyderabad market as of 2025 and exclude GST, scaffolding, and protection
+            screed. Actual cost depends on terrace condition, access difficulty, and drain count.
+          </p>
+
+          <hr className="kc-section-rule" />
+
+          {/* S8 */}
+          <h2 id="s8">8. Maintenance and Inspection</h2>
+          <p>
+            Even the best waterproofing system degrades without maintenance. A simple annual inspection programme will
+            catch problems early — when they are still inexpensive to repair — and extend system life significantly.
+          </p>
+
+          <h3>Annual Inspection Checklist</h3>
+          <ul>
+            <li>
+              <strong>Drain outlets</strong> — clear all silt and debris from drain basket strainers and visually
+              confirm water flows freely. Do this in September (post-monsoon) and again in May (pre-monsoon).
+            </li>
+            <li>
+              <strong>Parapet coping joints</strong> — inspect sealant at coping stone joints and wall-to-slab
+              junctions. Replace any sealant that has cracked, pulled away, or been compromised by paint.
+            </li>
+            <li>
+              <strong>Screed surface</strong> — tap-test any areas that sound hollow. Small hollow patches can be
+              injected with epoxy grout; large areas require re-laying.
+            </li>
+            <li>
+              <strong>Membrane upstands</strong> — check that membrane terminations at parapets are still sealed. Look
+              for blistering, lifting edges, or UV chalking.
+            </li>
+            <li>
+              <strong>Tile grout</strong> (tiled terraces) — re-grout any joints that have cracked or washed out. Use
+              a polymer-modified flexible grout, not standard OPC grout.
+            </li>
+            <li>
+              <strong>Pipe penetrations</strong> — inspect all sealant collars around plumbing pipes and satellite
+              cable penetrations. These are the highest-risk point failures on any terrace.
+            </li>
+            <li>
+              <strong>Ceiling below</strong> — inspect the ceiling of the topmost occupied floor for any staining,
+              salt efflorescence, or damp patches. Correlate any findings with the terrace above.
+            </li>
+          </ul>
+
+          <h3>What Not to Do</h3>
+          <p>
+            Many terrace leaks are caused by post-waterproofing activity, not by system failure. Communicate these
+            restrictions to building occupants and maintenance staff:
+          </p>
+          <ul>
+            <li>
+              <strong>Never drill into a waterproofed terrace</strong> without re-sealing. Every drill hole is a
+              direct water path through the protection screed and membrane.
+            </li>
+            <li>
+              <strong>Never place heavy concentrated loads</strong> (water drums, inverter batteries, generator sets)
+              directly on the screed without a load-distributing steel plate. Point loads crack the screed and punch
+              through the membrane.
+            </li>
+            <li>
+              <strong>Never apply bituminous paint or tar on top of a PU or acrylic membrane</strong> — the solvents
+              in bituminous products attack polymer membranes and cause delamination.
+            </li>
+            <li>
+              <strong>Never block or reduce drain outlet diameter</strong> with incorrect replacement grates. Drains
+              must remain fully open during monsoon.
+            </li>
+          </ul>
+
+          <div className="kc-callout tip">
+            <div className="kc-callout-label">Tip</div>
+            <p>
+              Take a photograph log of your terrace every year — drains, parapet junctions, and any areas of concern.
+              Year-on-year comparison catches slow-developing problems (growing crack widths, progressive
+              efflorescence) before they become expensive failures. Store the photographs with your building
+              maintenance records along with the waterproofing contractor's application report and material data
+              sheets.
+            </p>
+          </div>
+
+          <h3>When to Re-Waterproof</h3>
+          <p>
+            Do not wait for an active ceiling leak before acting. The following signs indicate that re-waterproofing
+            is required within one to two monsoon seasons:
+          </p>
+          <ul>
+            <li>Membrane blistering over more than 5% of the terrace area</li>
+            <li>Visible cracking of the protection screed in a grid pattern (map cracking)</li>
+            <li>Persistent efflorescence (white salt deposits) on the ceiling below the terrace</li>
+            <li>Membrane upstand terminations that have pulled away from the parapet wall</li>
+            <li>System age approaching the rated service life (refer to the table above)</li>
+          </ul>
+          <p>
+            Acting proactively — before active leakage begins — avoids the far greater cost of ceiling finishes
+            repair, rebar corrosion treatment, and the disruption of an emergency monsoon repair.
+          </p>
+
+          {/* INLINE CTA BOX */}
+          <div
+            style={{
+              marginTop: '2.5rem',
+              background: 'linear-gradient(135deg, rgba(30,90,168,0.15), rgba(243,156,18,0.08))',
+              border: '1px solid var(--border-gold)',
+              borderRadius: 'var(--radius-lg)',
+              padding: '2rem',
+              textAlign: 'center',
+            }}
+          >
+            <p
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.58rem',
+                letterSpacing: '0.14em',
+                textTransform: 'uppercase',
+                color: 'var(--gold)',
+                margin: '0 0 0.75rem',
+              }}
+            >
+              Free Site Assessment
+            </p>
+            <p
+              style={{
+                fontSize: '1rem',
+                fontWeight: 600,
+                color: 'var(--text)',
+                margin: '0 0 0.6rem',
+                lineHeight: 1.4,
+              }}
+            >
+              Need help selecting the right system for your terrace?
+            </p>
+            <p
+              style={{
+                fontSize: '0.88rem',
+                color: 'var(--text-muted)',
+                margin: '0 0 1.5rem',
+                lineHeight: 1.6,
+              }}
+            >
+              We assess and specify — free site visit. Our engineers will inspect your terrace, identify the failure
+              mode, and recommend the most appropriate system backed by a written report.
+            </p>
+            <a
+              href="/#contact"
+              style={{
+                display: 'inline-block',
+                background: 'var(--gold)',
+                color: '#070A14',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.65rem',
+                fontWeight: 700,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                padding: '0.75rem 2rem',
+                borderRadius: 'var(--radius)',
+                transition: 'opacity 0.2s',
+              }}
+            >
+              Book a Free Site Visit
+            </a>
+          </div>
+
+        </article>
+
+        {/* SIDEBAR */}
+        <aside className="kc-sidebar">
+          <div className="kc-toc">
+            <div className="kc-toc-title">In This Article</div>
+            <ol>
+              <li><a href="#s1">Why Terraces Leak</a></li>
+              <li><a href="#s2">Understanding Your Terrace Structure</a></li>
+              <li><a href="#s3">Torch-Applied Membranes</a></li>
+              <li><a href="#s4">Liquid-Applied Membranes</a></li>
+              <li><a href="#s5">Crystalline Treatment</a></li>
+              <li><a href="#s6">Surface Preparation</a></li>
+              <li><a href="#s7">The Application Process</a></li>
+              <li><a href="#s8">Maintenance and Inspection</a></li>
+            </ol>
+          </div>
+          <div className="kc-cta-box">
+            <p>Need help selecting the right system for your terrace? We assess and specify — free site visit.</p>
+            <a href="/#contact">Book Free Site Visit</a>
+          </div>
+        </aside>
+
+      </div>
+
+      {/* RELATED ARTICLES */}
+      <div className="kc-related">
+        <div className="kc-related-inner">
+          <div className="kc-related-title">Related Articles</div>
+          <div className="kc-related-grid">
+            <Link to="/knowledge/why-waterproofing-fails" className="kc-related-card">
+              <div className="kc-related-card-cat">Waterproofing</div>
+              <h4>Why Waterproofing Fails</h4>
+              <p>The five root causes behind every failed treatment — wrong system, bad prep, skipped details, and more.</p>
+            </Link>
+            <Link to="/knowledge/basement-leakage-guide" className="kc-related-card">
+              <div className="kc-related-card-cat">Waterproofing</div>
+              <h4>Basement Leakage Guide</h4>
+              <p>How water enters basements, the difference between hydrostatic and capillary ingress, and how to stop both.</p>
+            </Link>
+            <Link to="/knowledge/expansion-joints" className="kc-related-card">
+              <div className="kc-related-card-cat">Waterproofing</div>
+              <h4>Expansion Joints — Why They Leak and How to Fix Them</h4>
+              <p>Sealant selection, joint geometry, and the most common mistakes that cause repeat failures.</p>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+    </Layout>
+  );
+}

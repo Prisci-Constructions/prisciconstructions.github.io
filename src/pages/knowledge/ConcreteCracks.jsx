@@ -1,0 +1,496 @@
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Layout from '@/components/layout/Layout';
+import { useScrollTop } from '@/hooks/useScrollTop';
+import { useSEO } from '@/hooks/useSEO';
+import '@/styles/article.css';
+
+export default function ConcreteCracks() {
+  useScrollTop();
+  useSEO({
+    title: 'Concrete Cracks — Classification, Assessment, and Repair | Prisci Constructions',
+    description: "A field engineer's guide to classifying concrete cracks — active vs. dormant, structural vs. non-structural — and selecting the correct repair method for each type.",
+    path: '/knowledge/concrete-cracks',
+  });
+
+  useEffect(() => {
+    const links = document.querySelectorAll('.kc-toc a');
+    const sections = document.querySelectorAll('.kc-article h2[id]');
+    const handler = () => { let c = ''; sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) c = s.id; }); links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + c)); };
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
+
+  return (
+    <Layout>
+
+      <div className="kc-breadcrumb">
+        <Link to="/">Home</Link>
+        <span>/</span>
+        <Link to="/knowledge">Knowledge Center</Link>
+        <span>/</span>
+        Concrete Cracks &mdash; Classification and Repair
+      </div>
+
+      <div className="kc-hero">
+        <div className="kc-hero-inner">
+          <span className="kc-category-badge structural">Structural Rehabilitation</span>
+          <h1 className="kc-title">Concrete Cracks — Classification, Assessment, and Repair</h1>
+          <p className="kc-subtitle">
+            Not all cracks are equal. A hairline crack in a partition wall is a cosmetic nuisance;
+            a 1.5 mm crack in a beam soffit with rust staining is a structural emergency. This guide
+            walks through how to classify what you see, measure it correctly, and match the repair
+            method to the crack — not the other way around.
+          </p>
+          <div className="kc-meta">
+            <span>Structural Rehabilitation</span>
+            <span className="kc-meta-dot">·</span>
+            <span>8 min read</span>
+            <span className="kc-meta-dot">·</span>
+            <span>Prisci Constructions Engineering Team</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="kc-layout">
+
+        <article className="kc-article">
+
+          <h2 id="s1">1. Why Concrete Cracks</h2>
+          <p>
+            Concrete is strong in compression and weak in tension — its tensile strength is roughly
+            one-tenth of its compressive strength. Any mechanism that induces tensile stress in excess
+            of this threshold will open a crack. In practice, several distinct mechanisms are
+            responsible for the majority of cracks seen in Indian buildings.
+          </p>
+
+          <h3>Plastic Shrinkage</h3>
+          <p>
+            This occurs in the first few hours after casting, before the concrete has set. If the rate
+            of surface evaporation exceeds the rate at which bleed water rises to replace it — a common
+            situation on exposed terraces in Hyderabad's summer heat — the surface dries and contracts
+            while the interior is still plastic. The result is a pattern of roughly parallel or random
+            shallow cracks, typically 1–3 mm deep. They are almost always non-structural but can
+            provide a pathway for chloride and carbonation ingress if left unsealed.
+          </p>
+
+          <h3>Drying Shrinkage</h3>
+          <p>
+            As concrete loses moisture to the surrounding environment over the weeks and months
+            following casting, it contracts. Where this contraction is restrained — by adjacent
+            elements, by reinforcement, or by the self-weight of the member — tensile stress builds
+            until cracking occurs. Drying shrinkage cracks are characterised by their map-cracking or
+            crazing pattern on slabs and walls. High water-cement ratios and inadequate curing
+            significantly increase shrinkage magnitude.
+          </p>
+
+          <h3>Thermal Movement</h3>
+          <p>
+            Large concrete elements — particularly long external walls, exposed terraces, and
+            bridge decks — expand and contract with daily and seasonal temperature swings. Where
+            movement is restrained, stress accumulates at points of weakness, typically at re-entrant
+            corners, door and window openings, and construction joints. These cracks are often
+            <em>active</em>, meaning they open and close with the seasons.
+          </p>
+
+          <h3>Structural Overload</h3>
+          <p>
+            When applied loads exceed the design capacity of a member — whether due to increased
+            live loading, removal of load-bearing walls, or deterioration reducing the effective
+            cross-section — flexural and shear cracks form. Flexural cracks open at right angles to
+            the span direction on the tension face. Shear cracks form at approximately 45 degrees near
+            the supports. Both are structural and require immediate attention.
+          </p>
+
+          <h3>Foundation Settlement</h3>
+          <p>
+            Differential settlement — where one part of a foundation sinks more than another — induces
+            diagonal and staircase cracks in walls and frames as the structure distorts. The crack
+            pattern often points toward the area of greatest settlement. Active settlement cracks
+            are particularly serious because the driving mechanism may still be ongoing.
+          </p>
+
+          <h3>Rebar Corrosion Pressure</h3>
+          <p>
+            When the steel reinforcement embedded in concrete corrodes, the rust products occupy
+            a volume approximately 2.5 to 6.5 times greater than the original steel. This expansive
+            pressure cracks the concrete cover from the inside — producing longitudinal cracks directly
+            above reinforcing bars, followed by delamination and spalling. These cracks are always
+            structural in context and indicate an advanced deterioration state.
+          </p>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s2">2. Active vs. Dormant Cracks</h2>
+          <p>
+            Before choosing any repair method, the single most important determination to make is
+            whether a crack is <strong>active</strong> (still moving) or <strong>dormant</strong>
+            (stabilised). Applying the wrong treatment based on this distinction is the most
+            common cause of repair failure.
+          </p>
+
+          <h3>Active Cracks</h3>
+          <p>
+            An active crack is one that continues to change in width — opening, closing, or
+            propagating — driven by ongoing thermal movement, live loading, creep, or continuing
+            settlement. The defining characteristic is movement over time. Active cracks demand a
+            <strong>flexible repair system</strong> — typically a polyurethane or polysulphide
+            sealant — that can accommodate the cyclic deformation without debonding or fracturing.
+            Installing a rigid epoxy across an active crack is one of the most reliable ways to
+            guarantee a repeat failure: the epoxy will fracture, usually through the body of the
+            concrete adjacent to the repair.
+          </p>
+
+          <div className="kc-callout warning">
+            <div className="kc-callout-label">Warning</div>
+            <p>
+              Never inject or fill an active (still-moving) crack with rigid epoxy resin. As the
+              crack cycles open and closed under thermal or structural movement, the epoxy — which
+              bonds rigidly to both crack faces — will fracture through the surrounding concrete,
+              creating a larger defect than the original crack. Active cracks require a flexible
+              polyurethane or polysulphide sealant system that can move with the structure.
+            </p>
+          </div>
+
+          <h3>Dormant Cracks</h3>
+          <p>
+            A dormant crack is one whose cause has ceased and whose width is stable. Settlement
+            cracks where the soil has consolidated, shrinkage cracks in mature concrete, and cracks
+            from a one-time overload event that has since been resolved are typically dormant.
+            Dormant cracks can receive rigid repair systems — epoxy pastes and low-viscosity epoxy
+            injection mortars — which restore tensile continuity across the crack plane and, when
+            applied correctly, produce a repair zone stronger than the parent concrete.
+          </p>
+
+          <h3>How to Determine Activity</h3>
+          <p>
+            The definitive method is to install tell-tales (crack monitors) or a Demec gauge and
+            record readings over a minimum of four to six weeks, ideally spanning a seasonal
+            temperature change. A simpler field check is to apply a brittle lime mortar patch across
+            the crack and examine it after 30 days — a re-opened patch confirms activity. Rust
+            staining, fresh concrete dust in the crack, and loose edges are also indicators of
+            recent movement.
+          </p>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s3">3. Structural vs. Non-Structural Classification</h2>
+          <p>
+            The second classification axis — structural versus non-structural — determines the
+            urgency of intervention. A structural crack affects the load-bearing capacity of the
+            element; a non-structural crack does not, though it may still admit water and initiate
+            deterioration.
+          </p>
+
+          <h3>Structural Cracks — Key Indicators</h3>
+          <ul>
+            <li>Located in a primary load-bearing element: column, beam, load-bearing wall, or suspended slab</li>
+            <li>Width exceeds 0.3 mm (the threshold specified in IS 456:2000 for reinforced concrete in severe exposure conditions)</li>
+            <li>Associated with visible deflection, sagging, or distortion of the element</li>
+            <li>Rust staining on the concrete surface — indicating that the reinforcement is corroding and the cover crack is corrosion-induced</li>
+            <li>Accompanied by spalling, delamination, or hollow sound on hammer-tapping</li>
+            <li>Diagonal cracks at 45 degrees near column-beam junctions — a shear indicator</li>
+          </ul>
+          <p>
+            Any crack displaying one or more of these characteristics should be treated as structural
+            until proven otherwise by a qualified structural engineer. Do not apply cosmetic treatment
+            over a potentially structural crack — it hides the evidence needed for diagnosis.
+          </p>
+
+          <h3>Non-Structural Cracks — Characteristics</h3>
+          <ul>
+            <li>Located in non-load-bearing elements: plaster finishes, brick or block partition walls, screed layers</li>
+            <li>Hairline width — typically below 0.1 mm and not measurable with a standard crack gauge</li>
+            <li>No associated deflection, sagging, or distortion in the adjacent structure</li>
+            <li>Map cracking or crazing pattern typical of shrinkage in plaster or screed</li>
+            <li>No rust staining, no spalling, no hollow sound on tapping</li>
+          </ul>
+          <p>
+            Non-structural cracks are primarily a durability and aesthetics concern. Left untreated,
+            they can admit rainwater, accelerate carbonation of the concrete cover, and eventually
+            initiate corrosion of the reinforcement — converting a cosmetic defect into a structural
+            one over time.
+          </p>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s4">4. Crack Width Assessment</h2>
+          <p>
+            Crack width is the primary measurable parameter for classifying severity and selecting
+            treatment. It is measured using a <strong>crack width comparator card</strong> — a
+            card printed with reference lines of known widths (0.05 mm, 0.1 mm, 0.2 mm, 0.3 mm,
+            0.5 mm, 1.0 mm) held against the crack — or with a crack microscope (optical loupe
+            with a calibrated reticle) for higher accuracy.
+          </p>
+
+          <div className="kc-callout tip">
+            <div className="kc-callout-label">Tip</div>
+            <p>
+              When photographing cracks for records or engineering reports, always include a scale
+              reference in the frame. A standard 150 mm steel rule held alongside the crack gives the
+              reviewer accurate dimensional context. Photograph under raking light (torch held at a
+              low angle to the surface) to make hairline cracks visible. Record the date, location
+              reference, element type, and orientation of the crack on every photograph.
+            </p>
+          </div>
+
+          <p>
+            The four practical width categories used in the field are as follows:
+          </p>
+
+          <div className="kc-table-wrap">
+            <table className="kc-table">
+              <thead>
+                <tr>
+                  <th>Crack Width</th>
+                  <th>Classification</th>
+                  <th>Urgency</th>
+                  <th>Recommended Repair Method</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>{'< 0.1 mm'}</strong><br /><span style={{fontSize:'0.78rem', color:'var(--text-dim)'}}>Hairline</span></td>
+                  <td>Non-structural; cosmetic</td>
+                  <td>Monitor; low urgency</td>
+                  <td>Elastomeric acrylic or polyurethane coating over the crack to seal against moisture ingress. Re-inspect at 6-month intervals.</td>
+                </tr>
+                <tr>
+                  <td><strong>0.1 – 0.3 mm</strong><br /><span style={{fontSize:'0.78rem', color:'var(--text-dim)'}}>Minor</span></td>
+                  <td>Non-structural if in cover concrete; assess element type</td>
+                  <td>Treat within 3–6 months</td>
+                  <td>If dormant: epoxy paste surface seal or gravity-fed low-viscosity epoxy. If active: route and seal with flexible PU sealant.</td>
+                </tr>
+                <tr>
+                  <td><strong>0.3 – 1.0 mm</strong><br /><span style={{fontSize:'0.78rem', color:'var(--text-dim)'}}>Significant</span></td>
+                  <td>Potentially structural — assess element and context</td>
+                  <td>Treat within weeks; structural review recommended</td>
+                  <td>If dormant structural: low-viscosity epoxy injection under pressure. If active: route and seal with PU sealant; restrict loading.</td>
+                </tr>
+                <tr>
+                  <td><strong>{'> 1.0 mm'}</strong><br /><span style={{fontSize:'0.78rem', color:'var(--text-dim)'}}>Major</span></td>
+                  <td>Structural — requires engineering assessment</td>
+                  <td>Immediate; restrict use of structure if in doubt</td>
+                  <td>Do not repair without structural engineer's direction. May require propping, section strengthening, or FRP wrapping in addition to crack repair.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            IS 456:2000 Table 19 sets crack width limits of 0.3 mm for reinforced concrete in
+            moderate to severe exposure conditions. The BS EN 1992-1-1 (Eurocode 2) limit for
+            similar conditions is 0.2 mm. In Hyderabad's coastal-influenced, hot-humid climate —
+            which IS 456 classifies as Severe to Very Severe — the tighter limit is the more
+            appropriate reference.
+          </p>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s5">5. Repair Methods by Type</h2>
+          <p>
+            Correct repair method selection follows directly from the active/dormant determination
+            and the crack width category. The four primary techniques in field use are described
+            below.
+          </p>
+
+          <h3>Elastomeric Coating — Hairline Cracks ({'< 0.1 mm'})</h3>
+          <p>
+            A flexible acrylic or polyurethane elastomeric coating applied by brush in two coats
+            over the crack line provides a waterproof membrane that bridges the crack and
+            accommodates minor movement. The crack surface should be cleaned of dust, laitance, and
+            any loose material before application. This method seals against moisture ingress but
+            does not restore tensile continuity — it is appropriate only where structural integrity
+            is not the concern.
+          </p>
+
+          <h3>Epoxy Paste — Dormant Cracks (0.1–0.3 mm)</h3>
+          <p>
+            For dormant cracks in the 0.1–0.3 mm range where tensile strength restoration is
+            required, a two-component epoxy paste (such as Fosroc Nitomortar EP, BASF MasterEmaco
+            ADH 1000, or equivalent) is trowelled into the crack. The paste must be worked into the
+            crack under hand pressure, with surplus removed flush. Compressive strength of cured
+            epoxy paste exceeds 60 N/mm², making the repair zone stronger than the surrounding
+            concrete. Pot life at 35°C is typically 20–40 minutes — plan batch sizes accordingly.
+          </p>
+
+          <h3>Low-Viscosity Epoxy Injection — Dormant Structural Cracks (0.3 mm+)</h3>
+          <p>
+            Pressure injection of low-viscosity epoxy resin (viscosity 200–500 cP at 25°C) is
+            the definitive method for restoring tensile and flexural continuity across significant
+            dormant cracks in structural elements. The procedure is as follows:
+          </p>
+          <ol>
+            <li>Blow out the crack with dry compressed air to remove dust and loose material.</li>
+            <li>Install injection ports (surface-mounted plastic nipples) at intervals equal to the
+            concrete thickness — typically 150–300 mm — starting from the lowest point.</li>
+            <li>Seal the crack surface between ports with epoxy paste or surface-applied crack sealer;
+            allow to cure to firm.</li>
+            <li>Inject low-viscosity resin at the lowest port using a hand pump at 0.2–0.5 MPa until
+            resin appears at the next port, then cap the injection port and move to the next.</li>
+            <li>Allow full cure (minimum 24 hours at 25°C) before removing ports and finishing.</li>
+          </ol>
+          <p>
+            Epoxy injection is not suitable for cracks contaminated with water, oil, or salt
+            deposits — these must be flushed and dried before injection. For water-bearing active
+            cracks, a two-stage approach using polyurethane foam injection (to stop flow) followed
+            by epoxy injection (once dry) may be required.
+          </p>
+
+          <h3>Route-and-Seal — Active Cracks (any width)</h3>
+          <p>
+            Active cracks that cannot be eliminated at source — typically thermal movement cracks
+            in exposed slabs and walls — are treated by routing and sealing. A crack chaser or
+            angle grinder cuts a uniform reservoir (typically 10 mm wide × 10 mm deep) along the
+            crack line. The reservoir is cleaned, primed with a manufacturer-specified primer, and
+            filled with a flexible polyurethane or polysulphide sealant tooled to a concave
+            surface. The sealant must be selected to accommodate the expected cyclic movement —
+            typically ± 25% of the joint width for polyurethane sealants. Backer rod is installed
+            in deeper routed channels to control sealant depth and profile.
+          </p>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s6">6. Monitoring — The Demec Gauge</h2>
+          <p>
+            The Demec (Detachable Mechanical) gauge is the standard field instrument for monitoring
+            crack movement over time. It consists of a precision digital or dial gauge mounted in a
+            frame that locates onto two stainless steel discs bonded to the concrete surface on
+            either side of the crack, at a standard gauge length of <strong>200 mm</strong>.
+          </p>
+
+          <h3>Installation and Reading Procedure</h3>
+          <ol>
+            <li>Bond a pair of Demec discs to the clean, dry concrete surface — one on each side
+            of the crack — at the standard 200 mm centre-to-centre spacing.</li>
+            <li>Allow epoxy adhesive to cure fully (minimum 2 hours at 25°C) before taking the
+            first reading.</li>
+            <li>Record the initial (datum) reading and the ambient temperature.</li>
+            <li>Take subsequent readings at regular intervals — weekly for the first month,
+            then monthly thereafter — always recording ambient temperature alongside each reading.</li>
+            <li>Calculate strain by dividing the change in gauge reading by the 200 mm gauge length.
+            Convert to movement in millimetres.</li>
+          </ol>
+
+          <h3>Interpreting Results</h3>
+          <p>
+            A crack showing movement of less than <strong>0.05 mm per month</strong> over a
+            three-month monitoring period, with no systematic trend, is considered stable (dormant)
+            and can proceed to rigid repair. Movement exceeding this threshold, or a consistent
+            opening trend, indicates an active crack that requires investigation of the driving
+            cause before any repair is attempted.
+          </p>
+          <p>
+            Temperature-corrected readings are important for external elements: a gauge length
+            change driven purely by thermal expansion of the concrete (approximately
+            10 &times; 10<sup>-6</sup> per °C for normal-weight concrete) does not indicate structural
+            movement. Apply the temperature correction factor when comparing readings taken at
+            significantly different ambient temperatures.
+          </p>
+          <p>
+            Demec gauge monitoring data should be presented in a time-versus-movement graph
+            and retained as part of the structural maintenance record. This record is required
+            if the building owner later seeks a structural certificate or plans a change of use.
+          </p>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s7">7. When to Call a Structural Engineer</h2>
+          <p>
+            A building owner or site manager can safely manage the monitoring and cosmetic treatment
+            of minor, non-structural cracks. The following situations require a qualified structural
+            engineer to be engaged before any work proceeds:
+          </p>
+          <ul>
+            <li><strong>Any crack wider than 1.0 mm</strong> — regardless of location or element type.</li>
+            <li><strong>A crack in a structural element</strong> — column, beam, load-bearing wall,
+            or suspended slab — at any width above 0.3 mm.</li>
+            <li><strong>Any crack associated with visible deflection or sagging</strong> in the
+            element — even if the crack itself is narrow.</li>
+            <li><strong>Rust staining accompanied by spalling or delamination</strong> — indicating
+            that the reinforcement cover has been breached and corrosion is active.</li>
+            <li><strong>Multiple parallel cracks in a slab or beam</strong> — a pattern consistent
+            with flexural overstress rather than shrinkage.</li>
+            <li><strong>Diagonal cracks at column-beam junctions</strong> — a shear failure indicator
+            that demands immediate structural review.</li>
+            <li><strong>Any crack in a structure that has recently experienced an overload event</strong>
+            — flooding, imposed load change, impact, fire, or adjacent excavation.</li>
+            <li><strong>A crack that has grown measurably since last inspected</strong> — trend
+            data showing systematic widening should always be reviewed by an engineer.</li>
+          </ul>
+          <p>
+            A structural engineer's assessment will typically include a visual survey, non-destructive
+            testing (rebound hammer, UPV), carbonation depth measurement, and where warranted, a
+            half-cell potential survey to establish the corrosion state of the reinforcement. The
+            outcome is a repair specification that specifies not just the crack repair method but
+            the full rehabilitation sequence — including any load restrictions that must remain in
+            place during the repair period.
+          </p>
+          <p>
+            Prisci Constructions provides crack survey, structural assessment, and repair execution
+            as an integrated service across Hyderabad, Telangana, Andhra Pradesh, Karnataka, and
+            Maharashtra. Early intervention invariably costs a fraction of the remediation required
+            once a crack has progressed to spalling, rebar exposure, or section loss.
+          </p>
+
+        </article>
+
+        <aside className="kc-sidebar">
+          <div className="kc-toc">
+            <div className="kc-toc-title">Contents</div>
+            <ol>
+              <li><a href="#s1">Why Concrete Cracks</a></li>
+              <li><a href="#s2">Active vs. Dormant Cracks</a></li>
+              <li><a href="#s3">Structural vs. Non-Structural</a></li>
+              <li><a href="#s4">Crack Width Assessment</a></li>
+              <li><a href="#s5">Repair Methods by Type</a></li>
+              <li><a href="#s6">Monitoring — The Demec Gauge</a></li>
+              <li><a href="#s7">When to Call an Engineer</a></li>
+            </ol>
+          </div>
+
+          <div className="kc-cta-box">
+            <p>Have a crack you're not sure about? Our engineers carry out crack surveys and structural assessments across Hyderabad and South India.</p>
+            <Link to="/#contact">Get a Free Assessment</Link>
+          </div>
+        </aside>
+
+      </div>
+
+      <div className="kc-related">
+        <div className="kc-related-inner">
+          <div className="kc-related-title">Related Articles — Structural Rehabilitation</div>
+          <div className="kc-related-grid">
+
+            <Link to="/knowledge/honeycombing" className="kc-related-card">
+              <div className="kc-related-card-cat">Structural</div>
+              <h4>Honeycombing in Concrete</h4>
+              <p>Why voids form during casting, how to detect them with tapping and UPV, and the repair sequence that restores structural integrity.</p>
+            </Link>
+
+            <Link to="/knowledge/carbonation" className="kc-related-card">
+              <div className="kc-related-card-cat">Structural</div>
+              <h4>Carbonation of Concrete</h4>
+              <p>The chemical process that destroys the protective alkalinity around rebar — and how to measure carbonation depth and apply anti-carbonation coatings.</p>
+            </Link>
+
+            <Link to="/knowledge/spalling" className="kc-related-card">
+              <div className="kc-related-card-cat">Structural</div>
+              <h4>Concrete Spalling — Causes, Warning Signs, and Repair</h4>
+              <p>Why chunks of concrete fall off buildings, the early warning signs to look for, and the correct sequence for patch repair and corrosion treatment.</p>
+            </Link>
+
+          </div>
+        </div>
+      </div>
+
+      <footer className="kc-footer">
+        <p>
+          &copy; 2025 Prisci Constructions &nbsp;&middot;&nbsp; Hyderabad &nbsp;&middot;&nbsp;
+          <Link to="/#contact">Get a Free Consultation</Link>
+        </p>
+      </footer>
+
+    </Layout>
+  );
+}

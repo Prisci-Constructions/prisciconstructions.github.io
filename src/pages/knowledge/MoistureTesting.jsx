@@ -1,0 +1,241 @@
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Layout from '@/components/layout/Layout';
+import { useScrollTop } from '@/hooks/useScrollTop';
+import { useSEO } from '@/hooks/useSEO';
+import '@/styles/article.css';
+
+export default function MoistureTesting() {
+  useScrollTop();
+  useSEO({
+    title: 'Moisture Testing in Buildings | Knowledge Center | Prisci Constructions',
+    description: 'A practical guide to moisture testing instruments — pin meters, capacitance meters, RH probes, and the calcium chloride test — with guidance on interpreting the results.',
+    path: '/knowledge/moisture-testing',
+  });
+
+  useEffect(() => {
+    const links = document.querySelectorAll('.kc-toc a');
+    const sections = document.querySelectorAll('.kc-article h2[id]');
+    const handler = () => { let c = ''; sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) c = s.id; }); links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + c)); };
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
+
+  return (
+    <Layout>
+
+      <div className="kc-breadcrumb">
+        <Link to="/">Home</Link>
+        <span>/</span>
+        <Link to="/knowledge">Knowledge Center</Link>
+        <span>/</span>
+        <Link to="/knowledge">Building Diagnostics</Link>
+        <span>/</span>
+        Moisture Testing in Buildings
+      </div>
+
+      <div className="kc-hero">
+        <div className="kc-hero-inner">
+          <span className="kc-category-badge diagnostics">Building Diagnostics</span>
+          <h1 className="kc-title">Moisture Testing in Buildings — Instruments, Methods, and Interpretation</h1>
+          <p className="kc-subtitle">Before any repair can be designed, the extent and location of moisture must be established with instruments. A visual survey alone misses concealed ingress paths — and treating the symptom while missing the source guarantees a repeat failure.</p>
+          <div className="kc-meta">
+            <span>Prisci Constructions</span>
+            <span className="kc-meta-dot">·</span>
+            <span>Building Diagnostics</span>
+            <span className="kc-meta-dot">·</span>
+            <span>6 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="kc-layout">
+
+        <article className="kc-article">
+
+          <h2 id="s1">1. Why Moisture Measurement Matters</h2>
+          <p>Water damage is almost never self-explanatory. A stain on a ceiling could originate from a failed terrace membrane three floors above, a slow plumbing leak within the slab, or capillary rise from a saturated ground beam. You cannot design an effective repair if you do not know where the moisture is coming from or how much is present.</p>
+          <p>Moisture meters and probes allow engineers to <strong>map the extent of ingress</strong> — plotting wet and dry readings across a surface to trace the gradient from saturated zone to dry zone. That gradient is the path water has followed, and it points back to the source. Without this map, contractors repair in the wrong location, miss hidden pockets of saturation, and expose building owners to repeat failures within a single monsoon cycle.</p>
+          <p>Measurement also establishes a baseline. After repairs are completed, a follow-up survey with the same instruments confirms whether the intervention has worked — or whether residual moisture remains trapped in the substrate, which can cause adhesive failures under floor finishes or blistering under paint membranes.</p>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s2">2. Pin-Type Resistance Meters</h2>
+          <p>The pin meter is the most common moisture measurement tool on construction sites. Two sharp electrodes — pins — are driven into the material being tested. The instrument applies a small electrical current and measures the <strong>resistance between the pins</strong>: dry materials resist electrical flow; wet materials conduct it. The instrument converts this resistance reading into a moisture content figure.</p>
+
+          <h3>How readings are reported</h3>
+          <p>Most pin meters report in <strong>WME% — Wood Moisture Equivalent</strong>. This is calibrated against timber, where readings above approximately 20% indicate conditions favourable for fungal growth. For concrete, the WME scale is used as a comparative indicator rather than an absolute moisture content, since concrete's electrical properties differ significantly from timber. A reading of 80–100 WME% in concrete indicates saturation; readings below 30% suggest relatively dry conditions.</p>
+
+          <h3>Depth and instrument examples</h3>
+          <p>Standard pins penetrate to roughly <strong>5–20 mm</strong> below the surface. Extended-pin or hammer-electrode attachments allow readings to 40 mm. Common instruments include the <strong>Protimeter Surveymaster</strong> and <strong>Tramex Encounter Plus</strong>. Both are widely used in UK and Indian building surveys.</p>
+
+          <div className="kc-callout warning">
+            <div className="kc-callout-label">Warning — Salt Contamination</div>
+            <p>Salts dissolved in pore water dramatically increase electrical conductivity. In masonry affected by rising damp or efflorescence, salt contamination causes the pin meter to report <strong>falsely high moisture readings</strong> even in dry material. Any reading from a visibly efflorescent surface should be treated with scepticism and verified with a non-electrical method.</p>
+          </div>
+
+          <p>Despite this limitation, pin meters are fast, inexpensive, and excellent for rapid screening across large wall areas. Their readings are most reliable in timber, plywood, and relatively salt-free concrete.</p>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s3">3. Capacitance (Non-Invasive) Meters</h2>
+          <p>Capacitance meters work on a fundamentally different principle. Instead of driving pins into the material, the instrument is pressed flat against the surface. It emits an electromagnetic field that penetrates into the substrate, and measures changes in the field's <strong>dielectric constant</strong> — the degree to which the material stores electrical energy. Water has a dielectric constant approximately 80 times higher than dry building materials, so the presence of moisture causes a pronounced change in the reading.</p>
+
+          <h3>Advantages</h3>
+          <ul>
+            <li><strong>No surface damage.</strong> Scans can be performed through paint, ceramic tiles, vinyl flooring, and plaster finishes without drilling or pin punctures.</li>
+            <li><strong>Fast area coverage.</strong> An engineer can sweep a wall in seconds, identifying hot-spots for follow-up investigation.</li>
+            <li><strong>Depth.</strong> Depending on the instrument, readings reflect conditions <strong>50–80 mm</strong> below the surface — deeper than pin meters.</li>
+          </ul>
+
+          <h3>Limitations</h3>
+          <p>Capacitance meters indicate the <strong>relative presence of moisture</strong>, not an absolute moisture content. Dense materials (reinforced concrete with rebar, tiles with an adhesive layer) affect the reading independently of moisture. The instrument is most useful for <strong>screening and mapping</strong> — identifying which areas warrant follow-up testing — rather than for producing a definitive moisture content figure.</p>
+          <p>Common instruments include the <strong>Tramex CME5</strong> (Concrete Moisture Encounter) and <strong>Gann Hydromette</strong> series. Both are routinely used in pre-flooring surveys and post-repair verification.</p>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s4">4. Relative Humidity Probes</h2>
+          <p>When absolute moisture content at depth is required — particularly before laying a floor finish — relative humidity (RH) probes provide the most reliable measurement method for concrete slabs.</p>
+
+          <h3>Method</h3>
+          <p>A sleeve hole is drilled into the concrete slab, typically to a depth of <strong>40% of the slab thickness</strong> (the depth at which the equilibrium moisture condition of the slab is most accurately represented). The hole is sealed and left for a minimum of <strong>24 hours</strong> to allow the humidity within the sleeve to equilibrate with the moisture in the surrounding concrete. A calibrated hygro-thermometer probe is then inserted and the relative humidity reading recorded.</p>
+
+          <h3>Applicable standards</h3>
+          <p>The RH in-situ probe method is standardised under <strong>BS 8203</strong> (UK) and <strong>ASTM F2170</strong> (USA). Both standards define the critical threshold for floor finish adhesion at <strong>75% RH</strong>. Above this level, moisture vapour emission is sufficient to break down adhesive bonds beneath vinyl, timber, and resin floor finishes, causing lifting, bubbling, and adhesive failure.</p>
+          <p>RH probes are the preferred method where floor finishes are involved because the reading represents <strong>true moisture content at depth</strong>, unaffected by surface evaporation, salt content, or the dielectric properties of surface coatings.</p>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s5">5. Calcium Chloride Test</h2>
+          <p>The calcium chloride test — standardised under <strong>ASTM F1869</strong> — measures the <strong>moisture vapour emission rate (MVER)</strong> from a concrete slab surface rather than the moisture content within the slab body.</p>
+
+          <h3>Procedure</h3>
+          <p>A pre-weighed dish of anhydrous (water-free) calcium chloride is placed on the slab surface and sealed under a plastic dome for 60–72 hours. Calcium chloride is hygroscopic — it absorbs moisture vapour from the air trapped under the dome. The dish is then re-weighed; the weight gain represents the mass of vapour emitted by the slab over the test period.</p>
+
+          <h3>Result</h3>
+          <p>The MVER is expressed in <strong>kg/m²/24 hours</strong>. Most flooring manufacturers specify a maximum MVER (typically 17–25 g/m²/24 hours, or roughly 0.017–0.025 kg/m²/24 hr) below which their adhesive systems will perform reliably. The calcium chloride test is concrete-specific and provides an emission rate directly relevant to flooring adhesive selection — but it is slower to execute than the RH probe method and reflects surface conditions that can be altered by temperature and ventilation.</p>
+
+          <hr className="kc-section-rule" />
+
+          <h2 id="s6">6. Reading the Results — What the Numbers Mean</h2>
+          <p>Instrument readings only have value when interpreted in context. A single high moisture reading tells you that an area is wet; a survey of multiple readings across a surface tells you the story of how water is moving through the building.</p>
+
+          <h3>Moisture gradient mapping</h3>
+          <p>For leak tracing, readings are taken on a grid — every 500 mm to 1000 mm across a suspect surface — and the values plotted onto a floor plan or wall elevation. The resulting map reveals the <strong>moisture gradient</strong>: the zone of peak saturation at the ingress point, tapering to background levels as distance from the source increases. Tracing the gradient back to its highest point identifies where water is entering.</p>
+
+          <h3>Interpreting location relative to moisture source</h3>
+          <p>High readings in an area with no overhead water source — no terrace above, no plumbing in the wall — are diagnostic. They indicate either <strong>lateral movement</strong> (water entering at one point and migrating horizontally through the slab or screed before appearing at a different location) or <strong>rising damp</strong> (capillary water drawing upward from a saturated foundation or ground slab). Both mechanisms are commonly missed when repair decisions are based on visual inspection alone.</p>
+
+          <h3>Combining methods for confirmation</h3>
+          <p>No single instrument provides a complete picture on its own. The standard diagnostic workflow at Prisci Constructions uses capacitance meters for rapid area screening, pin meters for quick surface verification, and RH probes for pre-flooring assessments where absolute values are needed. Thermal imaging is added when there is reason to suspect concealed voids, delamination, or active water movement behind finishes.</p>
+
+          <div className="kc-callout tip">
+            <div className="kc-callout-label">Best Practice</div>
+            <p>Always verify moisture findings with at least two methods. Use a capacitance meter to screen and map the area quickly, then confirm suspect zones with pin readings or an in-situ RH probe. A single instrument used alone — particularly a pin meter on salt-affected masonry — can produce misleading results that lead to incorrect repair scope.</p>
+          </div>
+
+          <h3>Instrument comparison</h3>
+          <div className="kc-table-wrap">
+            <table className="kc-table">
+              <thead>
+                <tr>
+                  <th>Instrument</th>
+                  <th>Method</th>
+                  <th>Depth</th>
+                  <th>Primary Use Case</th>
+                  <th>Key Limitation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Pin-Type Meter</strong><br /><span style={{fontSize:'0.78rem', opacity:0.7}}>e.g. Protimeter, Tramex Encounter</span></td>
+                  <td>Electrical resistance between driven pins</td>
+                  <td>5–20 mm (standard); up to 40 mm with extended pins</td>
+                  <td>Surface and near-surface screening; timber; plaster</td>
+                  <td>Salt contamination causes falsely high readings</td>
+                </tr>
+                <tr>
+                  <td><strong>Capacitance Meter</strong><br /><span style={{fontSize:'0.78rem', opacity:0.7}}>e.g. Tramex CME5, Gann Hydromette</span></td>
+                  <td>Dielectric constant of substrate via surface-applied electromagnetic field</td>
+                  <td>50–80 mm</td>
+                  <td>Rapid area screening; mapping through tiles, paint, or membranes</td>
+                  <td>Relative reading only; dense materials (rebar, adhesive) affect result</td>
+                </tr>
+                <tr>
+                  <td><strong>In-Situ RH Probe</strong><br /><span style={{fontSize:'0.78rem', opacity:0.7}}>BS 8203 / ASTM F2170</span></td>
+                  <td>Relative humidity of air equilibrated within a sealed drill hole</td>
+                  <td>40% of slab depth (typically 40–80 mm)</td>
+                  <td>Pre-flooring assessment; absolute moisture content at depth</td>
+                  <td>Requires 24-hour equilibration; drilling required</td>
+                </tr>
+                <tr>
+                  <td><strong>Calcium Chloride Test</strong><br /><span style={{fontSize:'0.78rem', opacity:0.7}}>ASTM F1869</span></td>
+                  <td>Weight gain of desiccant exposed to slab surface vapour emission</td>
+                  <td>Surface emission only</td>
+                  <td>MVER for flooring adhesive specification</td>
+                  <td>60–72 hr test; results influenced by temperature and ventilation</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </article>
+
+        <aside className="kc-sidebar">
+          <nav className="kc-toc" aria-label="Table of contents">
+            <div className="kc-toc-title">Contents</div>
+            <ol>
+              <li><a href="#s1">Why Moisture Measurement Matters</a></li>
+              <li><a href="#s2">Pin-Type Resistance Meters</a></li>
+              <li><a href="#s3">Capacitance (Non-Invasive) Meters</a></li>
+              <li><a href="#s4">Relative Humidity Probes</a></li>
+              <li><a href="#s5">Calcium Chloride Test</a></li>
+              <li><a href="#s6">Reading the Results</a></li>
+            </ol>
+          </nav>
+
+          <div className="kc-cta-box">
+            <p>Suspect hidden moisture in your building? We carry out instrument-aided surveys and deliver a written report.</p>
+            <Link to="/#contact">Get a Free Consultation</Link>
+          </div>
+        </aside>
+
+      </div>
+
+      <section className="kc-related">
+        <div className="kc-related-inner">
+          <div className="kc-related-title">Related Articles</div>
+          <div className="kc-related-grid">
+
+            <Link to="/knowledge/infrared-inspection" className="kc-related-card">
+              <div className="kc-related-card-cat">Diagnostics</div>
+              <h4>Infrared Thermal Inspection</h4>
+              <p>How thermography reveals hidden leaks, delamination, and moisture without breaking walls.</p>
+            </Link>
+
+            <Link to="/knowledge/basement-leakage-guide" className="kc-related-card">
+              <div className="kc-related-card-cat">Waterproofing</div>
+              <h4>Basement Leakage Guide</h4>
+              <p>How water enters basements, the difference between hydrostatic and capillary ingress, and how to stop both.</p>
+            </Link>
+
+            <Link to="/services/building-leak-investigation" className="kc-related-card">
+              <div className="kc-related-card-cat">Service</div>
+              <h4>Building Leak Investigation</h4>
+              <p>Our instrument-aided leak investigation service — tracing water to its true source before any repair is recommended.</p>
+            </Link>
+
+          </div>
+        </div>
+      </section>
+
+      <footer className="kc-footer">
+        <p>
+          &copy; 2025 Prisci Constructions &middot; Hyderabad &middot;
+          <Link to="/#contact">Get a Free Consultation</Link>
+        </p>
+      </footer>
+
+    </Layout>
+  );
+}

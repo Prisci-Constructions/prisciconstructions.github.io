@@ -55,10 +55,38 @@ export const TESTIMONIALS = [
 export const NAV_LINKS = [
   { label: 'Home', path: '/' },
   { label: 'About Us', path: '/about' },
-  { label: 'Engineering Solutions', path: '/services' },
-  { label: 'Diagnostics', path: '/services#diagnostics' },
-  { label: 'Architecture & Interiors', path: '/services#architecture' },
+  { label: 'Services', path: '/services', dropdown: true },
   { label: 'Projects', path: '/projects' },
   { label: 'Case Studies', path: '/case-studies' },
+  { label: 'Knowledge', path: '/knowledge' },
   { label: 'Contact', path: '/contact' },
+];
+
+export const SERVICE_DROPDOWN = [
+  {
+    heading: 'Waterproofing',
+    items: [
+      { label: 'Terrace Waterproofing', path: '/services/terrace-waterproofing' },
+      { label: 'Basement Waterproofing', path: '/services/basement-waterproofing' },
+      { label: 'Bathroom Waterproofing', path: '/services/bathroom-waterproofing' },
+      { label: 'Roof Waterproofing', path: '/services/roof-waterproofing' },
+      { label: 'Injection Grouting', path: '/services/injection-grouting' },
+    ],
+  },
+  {
+    heading: 'Structural',
+    items: [
+      { label: 'Structural Rehabilitation', path: '/services/structural-rehabilitation' },
+      { label: 'Concrete Repair', path: '/services/concrete-repair' },
+      { label: 'Crack Repair', path: '/services/crack-repair' },
+      { label: 'Expansion Joint Treatment', path: '/services/expansion-joint-treatment' },
+    ],
+  },
+  {
+    heading: 'Diagnostics',
+    items: [
+      { label: 'Building Leak Investigation', path: '/services/building-leak-investigation' },
+      { label: 'Structural Audit', path: '/services/structural-audit' },
+    ],
+  },
 ];
