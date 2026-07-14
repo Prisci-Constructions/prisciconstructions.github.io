@@ -549,6 +549,16 @@
     idleTimer = setTimeout(() => { isIdle = true; }, 2000);
   });
 
+  document.addEventListener('touchmove', (e) => {
+    const touch = e.touches[0];
+    if (!touch) return;
+    mouseX = (touch.clientX / window.innerWidth  - 0.5) * 2;
+    mouseY = (touch.clientY / window.innerHeight - 0.5) * 2;
+    isIdle = false;
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(() => { isIdle = true; }, 2000);
+  }, { passive: true });
+
   window.addEventListener('scroll', () => {
     scrollY = window.scrollY;
   });
