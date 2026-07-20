@@ -639,7 +639,7 @@
   animate();
 
   // ── SCROLL REVEAL (intersection observer) ─────────────────
-  const fadeEls = document.querySelectorAll('.section-eyebrow, .section-title, .service-card, .project-card, .client-pill, .testimonial-card, .about-grid, .contact-grid');
+  const fadeEls = document.querySelectorAll('.section-eyebrow, .section-title, .vertical-card, .project-card, .client-logo-card, .testimonial-card, .about-grid, .contact-grid');
   fadeEls.forEach((el) => el.classList.add('fade-in-up'));
 
   const io = new IntersectionObserver(

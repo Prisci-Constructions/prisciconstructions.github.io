@@ -9,14 +9,37 @@
     content="25+ years of structural rehabilitation, waterproofing, architecture & interior design across AP, Telangana, Karnataka and Maharashtra. Since 1999." />
   <meta name="theme-color" content="#070A14" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/effects.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap"
     rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com/3.4.13"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false },
+      theme: {
+        extend: {
+          colors: {
+            bg: 'var(--bg)', bg2: 'var(--bg2)', surface: 'var(--surface)',
+            gold: 'var(--gold)', 'gold-lt': 'var(--gold-lt)',
+            text: 'var(--text)', 'text-muted': 'var(--text-muted)', 'text-dim': 'var(--text-dim)',
+          },
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+            mono: ['Space Mono', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
 </head>
 
 <body>
+
+  <div class="pf-grain"></div>
 
   <!-- Fixed 3D canvas — always behind content -->
   <canvas id="three-canvas"></canvas>
@@ -70,9 +93,9 @@
     <div class="hero-content">
       <div class="hero-label">EST. 1999 &nbsp;·&nbsp; HYDERABAD, INDIA</div>
       <h1 class="hero-title">
-        ENGINEERING.<br>
-        <span class="accent">REHABILITATION.</span><br>
-        DESIGN.
+        <span class="pf-headline-line"><span>ENGINEERING.</span></span>
+        <span class="pf-headline-line"><span class="accent">REHABILITATION.</span></span>
+        <span class="pf-headline-line"><span>DESIGN.</span></span>
       </h1>
       <p class="hero-tagline">Diagnosing and Solving Building Failures Since 1999</p>
       <ul class="hero-checklist">
@@ -119,6 +142,22 @@
       </div>
     </div>
   </section>
+
+  <!-- ── TICKER ─────────────────────────────── -->
+  <div class="pf-ticker">
+    <div class="pf-ticker-track">
+      <span>DIAGNOSIS BEFORE REMEDY</span><span class="pf-ticker-sep">/</span>
+      <span>ENGINEERED TO LAST</span><span class="pf-ticker-sep">/</span>
+      <span>NO SHORTCUTS</span><span class="pf-ticker-sep">/</span>
+      <span>SINCE 1999</span><span class="pf-ticker-sep">/</span>
+      <span>25+ YEARS ON SITE</span><span class="pf-ticker-sep">/</span>
+      <span>DIAGNOSIS BEFORE REMEDY</span><span class="pf-ticker-sep">/</span>
+      <span>ENGINEERED TO LAST</span><span class="pf-ticker-sep">/</span>
+      <span>NO SHORTCUTS</span><span class="pf-ticker-sep">/</span>
+      <span>SINCE 1999</span><span class="pf-ticker-sep">/</span>
+      <span>25+ YEARS ON SITE</span><span class="pf-ticker-sep">/</span>
+    </div>
+  </div>
 
   <!-- ── TRUST BAR ─────────────────────────────── -->
   <div class="trust-bar">
@@ -196,9 +235,9 @@
       <h2 class="section-title section-title--center">
         Three integrated <span class="accent">solutions</span>
       </h2>
-      <div class="verticals-grid">
+      <div class="verticals-grid pf-reveal-stagger">
 
-        <div class="vertical-card">
+        <div class="vertical-card notch-corner">
           <div class="vertical-card-top">
             <div class="vertical-num">01</div>
             <div class="vertical-icon">
@@ -241,10 +280,10 @@
               </ul>
             </div>
           </div>
-          <a href="#contact" class="vertical-cta">Book a Free Consultation →</a>
+          <a href="#contact" class="vertical-cta link-underline">Book a Free Consultation →</a>
         </div>
 
-        <div class="vertical-card">
+        <div class="vertical-card notch-corner">
           <div class="vertical-card-top">
             <div class="vertical-num">02</div>
             <div class="vertical-icon">
@@ -278,10 +317,10 @@
               </ul>
             </div>
           </div>
-          <a href="#contact" class="vertical-cta">Design Consultation →</a>
+          <a href="#contact" class="vertical-cta link-underline">Design Consultation →</a>
         </div>
 
-        <div class="vertical-card">
+        <div class="vertical-card notch-corner">
           <div class="vertical-card-top">
             <div class="vertical-num">03</div>
             <div class="vertical-icon">
@@ -307,7 +346,7 @@
               </ul>
             </div>
           </div>
-          <a href="#contact" class="vertical-cta">Advisory Session →</a>
+          <a href="#contact" class="vertical-cta link-underline">Advisory Session →</a>
         </div>
 
       </div>
@@ -321,7 +360,7 @@
       <h2 class="section-title section-title--center">
         The <span class="accent">Prisci's advantage</span>
       </h2>
-      <div class="why-grid">
+      <div class="why-grid pf-reveal-stagger">
 
         <div class="why-item">
           <div class="why-icon">
@@ -394,35 +433,35 @@
         Our <span class="accent">process</span>
       </h2>
       <p class="process-intro">Most contractors skip steps 1 and 2. We never do.</p>
-      <div class="process-steps">
-        <div class="process-step">
+      <div class="process-steps pf-reveal-stagger">
+        <div class="process-step notch-corner">
           <div class="process-num">01</div>
           <h3 class="process-title">Inspect</h3>
           <p class="process-desc">Site survey and comprehensive assessment, identifying visible and hidden issues.</p>
         </div>
         <div class="process-arrow">→</div>
-        <div class="process-step">
+        <div class="process-step notch-corner">
           <div class="process-num">02</div>
           <h3 class="process-title">Diagnose</h3>
           <p class="process-desc">Root cause identification using diagnostics, moisture mapping, and structural
             analysis.</p>
         </div>
         <div class="process-arrow">→</div>
-        <div class="process-step">
+        <div class="process-step notch-corner">
           <div class="process-num">03</div>
           <h3 class="process-title">Design</h3>
           <p class="process-desc">Engineering or architectural solution development tailored to the specific challenge.
           </p>
         </div>
         <div class="process-arrow">→</div>
-        <div class="process-step">
+        <div class="process-step notch-corner">
           <div class="process-num">04</div>
           <h3 class="process-title">Execute</h3>
           <p class="process-desc">Professional implementation by certified engineers using quality materials and proven
             systems.</p>
         </div>
         <div class="process-arrow">→</div>
-        <div class="process-step">
+        <div class="process-step notch-corner">
           <div class="process-num">05</div>
           <h3 class="process-title">Verify</h3>
           <p class="process-desc">Quality checks, final inspection, and post-completion validation for lasting results.
@@ -1052,7 +1091,7 @@
       <h2 class="section-title section-title--center">
         Experience across <span class="accent">every sector</span>
       </h2>
-      <div class="industries-grid">
+      <div class="industries-grid pf-reveal">
         <div class="industry-item">
           <div class="industry-icon">
             <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
@@ -1162,17 +1201,24 @@
 
       </h2>
       <div class="team-grid team-grid--3">
-        <div class="team-card">
-          <div class="team-avatar">ISP</div>
-          <h3 class="team-name">I.S. Prabhakar</h3>
-          <div class="team-role">Founder</div>
-          <p class="team-bio">Visionary behind Prisci Constructions with 25+ years of experience, leading the firm since
-            1999 with a commitment to technical excellence and long-term infrastructure quality across government and
-            industrial sectors.</p>
-          <div class="team-tags">
-            <span>Leadership</span>
-            <span>Infrastructure</span>
-            <span>Business Strategy</span>
+        <div class="flip-card team-flip">
+          <div class="flip-card-inner">
+            <div class="flip-face team-card">
+              <div class="team-avatar">ISP</div>
+              <h3 class="team-name">I.S. Prabhakar</h3>
+              <div class="team-role">Founder</div>
+              <div class="flip-card-hint">Hover for profile →</div>
+            </div>
+            <div class="flip-face flip-back team-card">
+              <p class="team-bio">Visionary behind Prisci Constructions with 25+ years of experience, leading the firm since
+                1999 with a commitment to technical excellence and long-term infrastructure quality across government and
+                industrial sectors.</p>
+              <div class="team-tags">
+                <span>Leadership</span>
+                <span>Infrastructure</span>
+                <span>Business Strategy</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1186,28 +1232,28 @@
       <h2 class="section-title section-title--center">
         Verified &amp; <span class="accent">Compliant</span>
       </h2>
-      <div class="certs-grid">
-        <div class="cert-card">
+      <div class="certs-grid pf-reveal-stagger">
+        <div class="cert-card notch-corner">
           <div class="cert-badge">MSME</div>
           <div class="cert-name">MSME Registered</div>
         </div>
-        <div class="cert-card">
+        <div class="cert-card notch-corner">
           <div class="cert-badge">GST</div>
           <div class="cert-name">GST Registered</div>
         </div>
-        <div class="cert-card">
+        <div class="cert-card notch-corner">
           <div class="cert-badge">UDYAM</div>
           <div class="cert-name">Udyam Registration</div>
         </div>
-        <div class="cert-card">
+        <div class="cert-card notch-corner">
           <div class="cert-badge">ISO</div>
           <div class="cert-name">ISO Certified</div>
         </div>
-        <div class="cert-card">
+        <div class="cert-card notch-corner">
           <div class="cert-badge">GOVT</div>
           <div class="cert-name">Government Approved</div>
         </div>
-        <div class="cert-card">
+        <div class="cert-card notch-corner">
           <img src="src/assets/icons/Waterproofing Association.jpeg" alt="Waterproofing Association Member"
             class="cert-badge-img" />
           <div class="cert-name">Waterproofing Association Member</div>
@@ -1223,7 +1269,7 @@
       <h2 class="section-title section-title--center">
         Trusted by <span class="accent">Industry Leaders</span>
       </h2>
-      <div class="clients-grid">
+      <div class="clients-grid pf-reveal">
         <div class="client-logo-card">
           <img src="src/assets/icons/Militery Engneering service.jpeg" alt="Military Engineering Services"
             class="client-logo-img" />
@@ -1285,8 +1331,8 @@
   <section class="section testimonials-section">
     <div class="container">
       <div class="section-eyebrow">What Clients Say</div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
+      <div class="testimonials-grid pf-reveal-stagger">
+        <div class="testimonial-card notch-corner">
           <div class="testimonial-quote">"</div>
           <p class="testimonial-text">Prisci Constructions executed the work with great professionalism and completed it
             well within schedule. Zero defects post-inspection.</p>
@@ -1298,7 +1344,7 @@
             </div>
           </div>
         </div>
-        <div class="testimonial-card">
+        <div class="testimonial-card notch-corner">
           <div class="testimonial-quote">"</div>
           <p class="testimonial-text">Their diagnostic team identified the root cause within hours. Zero issues in 3
             years since the repair. Exceptional technical depth.</p>
@@ -1321,36 +1367,36 @@
       <h2 class="section-title section-title--center">
         Engineering <span class="accent">Insights</span>
       </h2>
-      <div class="knowledge-grid">
-        <div class="blog-card">
+      <div class="knowledge-grid pf-reveal-stagger">
+        <div class="blog-card notch-corner">
           <div class="blog-tag">Waterproofing</div>
           <h3 class="blog-title">Why Buildings Leak: Root Causes and Permanent Solutions</h3>
           <p class="blog-snippet">Most building leaks are symptoms, not causes. Understanding the real source is the
             first step to a permanent fix.</p>
           <a href="knowledge/why-waterproofing-fails.html" class="blog-cta">Read Full Article →</a>
         </div>
-        <div class="blog-card">
+        <div class="blog-card notch-corner">
           <div class="blog-tag">Waterproofing</div>
           <h3 class="blog-title">Terrace Waterproofing: A Complete Guide</h3>
           <p class="blog-snippet">From membrane selection to application — what every building owner needs to know
             before the monsoon.</p>
           <a href="knowledge/terrace-waterproofing-guide.html" class="blog-cta">Read Full Article →</a>
         </div>
-        <div class="blog-card">
+        <div class="blog-card notch-corner">
           <div class="blog-tag">Structural</div>
           <h3 class="blog-title">Signs of Structural Distress You Shouldn't Ignore</h3>
           <p class="blog-snippet">Cracks, spalling, staining — how to read your building's warning signs before they
             become serious failures.</p>
           <a href="knowledge/spalling.html" class="blog-cta">Read Full Article →</a>
         </div>
-        <div class="blog-card">
+        <div class="blog-card notch-corner">
           <div class="blog-tag">Diagnostics</div>
           <h3 class="blog-title">How Moisture Mapping Works</h3>
           <p class="blog-snippet">Advanced non-destructive testing reveals hidden moisture that visual inspection cannot
             find.</p>
           <a href="knowledge/infrared-inspection.html" class="blog-cta">Read Full Article →</a>
         </div>
-        <div class="blog-card">
+        <div class="blog-card notch-corner">
           <div class="blog-tag">Waterproofing</div>
           <h3 class="blog-title">Common Waterproofing Failures and How to Avoid Them</h3>
           <p class="blog-snippet">The top five reasons waterproofing fails — and what to specify instead for long-term
@@ -1372,8 +1418,8 @@
         Practical checklists and guides distilled from 25+ years of site experience.
         Enter your email and the download starts instantly.
       </p>
-      <div class="downloads-grid">
-        <div class="download-card">
+      <div class="downloads-grid pf-reveal-stagger">
+        <div class="download-card notch-corner">
           <div class="download-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -1386,7 +1432,7 @@
             data-file="src/assets/downloads/inspection-checklist.pdf"
             data-resource="Inspection Checklist">Download Free</button>
         </div>
-        <div class="download-card">
+        <div class="download-card notch-corner">
           <div class="download-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -1399,7 +1445,7 @@
             data-file="src/assets/downloads/roof-waterproofing-guide.pdf"
             data-resource="Roof Waterproofing Guide">Download Free</button>
         </div>
-        <div class="download-card">
+        <div class="download-card notch-corner">
           <div class="download-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -1412,7 +1458,7 @@
             data-file="src/assets/downloads/leak-diagnosis-checklist.pdf"
             data-resource="Leak Diagnosis Checklist">Download Free</button>
         </div>
-        <div class="download-card">
+        <div class="download-card notch-corner">
           <div class="download-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -1425,7 +1471,7 @@
             data-file="src/assets/downloads/building-health-checklist.pdf"
             data-resource="Building Health Checklist">Download Free</button>
         </div>
-        <div class="download-card">
+        <div class="download-card notch-corner">
           <div class="download-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -1472,7 +1518,7 @@
       <h2 class="section-title section-title--center">
         Frequently Asked <span class="accent">Questions</span>
       </h2>
-      <div class="sp-faq faq-list">
+      <div class="sp-faq faq-list pf-reveal">
         <div class="sp-faq-item">
           <div class="sp-faq-q">What areas do you serve? <span class="sp-faq-chevron">+</span></div>
           <div class="sp-faq-a">Prisci Constructions operates across Andhra Pradesh, Telangana, Karnataka, and Maharashtra, serving government, industrial, commercial, and residential clients since 1999. For sites outside these states, contact us — we evaluate projects on a case-by-case basis depending on scope.</div>
@@ -1505,7 +1551,7 @@
   <section class="section contact-section" id="contact">
     <div class="container">
       <div class="section-eyebrow">Get In Touch</div>
-      <div class="contact-grid">
+      <div class="contact-grid pf-reveal">
         <div class="contact-info">
           <h2 class="section-title">
             Request a Technical<br><span class="accent">Consultation</span>
@@ -1851,8 +1897,15 @@
     </div>
   </footer>
 
+  <!-- ── STICKY CTA ─────────────────────────────── -->
+  <div class="sticky-cta">
+    <span class="sticky-cta-text">Building failure? <strong>Diagnose it before it spreads.</strong></span>
+    <a href="#contact" class="btn-primary" style="padding:0.6rem 1.5rem;font-size:0.7rem;">Request Inspection</a>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
   <script src="script.js"></script>
+  <script src="assets/site.js"></script>
   <script>
     window.addEventListener('scroll', () => {
       document.getElementById('nav').classList.toggle('nav--scrolled', window.scrollY > 60);

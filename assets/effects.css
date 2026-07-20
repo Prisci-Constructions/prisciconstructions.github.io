@@ -1,0 +1,243 @@
+/* ═══════════════════════════════════════════════════
+   PRISCI CONSTRUCTIONS — SHARED EFFECTS LAYER
+   Loaded on every page, after style.css / page CSS.
+   Every color/font value below reuses style.css's
+   existing :root tokens — no new palette is introduced.
+═══════════════════════════════════════════════════ */
+
+/* ── FILM GRAIN OVERLAY ─────────────────────────────── */
+.pf-grain {
+  position: fixed;
+  inset: -10%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='250' height='250'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  mix-blend-mode: overlay;
+}
+
+/* ── SCROLL REVEAL ─────────────────────────────── */
+.pf-reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.pf-reveal.in-view { opacity: 1; transform: none; }
+
+.pf-reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.pf-reveal-stagger.in-view > * { opacity: 1; transform: none; }
+.pf-reveal-stagger.in-view > *:nth-child(1) { transition-delay: 0s; }
+.pf-reveal-stagger.in-view > *:nth-child(2) { transition-delay: 0.08s; }
+.pf-reveal-stagger.in-view > *:nth-child(3) { transition-delay: 0.16s; }
+.pf-reveal-stagger.in-view > *:nth-child(4) { transition-delay: 0.24s; }
+.pf-reveal-stagger.in-view > *:nth-child(5) { transition-delay: 0.32s; }
+.pf-reveal-stagger.in-view > *:nth-child(6) { transition-delay: 0.4s; }
+
+/* Masked per-line headline reveal — wrap each line in
+   <span class="pf-headline-line"><span>TEXT</span></span> */
+.pf-headline-line { overflow: hidden; display: block; width: max-content; }
+.pf-headline-line > span {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.pf-headline-line.in-view > span { transform: translateY(0); }
+.pf-headline-line:nth-child(2) > span { transition-delay: 0.1s; }
+.pf-headline-line:nth-child(3) > span { transition-delay: 0.2s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-reveal, .pf-reveal-stagger > *, .pf-headline-line > span {
+    transition-duration: 0.01s !important;
+  }
+}
+
+/* ── NOTCH CORNER BRACKETS ─────────────────────────────── */
+.notch-corner { position: relative; }
+.notch-corner::before,
+.notch-corner::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--gold);
+  pointer-events: none;
+  opacity: 0.7;
+}
+.notch-corner::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+.notch-corner::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+/* ── FLIP CARD ─────────────────────────────── */
+.flip-card { perspective: 1800px; }
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.9s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner,
+.flip-card.is-flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+.flip-back { transform: rotateY(180deg); }
+.flip-card-hint {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+@media (prefers-reduced-motion: reduce) {
+  .flip-card-inner { transition-duration: 0.01s; }
+}
+
+/* ── TEAM FLIP-CARD (uses existing .team-card styling for both faces) ── */
+.flip-card.team-flip { height: 420px; width: 100%; }
+.team-grid--3 .flip-card:only-child { grid-column: 2; }
+.flip-card.team-flip .flip-face.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.flip-card.team-flip .flip-back.team-card { justify-content: center; }
+
+/* ── TICKER (reuses style.css's existing @keyframes marquee) ── */
+.pf-ticker {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: rgba(8, 8, 6, 0.5);
+  padding: 0.85rem 0;
+  overflow: hidden;
+}
+.pf-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+.pf-ticker-track span {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.22em;
+  color: var(--text-muted);
+  padding: 0 1.75rem;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+.pf-ticker-track span.pf-ticker-sep { color: var(--gold); padding: 0 0.5rem; }
+@media (prefers-reduced-motion: reduce) {
+  .pf-ticker-track { animation: none; }
+}
+
+/* ── GOAL PILL (toggle buttons) ─────────────────────────────── */
+.goal-pill {
+  cursor: pointer;
+  padding: 0.55rem 1.15rem;
+  border: 1px solid var(--border-gold);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  transition: all var(--transition);
+}
+.goal-pill:hover { border-color: var(--gold); color: var(--text); }
+.goal-pill.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--bg);
+  font-weight: 700;
+}
+
+/* ── UNDERLINE-ON-HOVER LINKS ─────────────────────────────── */
+.link-underline { position: relative; display: inline-block; }
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -3px;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.4s ease;
+}
+.link-underline:hover::after { width: 100%; }
+
+/* ── STICKY CTA BAR ─────────────────────────────── */
+.sticky-cta {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 150;
+  transform: translateY(110%);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  background: rgba(7, 10, 20, 0.95);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border-gold);
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+.sticky-cta.visible { transform: translateY(0); }
+.sticky-cta-text {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+.sticky-cta-text strong { color: var(--gold); }
+
+/* ── TOAST ─────────────────────────────── */
+.pf-toast {
+  position: fixed;
+  top: 90px;
+  right: 24px;
+  background: var(--surface);
+  border: 1px solid var(--gold);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 1rem 1.5rem;
+  z-index: 400;
+  max-width: 340px;
+  font-size: 0.85rem;
+  color: var(--text);
+  transform: translateX(120%);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.pf-toast.visible { transform: translateX(0); }
+@media (max-width: 480px) {
+  .pf-toast { left: 16px; right: 16px; max-width: none; }
+}
+
+/* ── DRAGGABLE STORY TRACK (generic horizontal carousel) ── */
+.pf-story-track {
+  display: flex;
+  gap: 1.5rem;
+  cursor: grab;
+  user-select: none;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.pf-story-track::-webkit-scrollbar { display: none; }
+.pf-story-track.dragging { cursor: grabbing; scroll-behavior: auto; }
+.pf-story-track.dragging * { pointer-events: none; }
+.pf-story-card { flex: 0 0 auto; }
+
+/* ── NUMBER COUNTER (shared numeral style for stat strips) ── */
+.pf-number {
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-display);
+}

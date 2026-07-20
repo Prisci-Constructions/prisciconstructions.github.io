@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node shot7.js)",
+      "Bash(timeout 25 node debugflip.js)"
+    ]
+  }
+}
