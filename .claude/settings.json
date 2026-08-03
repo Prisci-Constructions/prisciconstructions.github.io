@@ -3,6 +3,9 @@
     "allow": [
       "Bash(node shot7.js)",
       "Bash(timeout 25 node debugflip.js)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Bharath\\AppData\\Local\\Temp\\claude\\c--Users-Bharath-Desktop-Propay-Stephen-prisciconstructions-github-io\\a169bf02-b703-4354-a3ff-4e6b22b9dbd0\\scratchpad"
     ]
   }
 }

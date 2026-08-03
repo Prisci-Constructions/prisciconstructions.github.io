@@ -4,6 +4,8 @@
 ───────────────────────────────────────────── */
 
 :root {
+  color-scheme: dark;
+
   --bg:          #070A14;
   --bg2:         #0B0F1E;
   --surface:     #101525;
@@ -24,7 +26,7 @@
   --border-gold: rgba(245,230,200,0.25);
 
   --font-display: 'Bebas Neue', sans-serif;
-  --font-body:    'Inter', sans-serif;
+  --font-body:    'Montserrat', sans-serif;
   --font-mono:    'Space Mono', monospace;
 
   --radius:   6px;
@@ -1816,6 +1818,26 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
   justify-content: center;
   color: rgba(255,255,255,0.9);
+  overflow: hidden;
+}
+.gallery-item-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+.gallery-item:hover .gallery-item-visual img { transform: scale(1.06); }
+
+.gallery-slideshow { position: relative; }
+.gallery-slideshow .gallery-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease, transform var(--transition);
+}
+.gallery-slideshow .gallery-slide.is-active { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .gallery-slideshow .gallery-slide { transition: none; }
 }
 .gallery-item--waterproofing .gallery-item-visual { background: linear-gradient(135deg, #1e5aa8, #6fa3e0); }
 .gallery-item--structural    .gallery-item-visual { background: linear-gradient(135deg, #f39c12, #f3ae45); }

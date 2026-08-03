@@ -5,3 +5,14 @@ dist/
 .env*.local
 .DS_Store
 *.log
+
+# Raw source photos/videos for gallery projects — too large for git and
+# not needed in the repo; optimized web copies live in src/assets/gallery/
+src/assets/icons/Kurnool Tanks/
+src/assets/icons/KVBR Stadium Green Fencing/
+src/assets/icons/KVBR Stadium waterproofing/
+src/assets/icons/MEIL Road Compaction/
+src/assets/icons/NMDC Donimalai/
+src/assets/icons/OHT Waterproofing & Other work images/
+src/assets/icons/Pond desilting/
+src/assets/icons/St. Joseph's convent project/

@@ -170,6 +170,57 @@
     counters.forEach(function (el) { counterObserver.observe(el); });
   }
 
+  /* ── File input: show which file was actually chosen, and warn/reject
+     anything over Web3Forms' free-tier 5MB single-attachment limit ── */
+  var MAX_ATTACHMENT_BYTES = 5 * 1024 * 1024;
+  document.querySelectorAll('.file-input').forEach(function (input) {
+    var status = input.closest('.file-input-wrap') && input.closest('.file-input-wrap').querySelector('.file-input-status');
+    if (!status) return;
+    input.addEventListener('change', function () {
+      var file = input.files && input.files[0];
+      if (!file) {
+        status.textContent = status.dataset.empty || 'No file chosen';
+        status.classList.remove('has-files', 'file-too-large');
+        return;
+      }
+      if (file.size > MAX_ATTACHMENT_BYTES) {
+        status.textContent = file.name + ' is over 5MB — please choose a smaller file, or share it via WhatsApp instead.';
+        status.classList.remove('has-files');
+        status.classList.add('file-too-large');
+        input.value = '';
+        return;
+      }
+      status.textContent = 'Selected: ' + file.name + ' (' + (file.size / (1024 * 1024)).toFixed(1) + 'MB)';
+      status.classList.remove('file-too-large');
+      status.classList.add('has-files');
+    });
+  });
+
+  /* ── Date inputs: earliest selectable date is 2 days from today, giving
+     the team lead time to actually schedule the inspection ── */
+  document.querySelectorAll('input[type="date"]').forEach(function (input) {
+    if (!input.min) {
+      var earliest = new Date();
+      earliest.setDate(earliest.getDate() + 2);
+      var yyyy = earliest.getFullYear();
+      var mm = String(earliest.getMonth() + 1).padStart(2, '0');
+      var dd = String(earliest.getDate()).padStart(2, '0');
+      input.min = yyyy + '-' + mm + '-' + dd;
+    }
+  });
+
+  /* ── Gallery slideshows: crossfade through each project's photos ── */
+  document.querySelectorAll('.gallery-slideshow').forEach(function (box) {
+    var slides = box.querySelectorAll('.gallery-slide');
+    if (slides.length < 2) return;
+    var current = 0;
+    setInterval(function () {
+      slides[current].classList.remove('is-active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('is-active');
+    }, 5000);
+  });
+
   /* ── Draggable story track (generic horizontal carousel) ── */
   document.querySelectorAll('.pf-story-track').forEach(function (track) {
     var isDown = false, startX, scrollLeft;
@@ -189,5 +240,38 @@
         track.classList.remove('dragging');
       });
     });
+  });
+
+  /* ── Story track arrow buttons (scroll by one card + gap) ── */
+  document.querySelectorAll('.story-track-arrow').forEach(function (btn) {
+    var track = document.getElementById(btn.dataset.scrollTrack);
+    if (!track) return;
+    var dir = parseInt(btn.dataset.dir, 10) || 1;
+
+    btn.addEventListener('click', function () {
+      var card = track.querySelector('.pf-story-card, .testimonial-card');
+      var gap = parseFloat(getComputedStyle(track).gap) || 0;
+      var step = card ? card.getBoundingClientRect().width + gap : track.clientWidth * 0.8;
+      track.scrollBy({ left: dir * step, behavior: 'smooth' });
+    });
+  });
+
+  /* Keep arrow enabled/disabled state in sync with actual scroll position */
+  document.querySelectorAll('.pf-story-track').forEach(function (track) {
+    var arrows = document.querySelectorAll('.story-track-arrow[data-scroll-track="' + track.id + '"]');
+    if (!arrows.length) return;
+
+    function syncArrows() {
+      var maxScroll = track.scrollWidth - track.clientWidth;
+      arrows.forEach(function (btn) {
+        var dir = parseInt(btn.dataset.dir, 10) || 1;
+        if (dir < 0) btn.disabled = track.scrollLeft <= 1;
+        else btn.disabled = track.scrollLeft >= maxScroll - 1;
+      });
+    }
+
+    track.addEventListener('scroll', syncArrows);
+    window.addEventListener('resize', syncArrows);
+    syncArrows();
   });
 })();

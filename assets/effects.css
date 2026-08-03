@@ -110,6 +110,53 @@
   justify-content: center;
 }
 .flip-card.team-flip .flip-back.team-card { justify-content: center; }
+.team-avatar-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Front face: photo fills the whole card, name/role float as a bubble on top */
+.flip-card.team-flip .flip-face.team-card--photo {
+  padding: 0;
+  overflow: hidden;
+}
+.team-photo-full {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.team-photo-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(7, 10, 20, 0.92) 0%, rgba(7, 10, 20, 0.45) 35%, transparent 65%);
+}
+.team-photo-bubble {
+  position: absolute;
+  left: 50%;
+  bottom: 3.5rem;
+  transform: translateX(-50%);
+  z-index: 1;
+  text-align: center;
+  white-space: nowrap;
+  background: rgba(7, 10, 20, 0.72);
+  border: 1px solid var(--border-gold);
+  border-radius: 999px;
+  padding: 0.85rem 1.85rem;
+  backdrop-filter: blur(6px);
+}
+.team-photo-bubble .team-name { margin: 0 0 0.2rem; }
+.team-photo-bubble .team-role { margin: 0; }
+.team-photo-hint {
+  position: absolute;
+  left: 0; right: 0; bottom: 1rem;
+  z-index: 1;
+  text-align: center;
+}
 
 /* ── TICKER (reuses style.css's existing @keyframes marquee) ── */
 .pf-ticker {
@@ -235,6 +282,62 @@
 .pf-story-track.dragging { cursor: grabbing; scroll-behavior: auto; }
 .pf-story-track.dragging * { pointer-events: none; }
 .pf-story-card { flex: 0 0 auto; }
+#testimonials-track.pf-story-track { padding-bottom: 0.5rem; }
+#testimonials-track .testimonial-card {
+  width: 360px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+#testimonials-track .testimonial-text { flex: 1; }
+
+/* ── STORY TRACK OUTER (arrows + edge fade hint) ── */
+.story-track-outer {
+  position: relative;
+  padding: 0 3rem;
+}
+.story-track-outer::before,
+.story-track-outer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0.5rem;
+  width: 3rem;
+  pointer-events: none;
+  z-index: 1;
+}
+.story-track-outer::before {
+  left: 3rem;
+  background: linear-gradient(to right, var(--surface), transparent);
+}
+.story-track-outer::after {
+  right: 3rem;
+  background: linear-gradient(to left, var(--surface), transparent);
+}
+.story-track-arrow.pc-arrow--left { left: 0; }
+.story-track-arrow.pc-arrow--right { right: 0; }
+.story-track-arrow[disabled] { opacity: 0.3; cursor: default; pointer-events: none; }
+@media (max-width: 768px) {
+  .story-track-outer { padding: 0 0.5rem; }
+  .story-track-outer::before,
+  .story-track-outer::after { width: 1.5rem; }
+  .story-track-outer::before { left: 0.5rem; }
+  .story-track-outer::after { right: 0.5rem; }
+  .story-track-arrow { display: none; }
+}
+@media (max-width: 480px) {
+  #testimonials-track .testimonial-card { width: 84vw; }
+}
+
+/* ── FILE INPUT STATUS (shows chosen file names) ── */
+.file-input-status {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+.file-input-status.has-files { color: var(--gold); }
+.file-input-status.file-too-large { color: #e07850; }
 
 /* ── NUMBER COUNTER (shared numeral style for stat strips) ── */
 .pf-number {
