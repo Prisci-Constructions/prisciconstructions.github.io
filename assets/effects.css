@@ -158,6 +158,56 @@
   text-align: center;
 }
 
+/* ── VERTICAL CARD BACKGROUND IMAGE ── */
+.vertical-card-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform var(--transition);
+}
+.vertical-card-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(165deg, rgba(16, 21, 37, 0.55) 0%, rgba(16, 21, 37, 0.9) 55%, rgba(16, 21, 37, 0.97) 100%);
+}
+.vertical-card:hover .vertical-card-bg { transform: scale(1.04); }
+.vertical-card-top,
+.vertical-services,
+.vertical-cta {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── PROCESS STEP BACKGROUND IMAGE ── */
+.process-step-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform var(--transition);
+}
+.process-step-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(165deg, rgba(16, 21, 37, 0.5) 0%, rgba(16, 21, 37, 0.88) 55%, rgba(16, 21, 37, 0.96) 100%);
+}
+.process-step:hover .process-step-bg { transform: scale(1.05); }
+.process-step .process-num,
+.process-step .process-title,
+.process-step .process-desc {
+  position: relative;
+  z-index: 1;
+}
+
 /* ── TICKER (reuses style.css's existing @keyframes marquee) ── */
 .pf-ticker {
   border-top: 1px solid var(--border);
