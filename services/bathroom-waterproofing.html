@@ -10,12 +10,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/effects.css" />
+  <script src="https://cdn.tailwindcss.com/3.4.13"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false },
+      theme: {
+        extend: {
+          colors: {
+            bg: 'var(--bg)', bg2: 'var(--bg2)', surface: 'var(--surface)',
+            gold: 'var(--gold)', 'gold-lt': 'var(--gold-lt)',
+            text: 'var(--text)', 'text-muted': 'var(--text-muted)', 'text-dim': 'var(--text-dim)',
+          },
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            body: ['Montserrat', 'sans-serif'],
+            mono: ['Space Mono', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
 </head>
 <body>
 
+  <div class="pf-grain"></div>
+
   <nav class="nav" id="nav">
     <a href="../index.html" class="nav-logo">
-      <img src="../src/assets/icons/company logo.jpeg" alt="Prisci Constructions Logo" class="nav-logo-img" />
+      <img src="../src/assets/icons/company-logo.jpeg" alt="Prisci Constructions Logo" class="nav-logo-img" />
       <span class="nav-logo-text">PRISCI<br><em>CONSTRUCTIONS</em></span>
     </a>
     <ul class="nav-links">
@@ -78,20 +101,20 @@
             <p>Prisci Constructions approaches bathroom waterproofing as an engineering exercise, not a cosmetic fix. We remove failed tiles and screed only where necessary, treat the slab with a flexible polymer-modified waterproofing membrane, address all penetrations with pre-formed or sealant collars, and relay on a new screed and tile finish. The result is a bathroom that remains dry below even under daily use.</p>
             <p>We apply this approach to residential apartments, hotel rooms, institutional toilets, and large-format commercial bathroom blocks — including wet areas in defence accommodation and SAAP government buildings.</p>
           </div>
-          <div class="sp-stat-list">
-            <div class="sp-stat-item">
+          <div class="sp-stat-list pf-reveal-stagger">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">Flexible Membrane Systems</div>
               <div class="sp-stat-desc">Flexible coatings that bridge hairline cracks and accommodate minor structural movement without splitting.</div>
             </div>
-            <div class="sp-stat-item">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">All Penetrations Sealed</div>
               <div class="sp-stat-desc">Pipe sleeves, floor trap collars, and wall penetrations all individually detailed and sealed.</div>
             </div>
-            <div class="sp-stat-item">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">Flood Test Before Tiling</div>
               <div class="sp-stat-desc">48-hour ponding test on membrane before screed or tiles are laid — no hidden failures.</div>
             </div>
-            <div class="sp-stat-item">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">Minimal Disruption</div>
               <div class="sp-stat-desc">Targeted removal of only failed areas — we avoid unnecessary demolition in occupied buildings.</div>
             </div>
@@ -137,18 +160,18 @@
           <span class="sp-section-idx">04</span>
           <h2 class="sp-section-title">Our <span class="accent">Approach</span></h2>
         </div>
-        <div class="sp-approach-steps">
-          <div class="sp-approach-step">
+        <div class="sp-approach-steps pf-reveal-stagger">
+          <div class="sp-approach-step notch-corner">
             <div class="sp-step-num">01</div>
             <div class="sp-step-title">Diagnose</div>
             <p class="sp-step-desc">We inspect both the bathroom floor and the ceiling of the room below. Moisture meter readings map the extent of saturation. Tap-testing identifies delaminated tiles and hollow screed. All pipe penetrations, floor traps, and wall junctions are checked individually to locate the primary water entry paths.</p>
           </div>
-          <div class="sp-approach-step">
+          <div class="sp-approach-step notch-corner">
             <div class="sp-step-num">02</div>
             <div class="sp-step-title">Design</div>
             <p class="sp-step-desc">We specify the extent of tile and screed removal required (full bathroom or targeted areas), the appropriate membrane system (flexible polymer-modified or polyurethane-based), method for sealing each pipe penetration, and screed/tile reinstatement specification. A detailed scope of work is agreed before mobilisation.</p>
           </div>
-          <div class="sp-approach-step">
+          <div class="sp-approach-step notch-corner">
             <div class="sp-step-num">03</div>
             <div class="sp-step-title">Execute</div>
             <p class="sp-step-desc">Tiles and screed are removed cleanly. RCC surface is prepared. Membrane is applied in full coverage with fibre-mesh reinforcement at junctions. Flood test is conducted for 48 hours before screed and tiles are reinstated. The room below is inspected throughout the test period to confirm zero ingress.</p>
@@ -269,18 +292,18 @@
           <span class="sp-section-idx">08</span>
           <h2 class="sp-section-title">Related <span class="accent">Projects</span></h2>
         </div>
-        <div class="sp-projects">
-          <div class="sp-project-card">
+        <div class="sp-projects pf-reveal-stagger">
+          <div class="sp-project-card notch-corner">
             <div class="sp-project-cat">Institutional / SAAP</div>
             <div class="sp-project-name">Government Building Toilet Block Waterproofing</div>
             <div class="sp-project-loc">SAAP (State Agri Authority), Andhra Pradesh</div>
           </div>
-          <div class="sp-project-card">
+          <div class="sp-project-card notch-corner">
             <div class="sp-project-cat">Defence / MES</div>
             <div class="sp-project-name">Barracks Bathroom Rehabilitation</div>
             <div class="sp-project-loc">Military Engineering Services, Hyderabad Cantonment</div>
           </div>
-          <div class="sp-project-card">
+          <div class="sp-project-card notch-corner">
             <div class="sp-project-cat">Residential</div>
             <div class="sp-project-name">Multi-Flat Bathroom Leak Rectification</div>
             <div class="sp-project-loc">Madhapur / Hitech City, Hyderabad</div>
@@ -320,48 +343,13 @@
     </div>
   </footer>
 
-  <script>
-    /* Nav scroll */
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('nav--scrolled', window.scrollY > 50);
-    });
+  <!-- ── STICKY CTA ─────────────────────────────── -->
+  <div class="sticky-cta">
+    <span class="sticky-cta-text">Need Bathroom Waterproofing? <strong>Bathroom leaking? Fix the cause, not just the symptom.</strong></span>
+    <a href="../index.html#contact" class="btn-primary" style="padding:0.6rem 1.5rem;font-size:0.7rem;">Request Inspection</a>
+  </div>
 
-    /* FAQ accordion */
-    document.querySelectorAll('.sp-faq-q').forEach(q => {
-      q.addEventListener('click', () => {
-        const item = q.parentElement;
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.sp-faq-item.open').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
-      });
-    });
-
-    /* Subnav active section highlight */
-    const spSections = document.querySelectorAll('.sp-section[id]');
-    const subLinks = document.querySelectorAll('.sp-subnav-link');
-    const sectionObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          subLinks.forEach(l => l.classList.remove('active'));
-          const active = document.querySelector(`.sp-subnav-link[href="#${entry.target.id}"]`);
-          if (active) active.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-35% 0px -55% 0px' });
-    spSections.forEach(s => sectionObserver.observe(s));
-
-    /* Scroll reveal */
-    const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.sp-reveal').forEach(el => revealObserver.observe(el));
-  </script>
+  <script src="../assets/site.js"></script>
 <script src="services-nav.js"></script>
 </body>
 </html>

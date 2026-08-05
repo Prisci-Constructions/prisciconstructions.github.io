@@ -10,12 +10,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/effects.css" />
+  <script src="https://cdn.tailwindcss.com/3.4.13"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false },
+      theme: {
+        extend: {
+          colors: {
+            bg: 'var(--bg)', bg2: 'var(--bg2)', surface: 'var(--surface)',
+            gold: 'var(--gold)', 'gold-lt': 'var(--gold-lt)',
+            text: 'var(--text)', 'text-muted': 'var(--text-muted)', 'text-dim': 'var(--text-dim)',
+          },
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            body: ['Montserrat', 'sans-serif'],
+            mono: ['Space Mono', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
 </head>
 <body>
 
+  <div class="pf-grain"></div>
+
   <nav class="nav" id="nav">
     <a href="../index.html" class="nav-logo">
-      <img src="../src/assets/icons/company logo.jpeg" alt="Prisci Constructions Logo" class="nav-logo-img" />
+      <img src="../src/assets/icons/company-logo.jpeg" alt="Prisci Constructions Logo" class="nav-logo-img" />
       <span class="nav-logo-text">PRISCI<br><em>CONSTRUCTIONS</em></span>
     </a>
     <ul class="nav-links">
@@ -78,20 +101,20 @@
             <p>Prisci Constructions specifies polymer-modified cementitious repair mortars — from Fosroc's Renderoc range, BASF's MasterEmaco range, Sika's MonoTop range, Pidilite Dr. Fixit, and Sunanda repair products — all pre-bagged, factory-controlled systems with published tensile bond strength, compressive strength, and carbonation resistance data. Site-mixed cement-sand mortars are never used for structural or semi-structural repair; they shrink on curing, debond from the substrate within 2–5 years, and offer no corrosion protection to the reinforcement beneath.</p>
             <p>Where carbonation is identified as the underlying cause of corrosion, repair mortar alone is only half the solution. After patching, an anti-carbonation protective coating is applied to all concrete surfaces on the repaired structure — not just the patched areas. This arrests the advancing carbonation front in the surrounding sound concrete and prevents the well-documented "halo effect," where new corrosion initiates in a ring around repairs within 5–10 years of the original work.</p>
           </div>
-          <div class="sp-stat-list">
-            <div class="sp-stat-item">
+          <div class="sp-stat-list pf-reveal-stagger">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">Pre-Engineered Systems Only</div>
               <div class="sp-stat-desc">All repair mortars are pre-bagged, factory-controlled products with documented compressive and bond strength data — no site-mixed cement-sand substitutes, ever.</div>
             </div>
-            <div class="sp-stat-item">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">Root-Cause Diagnosis First</div>
               <div class="sp-stat-desc">The cause of deterioration — carbonation, chloride attack, honeycombing, or mechanical damage — is established before any repair work is specified or priced.</div>
             </div>
-            <div class="sp-stat-item">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">25+ Years Across Demanding Clients</div>
               <div class="sp-stat-desc">Concrete repair executed for MES, HPCL, Air India, Kurnool Municipal Corporation, and SAAP since 1999 — clients who require documented quality systems and pull-off test records.</div>
             </div>
-            <div class="sp-stat-item">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">Full-Surface Carbonation Treatment</div>
               <div class="sp-stat-desc">Anti-carbonation elastomeric coating applied to all concrete surfaces after repair — including sound concrete — to prevent halo-effect corrosion recurrence.</div>
             </div>
@@ -137,18 +160,18 @@
           <span class="sp-section-idx">04</span>
           <h2 class="sp-section-title">Our <span class="accent">Approach</span></h2>
         </div>
-        <div class="sp-approach-steps">
-          <div class="sp-approach-step">
+        <div class="sp-approach-steps pf-reveal-stagger">
+          <div class="sp-approach-step notch-corner">
             <div class="sp-step-num">01</div>
             <div class="sp-step-title">Assess</div>
             <p class="sp-step-desc">A systematic defect survey is completed before any repair work is specified. Visual mapping and tap-testing identify all spalled, hollow, and cracked areas. Carbonation depth is measured on core samples using phenolphthalein indicator. Rebound hammer readings confirm concrete strength. The cause of deterioration is established per defect area before the repair strategy is written.</p>
           </div>
-          <div class="sp-approach-step">
+          <div class="sp-approach-step notch-corner">
             <div class="sp-step-num">02</div>
             <div class="sp-step-title">Specify</div>
             <p class="sp-step-desc">The repair system is matched to the defect type and depth: thin-bed polymer-modified mortar for surface defects; thixotropic high-build mortar for overhead and vertical spall patching; form-and-pour fluid mortar for deep section reinstatement. Rebar treatment products and the final anti-carbonation protective coating are specified as part of the same repair scope — repair without protection is a short-term intervention.</p>
           </div>
-          <div class="sp-approach-step">
+          <div class="sp-approach-step notch-corner">
             <div class="sp-step-num">03</div>
             <div class="sp-step-title">Execute</div>
             <p class="sp-step-desc">Concrete removal is taken to a sound substrate confirmed by tap-test and rebound hammer. Reinforcement is cleaned to Sa 2.5 and treated with Fosroc Nitoprime Zincrich before mortar encapsulation. Repair mortar is applied in controlled layers per manufacturer's maximum thickness. On completion, pull-off adhesion tests are conducted and anti-carbonation coating is applied to all concrete surfaces.</p>
@@ -271,18 +294,18 @@
           <span class="sp-section-idx">08</span>
           <h2 class="sp-section-title">Related <span class="accent">Projects</span></h2>
         </div>
-        <div class="sp-projects">
-          <div class="sp-project-card">
+        <div class="sp-projects pf-reveal-stagger">
+          <div class="sp-project-card notch-corner">
             <div class="sp-project-cat">Defence / MES</div>
             <div class="sp-project-name">RCC Spall Repair and Carbonation Treatment — Barracks Blocks</div>
             <div class="sp-project-loc">Military Engineering Services, Secunderabad Cantonment</div>
           </div>
-          <div class="sp-project-card">
+          <div class="sp-project-card notch-corner">
             <div class="sp-project-cat">Industrial / HPCL</div>
             <div class="sp-project-name">Structural Concrete Defect Repair — Process Plant</div>
             <div class="sp-project-loc">HPCL Installation, Hyderabad</div>
           </div>
-          <div class="sp-project-card">
+          <div class="sp-project-card notch-corner">
             <div class="sp-project-cat">Municipal / Kurnool Corporation</div>
             <div class="sp-project-name">Concrete Repair and Protective Coating — Civic Infrastructure</div>
             <div class="sp-project-loc">Kurnool Municipal Corporation, Kurnool, Andhra Pradesh</div>
@@ -321,48 +344,13 @@
     </div>
   </footer>
 
-  <script>
-    /* Nav scroll */
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('nav--scrolled', window.scrollY > 50);
-    });
+  <!-- ── STICKY CTA ─────────────────────────────── -->
+  <div class="sticky-cta">
+    <span class="sticky-cta-text">Concrete Defects on Your Structure? <strong>Spalling or cracking? Don't let it spread.</strong></span>
+    <a href="../index.html#contact" class="btn-primary" style="padding:0.6rem 1.5rem;font-size:0.7rem;">Request Inspection</a>
+  </div>
 
-    /* FAQ accordion */
-    document.querySelectorAll('.sp-faq-q').forEach(q => {
-      q.addEventListener('click', () => {
-        const item = q.parentElement;
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.sp-faq-item.open').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
-      });
-    });
-
-    /* Subnav active section highlight */
-    const spSections = document.querySelectorAll('.sp-section[id]');
-    const subLinks = document.querySelectorAll('.sp-subnav-link');
-    const sectionObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          subLinks.forEach(l => l.classList.remove('active'));
-          const active = document.querySelector(`.sp-subnav-link[href="#${entry.target.id}"]`);
-          if (active) active.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-35% 0px -55% 0px' });
-    spSections.forEach(s => sectionObserver.observe(s));
-
-    /* Scroll reveal */
-    const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.sp-reveal').forEach(el => revealObserver.observe(el));
-  </script>
+  <script src="../assets/site.js"></script>
 <script src="services-nav.js"></script>
 </body>
 </html>

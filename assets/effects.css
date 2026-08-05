@@ -37,6 +37,13 @@
 .pf-reveal-stagger.in-view > *:nth-child(5) { transition-delay: 0.32s; }
 .pf-reveal-stagger.in-view > *:nth-child(6) { transition-delay: 0.4s; }
 
+/* .pf-reveal-stagger resets transform to none on reveal — that clobbers the
+   mobile-only rotate(90deg) on .process-arrow (style.css's rule loses the
+   specificity tie since effects.css loads later). Restore it explicitly. */
+@media (max-width: 768px) {
+  .process-steps.pf-reveal-stagger > .process-arrow { transform: rotate(90deg); }
+}
+
 /* Masked per-line headline reveal — wrap each line in
    <span class="pf-headline-line"><span>TEXT</span></span> */
 .pf-headline-line { overflow: hidden; display: block; width: max-content; }
@@ -103,6 +110,9 @@
 /* ── TEAM FLIP-CARD (uses existing .team-card styling for both faces) ── */
 .flip-card.team-flip { height: 420px; width: 100%; }
 .team-grid--3 .flip-card:only-child { grid-column: 2; }
+@media (max-width: 768px) {
+  .team-grid--3 .flip-card:only-child { grid-column: 1; }
+}
 .flip-card.team-flip .flip-face.team-card {
   display: flex;
   flex-direction: column;

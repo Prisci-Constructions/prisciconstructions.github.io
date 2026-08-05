@@ -10,12 +10,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/effects.css" />
+  <script src="https://cdn.tailwindcss.com/3.4.13"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false },
+      theme: {
+        extend: {
+          colors: {
+            bg: 'var(--bg)', bg2: 'var(--bg2)', surface: 'var(--surface)',
+            gold: 'var(--gold)', 'gold-lt': 'var(--gold-lt)',
+            text: 'var(--text)', 'text-muted': 'var(--text-muted)', 'text-dim': 'var(--text-dim)',
+          },
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            body: ['Montserrat', 'sans-serif'],
+            mono: ['Space Mono', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
 </head>
 <body>
 
+  <div class="pf-grain"></div>
+
   <nav class="nav" id="nav">
     <a href="../index.html" class="nav-logo">
-      <img src="../src/assets/icons/company logo.jpeg" alt="Prisci Constructions Logo" class="nav-logo-img" />
+      <img src="../src/assets/icons/company-logo.jpeg" alt="Prisci Constructions Logo" class="nav-logo-img" />
       <span class="nav-logo-text">PRISCI<br><em>CONSTRUCTIONS</em></span>
     </a>
     <ul class="nav-links">
@@ -78,20 +101,20 @@
             <p>Prisci Constructions follows the BS EN 1504 European Standard repair principle framework — the same standard used by major petrochemical, aviation, and defence clients in India — which requires that repair materials restore concrete equivalent to or better than the original. We do not use standard site-mixed mortars for structural repair; all materials are pre-engineered systems with documented compressive strength, tensile bond, modulus of elasticity, and chloride permeability data.</p>
             <p>Our structural rehabilitation team is led by qualified civil engineers with hands-on experience in corrosion assessment, half-cell potential testing, carbonation depth measurement, and repair design. We can act as the specialist repair contractor under your structural consultant's specification, or provide an independent assessment-to-execution service across Telangana, Andhra Pradesh, Karnataka, and Maharashtra.</p>
           </div>
-          <div class="sp-stat-list">
-            <div class="sp-stat-item">
+          <div class="sp-stat-list pf-reveal-stagger">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">BS EN 1504 Compliant</div>
               <div class="sp-stat-desc">All repair systems specified and applied following the European concrete repair standard — the benchmark adopted by MES, HPCL, and aviation clients.</div>
             </div>
-            <div class="sp-stat-item">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">Non-Destructive Testing</div>
               <div class="sp-stat-desc">Half-cell potential mapping, rebound hammer surveys, carbonation depth measurement, and chloride profiling before recommending any repair.</div>
             </div>
-            <div class="sp-stat-item">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">25+ Year Track Record</div>
               <div class="sp-stat-desc">Rehabilitation of defence, aviation, petrochemical, and municipal structures across Telangana and AP since 1999 — including MES, Air India, HPCL, and Kurnool Municipal Corporation projects.</div>
             </div>
-            <div class="sp-stat-item">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">Cost vs. Replacement Analysis</div>
               <div class="sp-stat-desc">We provide a documented structural feasibility and cost comparison between rehabilitation and full reconstruction to inform client decisions.</div>
             </div>
@@ -137,18 +160,18 @@
           <span class="sp-section-idx">04</span>
           <h2 class="sp-section-title">Our <span class="accent">Approach</span></h2>
         </div>
-        <div class="sp-approach-steps">
-          <div class="sp-approach-step">
+        <div class="sp-approach-steps pf-reveal-stagger">
+          <div class="sp-approach-step notch-corner">
             <div class="sp-step-num">01</div>
             <div class="sp-step-title">Diagnose</div>
             <p class="sp-step-desc">Full structural survey using rebound hammer, half-cell potential mapping, carbonation depth testing with phenolphthalein indicator, and visual spall mapping. Rebar corrosion activity is classified as active, passive, or uncertain across all structural elements. A condition report with quantified repair volumes is produced before any repair scope is priced or agreed.</p>
           </div>
-          <div class="sp-approach-step">
+          <div class="sp-approach-step notch-corner">
             <div class="sp-step-num">02</div>
             <div class="sp-step-title">Design</div>
             <p class="sp-step-desc">Repair strategy is developed per BS EN 1504 principles: patch repair for localised spalls, section replacement for extensive damage, concrete jacketing for structural upgrading, and FRP wrapping for column and beam strengthening. Material systems are specified with full datasheets, mix designs, and application thicknesses documented for client and structural consultant review.</p>
           </div>
-          <div class="sp-approach-step">
+          <div class="sp-approach-step notch-corner">
             <div class="sp-step-num">03</div>
             <div class="sp-step-title">Execute</div>
             <p class="sp-step-desc">Work proceeds systematically element by element with temporary propping before concrete removal where required. Each repaired section is tested by rebound hammer and pull-off adhesion test before the protective coating is applied. A photographic record of every element — from break-out to final coat — is maintained and submitted at project close.</p>
@@ -278,18 +301,18 @@
           <span class="sp-section-idx">08</span>
           <h2 class="sp-section-title">Related <span class="accent">Projects</span></h2>
         </div>
-        <div class="sp-projects">
-          <div class="sp-project-card">
+        <div class="sp-projects pf-reveal-stagger">
+          <div class="sp-project-card notch-corner">
             <div class="sp-project-cat">Aviation / Air India</div>
             <div class="sp-project-name">Hangar Structural Frame Rehabilitation</div>
             <div class="sp-project-loc">Air India Maintenance, Begumpet Airport, Hyderabad</div>
           </div>
-          <div class="sp-project-card">
+          <div class="sp-project-card notch-corner">
             <div class="sp-project-cat">Defence / MES</div>
             <div class="sp-project-name">Colonial-Era Barracks Structural Restoration</div>
             <div class="sp-project-loc">Military Engineering Services, Secunderabad Cantonment</div>
           </div>
-          <div class="sp-project-card">
+          <div class="sp-project-card notch-corner">
             <div class="sp-project-cat">Municipal / Kurnool</div>
             <div class="sp-project-name">Civic Building Concrete Repair &amp; Strengthening</div>
             <div class="sp-project-loc">Kurnool Municipal Corporation, Andhra Pradesh</div>
@@ -329,48 +352,13 @@
     </div>
   </footer>
 
-  <script>
-    /* Nav scroll */
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('nav--scrolled', window.scrollY > 50);
-    });
+  <!-- ── STICKY CTA ─────────────────────────────── -->
+  <div class="sticky-cta">
+    <span class="sticky-cta-text">Need Structural Rehabilitation? <strong>Structural damage? Get an engineer-led repair plan.</strong></span>
+    <a href="../index.html#contact" class="btn-primary" style="padding:0.6rem 1.5rem;font-size:0.7rem;">Request Inspection</a>
+  </div>
 
-    /* FAQ accordion */
-    document.querySelectorAll('.sp-faq-q').forEach(q => {
-      q.addEventListener('click', () => {
-        const item = q.parentElement;
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.sp-faq-item.open').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
-      });
-    });
-
-    /* Subnav active section highlight */
-    const spSections = document.querySelectorAll('.sp-section[id]');
-    const subLinks = document.querySelectorAll('.sp-subnav-link');
-    const sectionObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          subLinks.forEach(l => l.classList.remove('active'));
-          const active = document.querySelector(`.sp-subnav-link[href="#${entry.target.id}"]`);
-          if (active) active.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-35% 0px -55% 0px' });
-    spSections.forEach(s => sectionObserver.observe(s));
-
-    /* Scroll reveal */
-    const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.sp-reveal').forEach(el => revealObserver.observe(el));
-  </script>
+  <script src="../assets/site.js"></script>
 <script src="services-nav.js"></script>
 </body>
 </html>

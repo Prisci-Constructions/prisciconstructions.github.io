@@ -10,12 +10,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/effects.css" />
+  <script src="https://cdn.tailwindcss.com/3.4.13"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false },
+      theme: {
+        extend: {
+          colors: {
+            bg: 'var(--bg)', bg2: 'var(--bg2)', surface: 'var(--surface)',
+            gold: 'var(--gold)', 'gold-lt': 'var(--gold-lt)',
+            text: 'var(--text)', 'text-muted': 'var(--text-muted)', 'text-dim': 'var(--text-dim)',
+          },
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            body: ['Montserrat', 'sans-serif'],
+            mono: ['Space Mono', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
 </head>
 <body>
 
+  <div class="pf-grain"></div>
+
   <nav class="nav" id="nav">
     <a href="../index.html" class="nav-logo">
-      <img src="../src/assets/icons/company logo.jpeg" alt="Prisci Constructions Logo" class="nav-logo-img" />
+      <img src="../src/assets/icons/company-logo.jpeg" alt="Prisci Constructions Logo" class="nav-logo-img" />
       <span class="nav-logo-text">PRISCI<br><em>CONSTRUCTIONS</em></span>
     </a>
     <ul class="nav-links">
@@ -78,20 +101,20 @@
             <p>Prisci Constructions employs three fundamentally different system types depending on the severity of water ingress and access to the structure: crystalline integral systems (which become part of the concrete matrix and resist pressure from both sides), cementitious tanking membranes for negative-side application, and polyurethane injection grouting for active crack sealing and void filling.</p>
             <p>We have executed basement waterproofing for defence cantonments in Secunderabad, commercial basements in Hyderabad's CBD, and industrial facility sub-structures for clients including HPCL. Each project begins with a hydrostatic pressure assessment and water table study.</p>
           </div>
-          <div class="sp-stat-list">
-            <div class="sp-stat-item">
+          <div class="sp-stat-list pf-reveal-stagger">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">Negative &amp; Positive Side Systems</div>
               <div class="sp-stat-desc">Interior tanking and exterior membrane systems — chosen based on access and water pressure severity.</div>
             </div>
-            <div class="sp-stat-item">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">Active Leak Sealing</div>
               <div class="sp-stat-desc">Rapid-set hydraulic cement and PU injection for live water-entry cracks before main treatment.</div>
             </div>
-            <div class="sp-stat-item">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">Crystalline Technology</div>
               <div class="sp-stat-desc">Xypex or Dr. Fixit Crystalline systems that self-seal hairline cracks over time as the structure works.</div>
             </div>
-            <div class="sp-stat-item">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">Drainage Integration</div>
               <div class="sp-stat-desc">French drain and sump pump design for basements with persistent inflow that cannot be fully blocked at source.</div>
             </div>
@@ -137,18 +160,18 @@
           <span class="sp-section-idx">04</span>
           <h2 class="sp-section-title">Our <span class="accent">Approach</span></h2>
         </div>
-        <div class="sp-approach-steps">
-          <div class="sp-approach-step">
+        <div class="sp-approach-steps pf-reveal-stagger">
+          <div class="sp-approach-step notch-corner">
             <div class="sp-step-num">01</div>
             <div class="sp-step-title">Diagnose</div>
             <p class="sp-step-desc">We assess water table depth (via borehole or existing borewell levels), identify all water entry points, map crack patterns, and review original construction drawings if available. This determines whether positive-side, negative-side, or combination treatment is required.</p>
           </div>
-          <div class="sp-approach-step">
+          <div class="sp-approach-step notch-corner">
             <div class="sp-step-num">02</div>
             <div class="sp-step-title">Design</div>
             <p class="sp-step-desc">System is specified: crystalline coating for concrete slabs with multiple hairline cracks; rigid cementitious tanking for clean surfaces; PU injection for active crack sealing; drainage layer for high-inflow situations. All junction and penetration details are drawn before work begins.</p>
           </div>
-          <div class="sp-approach-step">
+          <div class="sp-approach-step notch-corner">
             <div class="sp-step-num">03</div>
             <div class="sp-step-title">Execute</div>
             <p class="sp-step-desc">Active leaks are arrested first with hydraulic cement. Surface is prepared and system applied in sequence per specification. Drainage integration, if required, is completed and tested. A post-monsoon inspection is included to confirm long-term performance.</p>
@@ -271,18 +294,18 @@
           <span class="sp-section-idx">08</span>
           <h2 class="sp-section-title">Related <span class="accent">Projects</span></h2>
         </div>
-        <div class="sp-projects">
-          <div class="sp-project-card">
+        <div class="sp-projects pf-reveal-stagger">
+          <div class="sp-project-card notch-corner">
             <div class="sp-project-cat">Defence / MES</div>
             <div class="sp-project-name">Underground Storage &amp; Basement Sealing</div>
             <div class="sp-project-loc">Military Engineering Services, Secunderabad Cantonment</div>
           </div>
-          <div class="sp-project-card">
+          <div class="sp-project-card notch-corner">
             <div class="sp-project-cat">Industrial</div>
             <div class="sp-project-name">Sub-Structure Waterproofing</div>
             <div class="sp-project-loc">HPCL Installation, Hyderabad</div>
           </div>
-          <div class="sp-project-card">
+          <div class="sp-project-card notch-corner">
             <div class="sp-project-cat">Residential</div>
             <div class="sp-project-name">Apartment Complex Basement Rehabilitation</div>
             <div class="sp-project-loc">Gachibowli / Kondapur, Hyderabad</div>
@@ -322,48 +345,13 @@
     </div>
   </footer>
 
-  <script>
-    /* Nav scroll */
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('nav--scrolled', window.scrollY > 50);
-    });
+  <!-- ── STICKY CTA ─────────────────────────────── -->
+  <div class="sticky-cta">
+    <span class="sticky-cta-text">Need Basement Waterproofing? <strong>Basement leaking? Stop it before it spreads.</strong></span>
+    <a href="../index.html#contact" class="btn-primary" style="padding:0.6rem 1.5rem;font-size:0.7rem;">Request Inspection</a>
+  </div>
 
-    /* FAQ accordion */
-    document.querySelectorAll('.sp-faq-q').forEach(q => {
-      q.addEventListener('click', () => {
-        const item = q.parentElement;
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.sp-faq-item.open').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
-      });
-    });
-
-    /* Subnav active section highlight */
-    const spSections = document.querySelectorAll('.sp-section[id]');
-    const subLinks = document.querySelectorAll('.sp-subnav-link');
-    const sectionObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          subLinks.forEach(l => l.classList.remove('active'));
-          const active = document.querySelector(`.sp-subnav-link[href="#${entry.target.id}"]`);
-          if (active) active.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-35% 0px -55% 0px' });
-    spSections.forEach(s => sectionObserver.observe(s));
-
-    /* Scroll reveal */
-    const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.sp-reveal').forEach(el => revealObserver.observe(el));
-  </script>
+  <script src="../assets/site.js"></script>
 <script src="services-nav.js"></script>
 </body>
 </html>

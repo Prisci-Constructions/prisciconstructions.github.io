@@ -10,12 +10,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/effects.css" />
+  <script src="https://cdn.tailwindcss.com/3.4.13"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false },
+      theme: {
+        extend: {
+          colors: {
+            bg: 'var(--bg)', bg2: 'var(--bg2)', surface: 'var(--surface)',
+            gold: 'var(--gold)', 'gold-lt': 'var(--gold-lt)',
+            text: 'var(--text)', 'text-muted': 'var(--text-muted)', 'text-dim': 'var(--text-dim)',
+          },
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            body: ['Montserrat', 'sans-serif'],
+            mono: ['Space Mono', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
 </head>
 <body>
 
+  <div class="pf-grain"></div>
+
   <nav class="nav" id="nav">
     <a href="../index.html" class="nav-logo">
-      <img src="../src/assets/icons/company logo.jpeg" alt="Prisci Constructions Logo" class="nav-logo-img" />
+      <img src="../src/assets/icons/company-logo.jpeg" alt="Prisci Constructions Logo" class="nav-logo-img" />
       <span class="nav-logo-text">PRISCI<br><em>CONSTRUCTIONS</em></span>
     </a>
     <ul class="nav-links">
@@ -78,20 +101,20 @@
             <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; font-size: 0.95rem;">Prisci Constructions uses elastomeric polyurethane coatings, aluminium-faced bituminous coatings, and butyl rubber seam tapes specifically formulated for metal and AC sheet substrates. These systems elongate with the roof under thermal movement and seal lap joints and fastener holes without requiring sheet replacement — making them cost-effective for large industrial footprints.</p>
             <p style="color: var(--text-muted); line-height: 1.7; font-size: 0.95rem;">We have waterproofed industrial roofs for HPCL, Air India maintenance hangars, and MES military structures — roofs that must remain operational and meet strict safety requirements throughout the treatment period.</p>
           </div>
-          <div class="sp-stat-list">
-            <div class="sp-stat-item">
+          <div class="sp-stat-list pf-reveal-stagger">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">GI / Metal Sheet Roofs</div>
               <div class="sp-stat-desc">Elastomeric PU and aluminium-based systems that flex with thermal movement without cracking.</div>
             </div>
-            <div class="sp-stat-item">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">AC Sheet Roofs</div>
               <div class="sp-stat-desc">Specialised penetrating sealants plus elastomeric top-coat to seal aged and porous AC sheets without removal.</div>
             </div>
-            <div class="sp-stat-item">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">Large-Area Coverage</div>
               <div class="sp-stat-desc">Airless spray application available for high-efficiency coverage of industrial roof areas exceeding 5,000 sqm.</div>
             </div>
-            <div class="sp-stat-item">
+            <div class="sp-stat-item notch-corner">
               <div class="sp-stat-label">Heat Reduction Benefit</div>
               <div class="sp-stat-desc">White or aluminium-pigmented roof coatings reduce roof surface temperature by 12–18°C, lowering internal building temperature.</div>
             </div>
@@ -137,18 +160,18 @@
           <span class="sp-section-idx">04</span>
           <h2 class="sp-section-title">Our <span class="accent">Approach</span></h2>
         </div>
-        <div class="sp-approach-steps">
-          <div class="sp-approach-step">
+        <div class="sp-approach-steps pf-reveal-stagger">
+          <div class="sp-approach-step notch-corner">
             <div class="sp-step-num">01</div>
             <div class="sp-step-title">Diagnose</div>
             <p class="sp-step-desc">A roof walk-over is conducted with a checklist for every lap, ridge, fastener point, flashing, and penetration. Leak locations from inside the building are correlated with roof features above. Areas of corrosion, perforation, and seal failure are photographed and measured.</p>
           </div>
-          <div class="sp-approach-step">
+          <div class="sp-approach-step notch-corner">
             <div class="sp-step-num">02</div>
             <div class="sp-step-title">Design</div>
             <p class="sp-step-desc">We specify whether the roof requires targeted seam-and-fastener treatment or a full-coverage elastomeric coating. Corroded sheets requiring replacement are identified separately. Material quantities, access scaffolding requirements, and work sequences for occupied facilities are planned.</p>
           </div>
-          <div class="sp-approach-step">
+          <div class="sp-approach-step notch-corner">
             <div class="sp-step-num">03</div>
             <div class="sp-step-title">Execute</div>
             <p class="sp-step-desc">Seams are cleaned, primed, and sealed with self-adhesive butyl tape before the liquid coating is applied. Airless spray or roller application proceeds systematically from ridge to eave. Post-application hose test is conducted at all previously identified leak points to confirm seal.</p>
@@ -276,18 +299,18 @@
           <span class="sp-section-idx">08</span>
           <h2 class="sp-section-title">Related <span class="accent">Projects</span></h2>
         </div>
-        <div class="sp-projects">
-          <div class="sp-project-card">
+        <div class="sp-projects pf-reveal-stagger">
+          <div class="sp-project-card notch-corner">
             <div class="sp-project-cat">Aviation / Air India</div>
             <div class="sp-project-name">Maintenance Hangar Roof Waterproofing</div>
             <div class="sp-project-loc">Air India Technical Centre, Begumpet, Hyderabad</div>
           </div>
-          <div class="sp-project-card">
+          <div class="sp-project-card notch-corner">
             <div class="sp-project-cat">Industrial / HPCL</div>
             <div class="sp-project-name">Storage Shed Roof Coating &amp; Sealing</div>
             <div class="sp-project-loc">HPCL Depot, Hyderabad</div>
           </div>
-          <div class="sp-project-card">
+          <div class="sp-project-card notch-corner">
             <div class="sp-project-cat">Defence / MES</div>
             <div class="sp-project-name">Ammunition Store Roof Rehabilitation</div>
             <div class="sp-project-loc">Military Engineering Services, Secunderabad</div>
@@ -327,48 +350,13 @@
     </div>
   </footer>
 
-  <script>
-    /* Nav scroll */
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('nav--scrolled', window.scrollY > 50);
-    });
+  <!-- ── STICKY CTA ─────────────────────────────── -->
+  <div class="sticky-cta">
+    <span class="sticky-cta-text">Need Roof Waterproofing? <strong>Roof leaking? Don't wait for the next monsoon.</strong></span>
+    <a href="../index.html#contact" class="btn-primary" style="padding:0.6rem 1.5rem;font-size:0.7rem;">Request Inspection</a>
+  </div>
 
-    /* FAQ accordion */
-    document.querySelectorAll('.sp-faq-q').forEach(q => {
-      q.addEventListener('click', () => {
-        const item = q.parentElement;
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.sp-faq-item.open').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
-      });
-    });
-
-    /* Subnav active section highlight */
-    const spSections = document.querySelectorAll('.sp-section[id]');
-    const subLinks = document.querySelectorAll('.sp-subnav-link');
-    const sectionObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          subLinks.forEach(l => l.classList.remove('active'));
-          const active = document.querySelector(`.sp-subnav-link[href="#${entry.target.id}"]`);
-          if (active) active.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-35% 0px -55% 0px' });
-    spSections.forEach(s => sectionObserver.observe(s));
-
-    /* Scroll reveal */
-    const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.sp-reveal').forEach(el => revealObserver.observe(el));
-  </script>
+  <script src="../assets/site.js"></script>
 <script src="services-nav.js"></script>
 </body>
 </html>

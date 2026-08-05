@@ -1145,6 +1145,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
   .services-grid{ grid-template-columns: 1fr; }
   .projects-grid .project-card{ flex: 1 1 calc(50% - 0.5rem); }
+  .projects-carousel-outer { padding: 0; }
+  .pc-arrow { display: none; }
   .clients-grid { grid-template-columns: repeat(2, 1fr); }
   .testimonials-grid { grid-template-columns: 1fr; }
   .form-row     { grid-template-columns: 1fr; }

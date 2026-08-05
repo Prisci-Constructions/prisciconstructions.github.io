@@ -10,12 +10,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/effects.css" />
+  <script src="https://cdn.tailwindcss.com/3.4.13"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false },
+      theme: {
+        extend: {
+          colors: {
+            bg: 'var(--bg)', bg2: 'var(--bg2)', surface: 'var(--surface)',
+            gold: 'var(--gold)', 'gold-lt': 'var(--gold-lt)',
+            text: 'var(--text)', 'text-muted': 'var(--text-muted)', 'text-dim': 'var(--text-dim)',
+          },
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            body: ['Montserrat', 'sans-serif'],
+            mono: ['Space Mono', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
 </head>
 <body>
 
+  <div class="pf-grain"></div>
+
   <nav class="nav" id="nav">
     <a href="../index.html" class="nav-logo">
-      <img src="../src/assets/icons/company logo.jpeg" alt="Prisci Constructions Logo" class="nav-logo-img" />
+      <img src="../src/assets/icons/company-logo.jpeg" alt="Prisci Constructions Logo" class="nav-logo-img" />
       <span class="nav-logo-text">PRISCI<br><em>CONSTRUCTIONS</em></span>
     </a>
     <ul class="nav-links">
@@ -248,7 +271,7 @@
         </ol>
       </nav>
 
-      <div class="kc-cta-box">
+      <div class="kc-cta-box notch-corner">
         <p>Suspect carbonation in your building? We carry out phenolphthalein testing and carbonation surveys across Hyderabad.</p>
         <a href="../index.html#contact">Request an Assessment</a>
       </div>
@@ -259,18 +282,18 @@
   <section class="kc-related">
     <div class="kc-related-inner">
       <div class="kc-related-title">Related Articles</div>
-      <div class="kc-related-grid">
-        <a href="corrosion.html" class="kc-related-card">
+      <div class="kc-related-grid pf-reveal-stagger">
+        <a href="corrosion.html" class="kc-related-card notch-corner">
           <div class="kc-related-card-cat">Structural Rehabilitation</div>
           <h4>Rebar Corrosion in Buildings</h4>
           <p>The mechanism behind rusting steel, detection with half-cell potential mapping, and repair strategies.</p>
         </a>
-        <a href="spalling.html" class="kc-related-card">
+        <a href="spalling.html" class="kc-related-card notch-corner">
           <div class="kc-related-card-cat">Structural Rehabilitation</div>
           <h4>Concrete Spalling — Causes, Warning Signs, and Repair</h4>
           <p>Why chunks of concrete fall off buildings, the early warning signs, and the correct repair sequence.</p>
         </a>
-        <a href="concrete-cracks.html" class="kc-related-card">
+        <a href="concrete-cracks.html" class="kc-related-card notch-corner">
           <div class="kc-related-card-cat">Structural Rehabilitation</div>
           <h4>Concrete Cracks — Classification and Repair</h4>
           <p>How to tell a structural crack from a cosmetic one, and the correct repair method for each type.</p>
@@ -286,23 +309,12 @@
     </p>
   </footer>
 
-  <script>
-    var nav = document.getElementById('nav');
-    window.addEventListener('scroll', function () {
-      nav.classList.toggle('nav--scrolled', window.scrollY > 40);
-    });
+  <!-- ── STICKY CTA ─────────────────────────────── -->
+  <div class="sticky-cta">
+    <span class="sticky-cta-text">Suspect carbonation? <strong>Get a phenolphthalein test done.</strong></span>
+    <a href="../index.html#contact" class="btn-primary" style="padding:0.6rem 1.5rem;font-size:0.7rem;">Request Inspection</a>
+  </div>
 
-    var links = document.querySelectorAll('.kc-toc a');
-    var sections = document.querySelectorAll('.kc-article h2[id]');
-    window.addEventListener('scroll', function () {
-      var current = '';
-      sections.forEach(function (s) {
-        if (window.scrollY >= s.offsetTop - 120) current = s.id;
-      });
-      links.forEach(function (l) {
-        l.classList.toggle('active', l.getAttribute('href') === '#' + current);
-      });
-    });
-  </script>
+  <script src="../assets/site.js"></script>
 </body>
 </html>
