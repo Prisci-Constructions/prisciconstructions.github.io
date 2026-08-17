@@ -116,12 +116,15 @@
     });
   }
 
-  /* ── Sticky CTA bar — appears after scrolling past the hero ── */
+  /* ── Sticky CTA bar — appears after scrolling past the hero, hides over the footer ── */
   var stickyCta = document.querySelector('.sticky-cta');
   if (stickyCta) {
     var showAfter = window.innerHeight * 0.65;
+    var footerEl = document.querySelector('.footer');
     window.addEventListener('scroll', function () {
-      stickyCta.classList.toggle('visible', window.scrollY > showAfter);
+      var pastHero = window.scrollY > showAfter;
+      var overFooter = footerEl && footerEl.getBoundingClientRect().top < window.innerHeight;
+      stickyCta.classList.toggle('visible', pastHero && !overFooter);
     });
   }
 
