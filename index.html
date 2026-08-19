@@ -41,8 +41,11 @@
 
   <div class="pf-grain"></div>
 
-  <!-- Fixed 3D canvas — always behind content -->
-  <canvas id="three-canvas"></canvas>
+  <!-- Fixed background video — always behind content -->
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="src/assets/video/v1.mp4" type="video/mp4">
+  </video>
+  <div id="bg-overlay"></div>
 
   <!-- ── NAV ─────────────────────────────── -->
   <nav class="nav" id="nav">
@@ -368,62 +371,77 @@
       <div class="why-grid pf-reveal-stagger">
 
         <div class="why-item">
-          <div class="why-icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
-              <circle cx="16" cy="16" r="5" />
-              <path
-                d="M16 4v3M16 25v3M4 16h3M25 16h3M7.5 7.5l2.1 2.1M22.4 22.4l2.1 2.1M7.5 24.5l2.1-2.1M22.4 9.6l2.1-2.1" />
-            </svg>
+          <div class="card-media"><img src="src/assets/images/Engineering First Approach 1.jpg" alt="Engineering First Approach" loading="lazy"></div>
+          <div class="why-body">
+            <div class="why-icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
+                <circle cx="16" cy="16" r="5" />
+                <path
+                  d="M16 4v3M16 25v3M4 16h3M25 16h3M7.5 7.5l2.1 2.1M22.4 22.4l2.1 2.1M7.5 24.5l2.1-2.1M22.4 9.6l2.1-2.1" />
+              </svg>
+            </div>
+            <h3 class="why-title">Engineering First Approach</h3>
+            <p class="why-desc">Solutions based on diagnosis, not assumptions. We identify root causes before recommending
+              any remedy.</p>
           </div>
-          <h3 class="why-title">Engineering First Approach</h3>
-          <p class="why-desc">Solutions based on diagnosis, not assumptions. We identify root causes before recommending
-            any remedy.</p>
         </div>
 
         <div class="why-item">
-          <div class="why-icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
-              <path d="M4 28V10l12-6 12 6v18" />
-              <rect x="12" y="18" width="8" height="10" />
-            </svg>
+          <div class="card-media"><img src="src/assets/images/25+ Years Experience 2.jpg" alt="25+ Years Experience" loading="lazy"></div>
+          <div class="why-body">
+            <div class="why-icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
+                <path d="M4 28V10l12-6 12 6v18" />
+                <rect x="12" y="18" width="8" height="10" />
+              </svg>
+            </div>
+            <h3 class="why-title">25+ Years Experience</h3>
+            <p class="why-desc">Practical execution across government, industrial, commercial, and residential sectors
+              since 1999.</p>
           </div>
-          <h3 class="why-title">25+ Years Experience</h3>
-          <p class="why-desc">Practical execution across government, industrial, commercial, and residential sectors
-            since 1999.</p>
         </div>
 
         <div class="why-item">
-          <div class="why-icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
-              <polygon points="16,3 20,12 30,13 23,20 25,30 16,25 7,30 9,20 2,13 12,12" />
-            </svg>
+          <div class="card-media"><img src="src/assets/images/Specialized Expertise 2.jpg" alt="Specialized Expertise" loading="lazy"></div>
+          <div class="why-body">
+            <div class="why-icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
+                <polygon points="16,3 20,12 30,13 23,20 25,30 16,25 7,30 9,20 2,13 12,12" />
+              </svg>
+            </div>
+            <h3 class="why-title">Specialized Expertise</h3>
+            <p class="why-desc">Waterproofing and structural rehabilitation specialists with deep technical knowledge and
+              proven systems.</p>
           </div>
-          <h3 class="why-title">Specialized Expertise</h3>
-          <p class="why-desc">Waterproofing and structural rehabilitation specialists with deep technical knowledge and
-            proven systems.</p>
         </div>
 
         <div class="why-item">
-          <div class="why-icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
-              <polyline points="4,16 10,16 14,8 18,24 22,16 28,16" />
-            </svg>
+          <div class="card-media"><img src="src/assets/images/End-to-End Solutions 1.jpg" alt="End-to-End Solutions" loading="lazy"></div>
+          <div class="why-body">
+            <div class="why-icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
+                <polyline points="4,16 10,16 14,8 18,24 22,16 28,16" />
+              </svg>
+            </div>
+            <h3 class="why-title">End-to-End Solutions</h3>
+            <p class="why-desc">Inspection → Design → Execution → Verification. One firm, complete accountability.</p>
           </div>
-          <h3 class="why-title">End-to-End Solutions</h3>
-          <p class="why-desc">Inspection → Design → Execution → Verification. One firm, complete accountability.</p>
         </div>
 
         <div class="why-item">
-          <div class="why-icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
-              <circle cx="10" cy="12" r="4" />
-              <circle cx="22" cy="12" r="4" />
-              <path d="M2 26c0-4 3.6-7 8-7h4c4.4 0 8 3 8 7" />
-            </svg>
+          <div class="card-media"><img src="src/assets/images/Multi-Disciplinary Team.jpg" alt="Multi-Disciplinary Team" loading="lazy"></div>
+          <div class="why-body">
+            <div class="why-icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
+                <circle cx="10" cy="12" r="4" />
+                <circle cx="22" cy="12" r="4" />
+                <path d="M2 26c0-4 3.6-7 8-7h4c4.4 0 8 3 8 7" />
+              </svg>
+            </div>
+            <h3 class="why-title">Multi-Disciplinary Team</h3>
+            <p class="why-desc">Engineering, architecture, and design under one roof — integrated solutions without
+              coordination overhead.</p>
           </div>
-          <h3 class="why-title">Multi-Disciplinary Team</h3>
-          <p class="why-desc">Engineering, architecture, and design under one roof — integrated solutions without
-            coordination overhead.</p>
         </div>
 
       </div>
@@ -1169,98 +1187,125 @@
       </h2>
       <div class="industries-grid pf-reveal">
         <div class="industry-item">
-          <div class="industry-icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
-              <path d="M4 28V16L16 6l12 10v12" />
-              <rect x="12" y="18" width="8" height="10" />
-            </svg>
+          <div class="card-media"><img src="src/assets/images/Residential.jpg" alt="Residential" loading="lazy"></div>
+          <div class="industry-body">
+            <div class="industry-icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+                <path d="M4 28V16L16 6l12 10v12" />
+                <rect x="12" y="18" width="8" height="10" />
+              </svg>
+            </div>
+            <div class="industry-label">Residential</div>
           </div>
-          <div class="industry-label">Residential</div>
         </div>
         <div class="industry-item">
-          <div class="industry-icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
-              <rect x="4" y="8" width="24" height="20" />
-              <rect x="10" y="16" width="5" height="12" />
-              <rect x="17" y="16" width="5" height="12" />
-              <path d="M4 8l12-6 12 6" />
-            </svg>
+          <div class="card-media"><img src="src/assets/images/Commercial.jpg" alt="Commercial" loading="lazy"></div>
+          <div class="industry-body">
+            <div class="industry-icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+                <rect x="4" y="8" width="24" height="20" />
+                <rect x="10" y="16" width="5" height="12" />
+                <rect x="17" y="16" width="5" height="12" />
+                <path d="M4 8l12-6 12 6" />
+              </svg>
+            </div>
+            <div class="industry-label">Commercial</div>
           </div>
-          <div class="industry-label">Commercial</div>
         </div>
         <div class="industry-item">
-          <div class="industry-icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
-              <rect x="2" y="14" width="28" height="14" />
-              <rect x="8" y="8" width="16" height="6" />
-              <rect x="12" y="4" width="8" height="4" />
-              <rect x="10" y="18" width="4" height="6" />
-              <rect x="18" y="18" width="4" height="6" />
-            </svg>
+          <div class="card-media"><img src="src/assets/images/Industrial.jpg" alt="Industrial" loading="lazy"></div>
+          <div class="industry-body">
+            <div class="industry-icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+                <rect x="2" y="14" width="28" height="14" />
+                <rect x="8" y="8" width="16" height="6" />
+                <rect x="12" y="4" width="8" height="4" />
+                <rect x="10" y="18" width="4" height="6" />
+                <rect x="18" y="18" width="4" height="6" />
+              </svg>
+            </div>
+            <div class="industry-label">Industrial</div>
           </div>
-          <div class="industry-label">Industrial</div>
         </div>
         <div class="industry-item">
-          <div class="industry-icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
-              <path d="M4 28V14l12-10 12 10v14" />
-              <line x1="4" y1="28" x2="28" y2="28" />
-              <line x1="2" y1="14" x2="30" y2="14" />
-            </svg>
+          <div class="card-media"><img src="src/assets/images/Government.jpg" alt="Government" loading="lazy"></div>
+          <div class="industry-body">
+            <div class="industry-icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+                <path d="M4 28V14l12-10 12 10v14" />
+                <line x1="4" y1="28" x2="28" y2="28" />
+                <line x1="2" y1="14" x2="30" y2="14" />
+              </svg>
+            </div>
+            <div class="industry-label">Government</div>
           </div>
-          <div class="industry-label">Government</div>
         </div>
         <div class="industry-item">
-          <div class="industry-icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
-              <path d="M4 28V14l12-10 12 10v14" />
-              <rect x="11" y="18" width="10" height="10" />
-              <path d="M11 18a5 5 0 0 1 10 0" />
-            </svg>
+          <div class="card-media"><img src="src/assets/images/University.jpg" alt="Education" loading="lazy"></div>
+          <div class="industry-body">
+            <div class="industry-icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+                <path d="M4 28V14l12-10 12 10v14" />
+                <rect x="11" y="18" width="10" height="10" />
+                <path d="M11 18a5 5 0 0 1 10 0" />
+              </svg>
+            </div>
+            <div class="industry-label">Education</div>
           </div>
-          <div class="industry-label">Education</div>
         </div>
         <div class="industry-item">
-          <div class="industry-icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
-              <path d="M15 4h2v5h5v2h-5v5h-2v-5h-5v-2h5z" />
-              <path d="M6 28V16h20v12" />
-              <line x1="6" y1="28" x2="26" y2="28" />
-            </svg>
+          <div class="card-media"><img src="src/assets/images/Healthcare.jpg" alt="Healthcare" loading="lazy"></div>
+          <div class="industry-body">
+            <div class="industry-icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+                <path d="M15 4h2v5h5v2h-5v5h-2v-5h-5v-2h5z" />
+                <path d="M6 28V16h20v12" />
+                <line x1="6" y1="28" x2="26" y2="28" />
+              </svg>
+            </div>
+            <div class="industry-label">Healthcare</div>
           </div>
-          <div class="industry-label">Healthcare</div>
         </div>
         <div class="industry-item">
-          <div class="industry-icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
-              <path d="M4 24c0-8 5-12 12-14M28 24c0-8-5-12-12-14" />
-              <path d="M4 24h24" />
-              <path d="M12 24v-8" />
-              <path d="M20 24v-8" />
-            </svg>
+          <div class="card-media"><img src="src/assets/images/Municipal.jpg" alt="Municipal Infrastructure" loading="lazy"></div>
+          <div class="industry-body">
+            <div class="industry-icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+                <path d="M4 24c0-8 5-12 12-14M28 24c0-8-5-12-12-14" />
+                <path d="M4 24h24" />
+                <path d="M12 24v-8" />
+                <path d="M20 24v-8" />
+              </svg>
+            </div>
+            <div class="industry-label">Municipal Infrastructure</div>
           </div>
-          <div class="industry-label">Municipal Infrastructure</div>
         </div>
         <div class="industry-item">
-          <div class="industry-icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
-              <path d="M16 4c-7 0-12 5-12 12s5 12 12 12 12-5 12-12" />
-              <path d="M16 10v6l4 4" />
-              <circle cx="25" cy="8" r="4" />
-              <path d="M22 8h6M25 5v6" />
-            </svg>
+          <div class="card-media"><img src="src/assets/images/Water utility.jpg" alt="Water Utilities" loading="lazy"></div>
+          <div class="industry-body">
+            <div class="industry-icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+                <path d="M16 4c-7 0-12 5-12 12s5 12 12 12 12-5 12-12" />
+                <path d="M16 10v6l4 4" />
+                <circle cx="25" cy="8" r="4" />
+                <path d="M22 8h6M25 5v6" />
+              </svg>
+            </div>
+            <div class="industry-label">Water Utilities</div>
           </div>
-          <div class="industry-label">Water Utilities</div>
         </div>
         <div class="industry-item">
-          <div class="industry-icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
-              <circle cx="16" cy="16" r="6" />
-              <path
-                d="M16 4v4M16 24v4M4 16h4M24 16h4M7.5 7.5l2.8 2.8M21.7 21.7l2.8 2.8M7.5 24.5l2.8-2.8M21.7 10.3l2.8-2.8" />
-            </svg>
+          <div class="card-media"><img src="src/assets/images/Manufacturing.jpg" alt="Manufacturing" loading="lazy"></div>
+          <div class="industry-body">
+            <div class="industry-icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+                <circle cx="16" cy="16" r="6" />
+                <path
+                  d="M16 4v4M16 24v4M4 16h4M24 16h4M7.5 7.5l2.8 2.8M21.7 21.7l2.8 2.8M7.5 24.5l2.8-2.8M21.7 10.3l2.8-2.8" />
+              </svg>
+            </div>
+            <div class="industry-label">Manufacturing</div>
           </div>
-          <div class="industry-label">Manufacturing</div>
         </div>
       </div>
     </div>
@@ -1567,39 +1612,54 @@
       </h2>
       <div class="knowledge-grid pf-reveal-stagger">
         <div class="blog-card notch-corner">
-          <div class="blog-tag">Waterproofing</div>
-          <h3 class="blog-title">Why Buildings Leak: Root Causes and Permanent Solutions</h3>
-          <p class="blog-snippet">Most building leaks are symptoms, not causes. Understanding the real source is the
-            first step to a permanent fix.</p>
-          <a href="knowledge/why-waterproofing-fails.html" class="blog-cta">Read Full Article →</a>
+          <div class="card-media"><img src="src/assets/images/Why Buildings Leak Root Causes and Permanent Solutions 2.jpg" alt="Why Buildings Leak" loading="lazy"></div>
+          <div class="blog-body">
+            <div class="blog-tag">Waterproofing</div>
+            <h3 class="blog-title">Why Buildings Leak: Root Causes and Permanent Solutions</h3>
+            <p class="blog-snippet">Most building leaks are symptoms, not causes. Understanding the real source is the
+              first step to a permanent fix.</p>
+            <a href="knowledge/why-waterproofing-fails.html" class="blog-cta">Read Full Article →</a>
+          </div>
         </div>
         <div class="blog-card notch-corner">
-          <div class="blog-tag">Waterproofing</div>
-          <h3 class="blog-title">Terrace Waterproofing: A Complete Guide</h3>
-          <p class="blog-snippet">From membrane selection to application — what every building owner needs to know
-            before the monsoon.</p>
-          <a href="knowledge/terrace-waterproofing-guide.html" class="blog-cta">Read Full Article →</a>
+          <div class="card-media"><img src="src/assets/images/Terrace Waterproofing A Complete Guide 1.jpg" alt="Terrace Waterproofing" loading="lazy"></div>
+          <div class="blog-body">
+            <div class="blog-tag">Waterproofing</div>
+            <h3 class="blog-title">Terrace Waterproofing: A Complete Guide</h3>
+            <p class="blog-snippet">From membrane selection to application — what every building owner needs to know
+              before the monsoon.</p>
+            <a href="knowledge/terrace-waterproofing-guide.html" class="blog-cta">Read Full Article →</a>
+          </div>
         </div>
         <div class="blog-card notch-corner">
-          <div class="blog-tag">Structural</div>
-          <h3 class="blog-title">Signs of Structural Distress You Shouldn't Ignore</h3>
-          <p class="blog-snippet">Cracks, spalling, staining — how to read your building's warning signs before they
-            become serious failures.</p>
-          <a href="knowledge/spalling.html" class="blog-cta">Read Full Article →</a>
+          <div class="card-media"><img src="src/assets/images/Signs of Structural Distress You Shouldn&#39;t Ignore 2.jpg" alt="Signs of Structural Distress" loading="lazy"></div>
+          <div class="blog-body">
+            <div class="blog-tag">Structural</div>
+            <h3 class="blog-title">Signs of Structural Distress You Shouldn't Ignore</h3>
+            <p class="blog-snippet">Cracks, spalling, staining — how to read your building's warning signs before they
+              become serious failures.</p>
+            <a href="knowledge/spalling.html" class="blog-cta">Read Full Article →</a>
+          </div>
         </div>
         <div class="blog-card notch-corner">
-          <div class="blog-tag">Diagnostics</div>
-          <h3 class="blog-title">How Moisture Mapping Works</h3>
-          <p class="blog-snippet">Advanced non-destructive testing reveals hidden moisture that visual inspection cannot
-            find.</p>
-          <a href="knowledge/infrared-inspection.html" class="blog-cta">Read Full Article →</a>
+          <div class="card-media"><img src="src/assets/images/How Moisture Mapping Works.jpg" alt="How Moisture Mapping Works" loading="lazy"></div>
+          <div class="blog-body">
+            <div class="blog-tag">Diagnostics</div>
+            <h3 class="blog-title">How Moisture Mapping Works</h3>
+            <p class="blog-snippet">Advanced non-destructive testing reveals hidden moisture that visual inspection cannot
+              find.</p>
+            <a href="knowledge/infrared-inspection.html" class="blog-cta">Read Full Article →</a>
+          </div>
         </div>
         <div class="blog-card notch-corner">
-          <div class="blog-tag">Waterproofing</div>
-          <h3 class="blog-title">Basement Leakage: Causes, Diagnosis &amp; Treatment</h3>
-          <p class="blog-snippet">Water entry in basements is rarely one problem — how to tell which mechanism is
-            dominant and choose a system that actually holds.</p>
-          <a href="knowledge/basement-leakage-guide.html" class="blog-cta">Read Full Article →</a>
+          <div class="card-media"><img src="src/assets/images/Basement Leakage Causes, Diagnosis &amp; Treatment.jpg" alt="Basement Leakage" loading="lazy"></div>
+          <div class="blog-body">
+            <div class="blog-tag">Waterproofing</div>
+            <h3 class="blog-title">Basement Leakage: Causes, Diagnosis &amp; Treatment</h3>
+            <p class="blog-snippet">Water entry in basements is rarely one problem — how to tell which mechanism is
+              dominant and choose a system that actually holds.</p>
+            <a href="knowledge/basement-leakage-guide.html" class="blog-cta">Read Full Article →</a>
+          </div>
         </div>
       </div>
     </div>
@@ -2109,8 +2169,6 @@
     <a href="#contact" class="btn-primary" style="padding:0.6rem 1.5rem;font-size:0.7rem;">Request Inspection</a>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-  <script src="script.js"></script>
   <script src="assets/site.js"></script>
   <script>
     /* Nav-scroll shadow, hero stat counters, mobile burger, services dropdown,
