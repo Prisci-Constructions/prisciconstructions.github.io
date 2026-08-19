@@ -388,7 +388,7 @@
   user-select: none;
   transition: background 0.2s;
 }
-.sp-faq-q:hover { background: rgba(255,255,255,0.02); }
+.sp-faq-q:hover { background: linear-gradient(rgba(255,255,255,0.03), rgba(255,255,255,0.03)), var(--surface); }
 .sp-faq-chevron {
   width: 18px;
   height: 18px;

@@ -388,7 +388,7 @@
   user-select: none;
   transition: background 0.2s;
 }
-.sp-faq-q:hover { background: rgba(255,255,255,0.02); }
+.sp-faq-q:hover { background: linear-gradient(rgba(255,255,255,0.03), rgba(255,255,255,0.03)), var(--surface); }
 .sp-faq-chevron {
   width: 18px;
   height: 18px;
@@ -410,6 +410,7 @@
   line-height: 1.72;
   max-height: 0;
   overflow: hidden;
+  background: var(--surface);
   transition: max-height 0.38s ease, padding 0.22s;
   border-top: 0px solid transparent;
 }

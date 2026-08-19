@@ -1945,7 +1945,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   user-select: none;
   transition: background var(--transition);
 }
-.sp-faq-q:hover { background: rgba(255,255,255,0.02); }
+.sp-faq-q:hover { background: linear-gradient(rgba(255,255,255,0.03), rgba(255,255,255,0.03)), var(--surface); }
 .sp-faq-chevron {
   width: 18px;
   height: 18px;
@@ -1967,6 +1967,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   line-height: 1.72;
   max-height: 0;
   overflow: hidden;
+  background: var(--surface);
   transition: max-height 0.38s ease, padding 0.22s;
 }
 .sp-faq-item.open .sp-faq-a {
