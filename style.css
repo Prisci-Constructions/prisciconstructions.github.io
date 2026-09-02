@@ -474,7 +474,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .about-section    { background: var(--bg2); }
 .services-section { background: var(--surface); }
-.projects-section { background: var(--bg2); }
 .clients-section  { background: var(--surface2); }
 .testimonials-section { background: var(--surface); }
 .contact-section  { background: var(--bg2); }
@@ -1309,16 +1308,23 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* ── BUSINESS VERTICALS ─────────────────────────────── */
-.verticals-section { background: var(--bg2); }
+.verticals-section { background: var(--bg2); padding-top: 0; scroll-margin-top: 6rem; }
+.verticals-section .section-title { margin-bottom: 2rem; }
 .verticals-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  margin-top: 3rem;
+  margin-top: 0;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
 }
 .vertical-card {
+  position: relative;
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 0;
   border-radius: var(--radius-lg);
   padding: 2rem;
   display: flex;
@@ -1327,7 +1333,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: border-color var(--transition), transform var(--transition);
 }
 .vertical-card:hover {
-  border-color: var(--border-gold);
+  box-shadow: 0 0 0 1px var(--border-gold);
   transform: translateY(-4px);
 }
 .vertical-card-top { display: flex; flex-direction: column; gap: 0.75rem; }
@@ -1656,9 +1662,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ── CERTIFICATIONS ─────────────────────────────── */
 .certs-section { background: var(--bg); }
 .certs-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   gap: 1.25rem;
   margin-top: 3rem;
 }
@@ -1667,11 +1672,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 1.25rem;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  min-width: 120px;
   text-align: center;
   transition: border-color var(--transition);
 }
@@ -1684,9 +1688,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .cert-name { font-size: 0.72rem; color: var(--text-muted); }
 .cert-badge-img {
-  height: 2.2rem;
+  height: 4.5rem;
   width: auto;
-  max-width: 100px;
+  max-width: 140px;
   object-fit: contain;
   border-radius: 4px;
 }
@@ -2145,6 +2149,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .why-grid        { grid-template-columns: 1fr 1fr; }
   .industries-grid { grid-template-columns: repeat(4, 1fr); }
   .knowledge-grid  { grid-template-columns: 1fr 1fr; }
+  .certs-grid      { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -2155,8 +2160,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .industries-grid { grid-template-columns: repeat(3, 1fr); }
   .team-grid, .team-grid--3 { grid-template-columns: 1fr; max-width: 460px; }
   .knowledge-grid  { grid-template-columns: 1fr; }
-  .certs-grid      { gap: 0.75rem; }
-  .cert-card       { padding: 1.25rem 1.5rem; min-width: 100px; }
+  .certs-grid      { grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+  .cert-card       { padding: 1.25rem 1rem; }
   .about-vm        { grid-template-columns: 1fr; }
 
   .contact-actions { flex-direction: column; }
@@ -2173,4 +2178,5 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .industries-grid { grid-template-columns: repeat(2, 1fr); }
   .knowledge-grid  { grid-template-columns: 1fr; }
   .verticals-grid  { grid-template-columns: 1fr; }
+  .certs-grid      { grid-template-columns: repeat(2, 1fr); }
 }

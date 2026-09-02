@@ -18,7 +18,7 @@
   <script src="https://cdn.tailwindcss.com/3.4.13"></script>
   <script>
     tailwind.config = {
-      corePlugins: { preflight: false },
+      corePlugins: { preflight: false, container: false },
       theme: {
         extend: {
           colors: {
@@ -238,9 +238,10 @@
       <h2 class="section-title section-title--center">
         Three integrated <span class="accent">solutions</span>
       </h2>
-      <div class="verticals-grid pf-reveal-stagger">
+    </div>
+    <div class="verticals-grid pf-reveal-stagger">
 
-        <div class="vertical-card notch-corner">
+        <div class="vertical-card">
           <div class="vertical-card-bg"
             style="background-image: url('src/assets/graphics/vertical-engineering.jpg');"></div>
           <div class="vertical-card-top">
@@ -288,7 +289,7 @@
           <a href="#contact" class="vertical-cta link-underline">Book a Free Consultation →</a>
         </div>
 
-        <div class="vertical-card notch-corner">
+        <div class="vertical-card">
           <div class="vertical-card-bg" style="background-image: url('src/assets/graphics/vertical-design-studio.jpg');">
           </div>
           <div class="vertical-card-top">
@@ -327,7 +328,7 @@
           <a href="#contact" class="vertical-cta link-underline">Design Consultation →</a>
         </div>
 
-        <div class="vertical-card notch-corner">
+        <div class="vertical-card">
           <div class="vertical-card-bg" style="background-image: url('src/assets/graphics/vertical-development-advisory.jpg');"></div>
           <div class="vertical-card-top">
             <div class="vertical-num">03</div>
@@ -358,7 +359,6 @@
         </div>
 
       </div>
-    </div>
   </section>
 
   <!-- ── WHY CHOOSE US ─────────────────────────────── -->
@@ -387,7 +387,7 @@
         </div>
 
         <div class="why-item">
-          <div class="card-media"><img src="src/assets/images/25 Plus Years Experience 2.jpg" alt="25+ Years Experience" loading="lazy"></div>
+          <div class="card-media"><img src="src/assets/images/25 Plus Years Experience 1.jpg" alt="25+ Years Experience" loading="lazy"></div>
           <div class="why-body">
             <div class="why-icon">
               <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
@@ -402,7 +402,7 @@
         </div>
 
         <div class="why-item">
-          <div class="card-media"><img src="src/assets/images/Specialized Expertise 2.jpg" alt="Specialized Expertise" loading="lazy"></div>
+          <div class="card-media"><img src="src/assets/images/Specialized Expertise 1.jpg" alt="Specialized Expertise" loading="lazy"></div>
           <div class="why-body">
             <div class="why-icon">
               <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
@@ -416,7 +416,7 @@
         </div>
 
         <div class="why-item">
-          <div class="card-media"><img src="src/assets/images/End-to-End Solutions 1.jpg" alt="End-to-End Solutions" loading="lazy"></div>
+          <div class="card-media"><img src="src/assets/images/End-to-End Solutions 2.jpg" alt="End-to-End Solutions" loading="lazy"></div>
           <div class="why-body">
             <div class="why-icon">
               <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26">
@@ -1360,23 +1360,23 @@
       </h2>
       <div class="certs-grid pf-reveal-stagger">
         <div class="cert-card notch-corner">
-          <div class="cert-badge">MSME</div>
+          <img src="src/assets/icons/MSME.png" alt="MSME Registered" class="cert-badge-img" />
           <div class="cert-name">MSME Registered</div>
         </div>
         <div class="cert-card notch-corner">
-          <div class="cert-badge">GST</div>
+          <img src="src/assets/icons/GST.png" alt="GST Registered" class="cert-badge-img" />
           <div class="cert-name">GST Registered</div>
         </div>
         <div class="cert-card notch-corner">
-          <div class="cert-badge">UDYAM</div>
+          <img src="src/assets/icons/UDYAM.png" alt="Udyam Registration" class="cert-badge-img" />
           <div class="cert-name">Udyam Registration</div>
         </div>
         <div class="cert-card notch-corner">
-          <div class="cert-badge">ISO</div>
+          <img src="src/assets/icons/ISO.png" alt="ISO Certified" class="cert-badge-img" />
           <div class="cert-name">ISO Certified</div>
         </div>
         <div class="cert-card notch-corner">
-          <div class="cert-badge">GOVT</div>
+          <img src="src/assets/icons/Governmant Aproved.png" alt="Government Approved" class="cert-badge-img" />
           <div class="cert-name">Government Approved</div>
         </div>
         <div class="cert-card notch-corner">
